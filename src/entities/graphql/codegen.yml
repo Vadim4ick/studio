@@ -1,0 +1,13 @@
+overwrite: true
+schema: http://85.193.95.227:8055/graphql
+documents: "./src/entities/graphql/documents/**/*.gql"
+generates:
+  ./src/entities/graphql/__generated__.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request
+config:
+  maybeValue: "T"
+  avoidOptionals: true
+  immutableTypes: true
