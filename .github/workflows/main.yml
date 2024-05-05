@@ -12,36 +12,56 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-dependencies-${{ hashFiles('bun.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-dependencies-
-
       - run: bun install
       - run: bun run lint
-
-  build:
-    name: build
-    needs: init
-    runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
-
-      - name: Restore cached dependencies
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-dependencies-${{ hashFiles('bun.lock') }}
-
-      - run: bun run build
 
       - name: Change directory
         run: cd /home/admin/actions-runner/_work/studio/studio
       - run: pm2 restart 0
+# name: Bun CI
+
+# on:
+#   push:
+#     branches: ["master"]
+
+# jobs:
+#   init:
+#     name: init
+#     runs-on: self-hosted
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: oven-sh/setup-bun@v1
+
+#       - name: Cache dependencies
+#         uses: actions/cache@v2
+#         with:
+#           path: node_modules
+#           key: ${{ runner.os }}-dependencies-${{ hashFiles('bun.lock') }}
+#           restore-keys: |
+#             ${{ runner.os }}-dependencies-
+
+#       - run: bun install
+#       - run: bun run lint
+
+#   build:
+#     name: build
+#     needs: init
+#     runs-on: self-hosted
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: oven-sh/setup-bun@v1
+
+#       - name: Restore cached dependencies
+#         uses: actions/cache@v2
+#         with:
+#           path: node_modules
+#           key: ${{ runner.os }}-dependencies-${{ hashFiles('bun.lock') }}
+
+#       - run: bun run build
+
+#       - name: Change directory
+#         run: cd /home/admin/actions-runner/_work/studio/studio
+#       - run: pm2 restart 0
 # name: Node.js CI
 
 # on:
