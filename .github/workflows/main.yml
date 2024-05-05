@@ -15,6 +15,8 @@ jobs:
       - run: bun install
       - run: bun run lint
 
+      - run: bun run build
+
       - name: Change directory
         run: cd /home/admin/actions-runner/_work/studio/studio
       - run: pm2 restart 0
