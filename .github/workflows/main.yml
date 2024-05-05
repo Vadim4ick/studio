@@ -12,6 +12,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-dependencies-${{ hashFiles('bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-dependencies-
+
       - run: bun install
       - run: bun run lint
 
@@ -22,6 +30,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
+
+      - name: Restore cached dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-dependencies-${{ hashFiles('bun.lock') }}
 
       - run: bun run build
 
