@@ -20,6 +20,9 @@ jobs:
     needs: init
     runs-on: self-hosted
     steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+
       - run: bun run build
 
       - name: Change directory
