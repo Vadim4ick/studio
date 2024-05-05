@@ -1,22 +1,16 @@
 "use client";
 
-import { gql } from "@/entities/graphql";
-import { useEffect } from "react";
-
-async function test() {
-  const res = await gql.GetBanner();
-
-  console.log(res);
-}
+import { useGetBanner } from "@/entities/Banner";
 
 const HomePage = () => {
-  useEffect(() => {
-    test();
-  }, []);
+  const { data, isLoading } = useGetBanner();
+
+  console.log(data);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello!
+      {isLoading && <div>loading...</div>}
+      {!isLoading && data && data.banner.length > 0 && data.banner[0].title}
     </main>
   );
 };

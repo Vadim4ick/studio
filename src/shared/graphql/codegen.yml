@@ -1,8 +1,8 @@
 overwrite: true
 schema: http://37.220.81.230:8055/graphql
-documents: "./src/entities/graphql/documents/**/*.gql"
+documents: "./src/shared/graphql/api/**/*.gql"
 generates:
-  ./src/entities/graphql/__generated__.ts:
+  ./src/shared/graphql/__generated__.ts:
     plugins:
       - typescript
       - typescript-operations
