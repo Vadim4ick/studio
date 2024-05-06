@@ -6,6 +6,10 @@
   .btn-primary {
     @apply h-[60px] rounded-[5px] bg-[#6B5AF9] transition-all hover:bg-[#7A6AFF];
   }
+  .btn-secondary {
+    @apply text-xs rounded-md bg-cyan-200 px-10 py-4 transition hover:bg-orange-500 active:scale-[0.97]
+  }
+
 }
 
 .skeleton-item {
