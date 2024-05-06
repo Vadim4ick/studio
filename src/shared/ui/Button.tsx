@@ -1,13 +1,31 @@
-import type { FC } from "react";
+import clsx from "clsx";
+import { ReactNode } from "react";
 
-export interface ButtonProps {
-  text: string;
+type BtnVariant = "primary" | "secondary";
+
+interface ButtonProps extends ReactTagProps<"button"> {
+  children: ReactNode;
+  variant?: BtnVariant;
 }
 
-const PrimaryButton: FC<ButtonProps> = ({ text }) => (
-  <button className="rounded-md bg-cyan-200 px-5 py-2 transition hover:bg-orange-500 active:scale-[0.97]">
-    {text}
-  </button>
-);
+const Button = (props: ButtonProps) => {
+  const { children, className, variant = "primary", ...otherProps } = props;
 
-export { PrimaryButton };
+  return (
+    <button
+      className={clsx(
+        "text-center text-white",
+        {
+          primary: "btn-primary",
+          secondary: "btn-secondary",
+        }[variant],
+        [className],
+      )}
+      {...otherProps}
+    >
+      {children}
+    </button>
+  );
+};
+
+export { Button };
