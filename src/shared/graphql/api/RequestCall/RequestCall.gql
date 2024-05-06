@@ -1,0 +1,7 @@
+query GetRequestCall {
+  contacts {
+    id
+    text
+    tel
+  }
+}
