@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const HomePage = () => (
   //<main className="flex min-h-screen flex-col items-center justify-between ">
-  <section className="container mx-auto w-full py-10 sm:flex sm:items-center sm:px-8 sm:py-10 md:py-16 lg:py-24">
+  <section className="mx-auto max-w-7xl px-4 py-10 sm:flex sm:items-center sm:py-10 md:py-16 lg:py-24">
     <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
       <div className="flex max-w-2xl flex-col gap-2 px-2">
         <h1 className="text-lg font-semibold md:mb-5 md:text-2xl lg:mb-8 lg:text-4xl">
