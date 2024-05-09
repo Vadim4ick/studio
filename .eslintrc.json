@@ -29,6 +29,7 @@
     "padded-blocks": ["error", "never"],
     "max-len": ["error", { "code": 120 }],
     "indent": ["error", 2],
+    "react/display-name": "off",
     "react/self-closing-comp": [
       "error",
       {

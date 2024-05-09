@@ -1,19 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import { useActiveLink } from "./hooks/useActiveLink";
 import Link from "next/link";
-import clsx from "clsx";
 import { RequestCall } from "@/features/RequestCall";
+import { useMedia } from "@/shared/hooks/useMedia.hooks";
+import { BurgerMenu, NavigationMenu } from "@/features/NavigationMenu";
+import clsx from "clsx";
+import { memo, useRef } from "react";
 
-const Header = () => {
-  const { navigation, activeIdx } = useActiveLink();
+const Header = memo(() => {
+  const isDesktop1150 = useMedia({ media: "max", number: 1150 });
+
+  const headerRef = useRef(null);
 
   return (
-    <header className="flex items-center pt-8">
+    <header
+      ref={headerRef}
+      className={clsx(
+        "z-10 flex w-full items-center bg-white pt-8 max-desktop:fixed max-desktop:pt-4",
+      )}
+    >
       <div className="mx-auto w-full max-w-[1280px] px-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-11">
+        <div className="relative flex items-center justify-between">
+          <div className="z-10 flex items-center gap-11">
             <Link href={"/"}>
               <Image
                 src={"/image/logo.png"}
@@ -24,27 +33,14 @@ const Header = () => {
               />
             </Link>
 
-            <nav>
-              <ul className="flex gap-6">
-                {navigation.map((el, i) => (
-                  <li
-                    className={clsx("font-bold", {
-                      "text-[#6B5AF9]": i === activeIdx,
-                    })}
-                    key={el.path}
-                  >
-                    <Link href={el.path}>{el.name}</Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            {headerRef.current && <NavigationMenu ref={headerRef} />}
           </div>
 
-          <RequestCall />
+          {!isDesktop1150.matches ? <RequestCall /> : <BurgerMenu />}
         </div>
       </div>
     </header>
   );
-};
+});
 
 export { Header };

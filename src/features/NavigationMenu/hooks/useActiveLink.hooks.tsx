@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { navigation } from "../const/navigation.const";
 import { usePathname } from "next/navigation";
+import { navigation } from "../const/navigation.const";
 
 const useActiveLink = () => {
   const [activeIdx, setActiveIdx] = useState(0);

@@ -1,5 +1,5 @@
 import { formatPhone } from "@/shared/helpers/formatPhone.helper";
-import { useGetRequestCall } from "./api/getRequestCall";
+import { useGetRequestCall } from "../api/getRequestCall";
 import { Skeleton } from "@/shared/ui/Skeleton";
 
 const RequestCallTel = () => {

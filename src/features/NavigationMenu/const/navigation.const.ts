@@ -1,6 +1,11 @@
 import { DASHBOARD_PAGES } from "@/shared/const/pages-url.const";
 
-export const navigation = [
+export interface Navigation {
+  name: string;
+  path: string;
+}
+
+export const navigation: Navigation[] = [
   {
     name: "Главная",
     path: DASHBOARD_PAGES.HOME,
@@ -10,7 +15,7 @@ export const navigation = [
     path: DASHBOARD_PAGES.PRICE,
   },
   {
-    name: "Кейсы и отзывы",
+    name: "Кейсы",
     path: DASHBOARD_PAGES.REVIEWS,
   },
   {
