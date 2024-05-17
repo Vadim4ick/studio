@@ -1,4 +1,5 @@
 import { Button } from "@/shared/ui/Button";
+import { BenefitsList } from "@/widgets/BenefitsList";
 import Image from "next/image";
 
 const HomePage = () => (
@@ -32,6 +33,9 @@ const HomePage = () => (
           height={2000}
         />
       </div>
+    </section>
+    <section className="">
+      <BenefitsList />
     </section>
   </main>
 );
