@@ -1,10 +1,11 @@
+import { benefits } from "@/entities/BenefitItem";
 import { Button } from "@/shared/ui/Button";
 import { BenefitsList } from "@/widgets/BenefitsList";
 import Image from "next/image";
 
 const HomePage = () => (
   <main className={"max-desktop:pt-headerMobile"}>
-    <section className="mx-auto max-w-7xl px-4 py-10 sm:flex sm:items-center sm:py-10 md:py-16 lg:py-24">
+    <section className="max-[1160px] mx-auto px-4 py-10 sm:flex sm:items-center sm:py-10 md:py-16 lg:py-24">
       <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
         <div className="flex max-w-2xl flex-col gap-2 px-2">
           <h1 className="text-lg font-semibold md:mb-5 md:text-2xl lg:mb-8 lg:text-4xl">
@@ -34,8 +35,20 @@ const HomePage = () => (
         />
       </div>
     </section>
-    <section className="">
-      <BenefitsList />
+    <section className="mx-auto max-w-[1160px] px-4 py-10">
+      <h2 className="mb-[54px] text-lg font-extrabold md:mb-8 md:text-2xl lg:mb-7 lg:text-4xl">
+        Мы создаем интернет-магазины,{" "}
+        <span className="text-[#6B5AF9]">которые продают</span>{" "}
+      </h2>
+      <BenefitsList
+        benefitsData={benefits}
+        className="mb-[50px] grid grid-cols-1 justify-items-center gap-y-10 md:grid-cols-2 md:gap-x-5 lg:grid-cols-3 lg:gap-y-[54px]"
+      />
+      <div className="mt-4 flex justify-center gap-8 font-semibold lg:justify-start">
+        <Button className="text-xs" variant="secondary">
+          Узнать стоимость
+        </Button>
+      </div>
     </section>
   </main>
 );

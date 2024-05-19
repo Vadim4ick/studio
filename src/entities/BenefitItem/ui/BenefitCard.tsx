@@ -6,26 +6,28 @@ import {
   CardDescription,
   CardContent,
 } from "@/shared/ui/Card";
+import { Benefit } from "../model/types";
 
-type CardProps = React.ComponentProps<typeof Card>;
+type Props = {
+  className?: string;
+  item: Benefit;
+  index: number;
+} & React.ComponentProps<typeof Card>;
 
-export function BenefitCard({ className, ...props }: CardProps) {
+export function BenefitCard({ className, item, index, ...props }: Props) {
   return (
-    <Card className={clsx("max-w-[373px] shadow-lg", [className])} {...props}>
+    <Card className={clsx("max-w-[373px] !shadow-lg", [className])} {...props}>
       <CardHeader>
-        <CardTitle className="text-[64px] font-bold text-white drop-shadow-lg">
-          01
-        </CardTitle>
-        <div className="w-44 border-0 border-b-2 border-red-400"> </div>
-        <CardDescription className="text-sm font-bold">
-          Удобный интерфейс
-        </CardDescription>
+        <div className="text-[64px] font-bold text-white drop-shadow-lg">
+          0{index + 1}
+        </div>
+        <div className="w-44 border-0 border-b-2 border-[#DA7B78]"> </div>
+        <CardTitle className="text-sm font-bold">{item.title}</CardTitle>
       </CardHeader>
       <CardContent className="">
-        <p className="text-xs font-normal leading-none">
-          Блоковая подача информации, удобные кнопки, карточки товаров, понятное
-          меню и легкая навигация по многостраничному сайту.
-        </p>
+        <CardDescription className="text-xs font-normal leading-none">
+          {item.description}
+        </CardDescription>
       </CardContent>
     </Card>
   );

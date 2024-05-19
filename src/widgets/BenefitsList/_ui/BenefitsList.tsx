@@ -1,19 +1,21 @@
 import { BenefitCard } from "@/entities/BenefitItem";
+import { Benefit } from "@/entities/BenefitItem";
+import clsx from "clsx";
 import React from "react";
 
-function BenefitsList() {
-  return (
-    <div className="mx-auto max-w-[1160px]">
-      <div className="grid grid-cols-1 justify-items-center gap-y-10 md:grid-cols-2 md:gap-x-5 lg:grid-cols-3 lg:gap-y-[54px]">
-        <BenefitCard />
-        <BenefitCard />
-        <BenefitCard />
-        <BenefitCard />
-        <BenefitCard />
-        <BenefitCard />
-      </div>
+type Props = {
+  className?: string;
+  benefitsData: Benefit[];
+};
+
+const BenefitsList = React.forwardRef<HTMLDivElement, Props>(
+  ({ className, benefitsData, ...props }, ref) => (
+    <div ref={ref} className={clsx("bg-primary", [className])} {...props}>
+      {benefitsData.map((item, index) => (
+        <BenefitCard key={item.id} index={index} item={item} />
+      ))}
     </div>
-  );
-}
+  ),
+);
 
 export { BenefitsList };
