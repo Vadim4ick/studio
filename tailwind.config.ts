@@ -3,16 +3,19 @@ import colors from "tailwindcss/colors";
 
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}"],
+  darkMode: "class",
 
   theme: {
-    colors: {
-      transparent: "transparent",
-      current: "currentColor",
-      primary: colors.indigo,
-      secondary: colors.green,
-      hover: colors.red,
-    },
     extend: {
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        primary: colors.indigo,
+        secondary: colors.green,
+        hover: colors.red,
+
+        "bg-dark": "#475569",
+      },
       padding: {
         headerMobile: "70.5px",
       },

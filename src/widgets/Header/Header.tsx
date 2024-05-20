@@ -7,6 +7,7 @@ import { useMedia } from "@/shared/hooks/useMedia.hooks";
 import { BurgerMenu, NavigationMenu } from "@/features/NavigationMenu";
 import clsx from "clsx";
 import { memo, useRef } from "react";
+import { SwithTheme } from "@/features/SwitchTheme";
 
 const Header = memo(() => {
   const isDesktop1150 = useMedia({ media: "max", number: 1150 });
@@ -17,7 +18,7 @@ const Header = memo(() => {
     <header
       ref={headerRef}
       className={clsx(
-        "z-10 flex w-full items-center bg-white pt-8 max-desktop:fixed max-desktop:pt-4",
+        "z-10 flex w-full items-center pt-8 max-desktop:fixed max-desktop:pt-4",
       )}
     >
       <div className="mx-auto w-full max-w-[1280px] px-4">
@@ -35,6 +36,8 @@ const Header = memo(() => {
 
             {headerRef.current && <NavigationMenu ref={headerRef} />}
           </div>
+
+          <SwithTheme />
 
           {!isDesktop1150.matches ? <RequestCall /> : <BurgerMenu />}
         </div>
