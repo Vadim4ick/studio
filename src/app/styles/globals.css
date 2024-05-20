@@ -2,12 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer utilities {
   .btn-primary {
     @apply h-[60px] rounded-[5px] bg-[#6B5AF9] transition-all hover:bg-[#7A6AFF];
   }
   .btn-secondary {
-    @apply rounded-md bg-sky-700 px-10 py-4 transition duration-500 hover:bg-orange-600 active:scale-[0.97];
+    @apply rounded-md bg-primary-500 px-10 py-4 transition duration-500 hover:bg-hover-400 active:scale-[0.97];
   }
 }
 

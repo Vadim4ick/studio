@@ -1,9 +1,17 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}"],
 
   theme: {
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      primary: colors.indigo,
+      secondary: colors.green,
+      hover: colors.red,
+    },
     extend: {
       padding: {
         headerMobile: "70.5px",
