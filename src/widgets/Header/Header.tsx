@@ -37,9 +37,13 @@ const Header = memo(() => {
             {headerRef.current && <NavigationMenu ref={headerRef} />}
           </div>
 
-          {!isDesktop1150.matches ? <RequestCall /> : <BurgerMenu />}
-
-          <SwithTheme />
+          {!isDesktop1150.matches ? (
+            <>
+              <RequestCall /> <SwithTheme />
+            </>
+          ) : (
+            <BurgerMenu />
+          )}
         </div>
       </div>
     </header>

@@ -9,6 +9,7 @@ import { Overlay } from "@/shared/ui/Overlay";
 import { Button } from "@/shared/ui/Button";
 import { forwardRef } from "react";
 import { useActiveLink } from "../hooks/useActiveLink.hooks";
+import { SwithTheme } from "@/features/SwitchTheme";
 
 const NavigationMenu = forwardRef<HTMLElement>((_, ref) => {
   const { navigation, activeIdx } = useActiveLink();
@@ -63,6 +64,8 @@ const NavigationMenu = forwardRef<HTMLElement>((_, ref) => {
                 </li>
               ))}
             </ul>
+
+            <SwithTheme />
 
             <Button variant="secondary" className="mt-6 w-full text-nowrap">
               Заказать звонок

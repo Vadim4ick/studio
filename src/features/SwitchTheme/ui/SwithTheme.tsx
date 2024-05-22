@@ -4,15 +4,23 @@ import { DarkIcon } from "@/shared/icons/theme/Dark";
 import { $theme, changeTheme } from "@/shared/context/theme";
 import { useUnit } from "effector-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useMedia } from "@/shared/hooks/useMedia.hooks";
 
 const SwithTheme = () => {
   const theme = useUnit($theme);
+
+  const isDesktop1150 = useMedia({ media: "max", number: 1150 });
 
   return (
     <motion.span
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="relative flex h-[50px] w-[100px] items-center justify-evenly rounded-lg bg-[#f1f5f9] dark:bg-[#64748b]"
+      className={clsx(
+        "relative flex h-[50px] w-[100px] items-center justify-evenly rounded-lg bg-[#f1f5f9] dark:bg-[#64748b]",
+        {
+          "m-auto mt-4": isDesktop1150.matches,
+        },
+      )}
       aria-label="Theme"
     >
       <AnimatePresence>
