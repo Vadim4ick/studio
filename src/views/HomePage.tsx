@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const HomePage = () => (
   <main className={"max-desktop:pt-headerMobile"}>
-    <section className="max-[1160px] mx-auto px-4 py-10 sm:flex sm:items-center sm:py-10 md:py-16 lg:py-24">
+    <section className="max-w-[1160px] mx-auto px-4 py-10 sm:flex sm:items-center sm:py-10 md:py-16 lg:py-24">
       <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
         <div className="flex max-w-2xl flex-col gap-2 px-2">
           <h1 className="text text-lg font-semibold md:mb-5 md:text-2xl lg:mb-8 lg:text-4xl">
@@ -27,7 +27,7 @@ const HomePage = () => (
           quality={100}
           priority
           sizes="(max-width: 768px) 100vw, 50vw"
-          src="/banner-image-1.png"
+          src="/image/banner-image-1.png"
           alt="bunner image"
           className="pointer-events-none mx-auto h-full w-full select-none object-cover"
           width={2000}
