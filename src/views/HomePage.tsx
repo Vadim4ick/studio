@@ -1,17 +1,17 @@
-import { benefits } from "@/entities/BenefitItem";
-import { Button } from "@/shared/ui/Button";
-import { BenefitsList } from "@/widgets/BenefitsList";
-import Image from "next/image";
+import { benefits } from "@/entities/BenefitItem"
+import { Button } from "@/shared/ui/Button"
+import { BenefitsList } from "@/widgets/BenefitsList"
+import Image from "next/image"
 
 const HomePage = () => (
   <main className={"max-desktop:pt-headerMobile"}>
     <section className="max-[1160px] mx-auto px-4 py-10 sm:flex sm:items-center sm:py-10 md:py-16 lg:py-24">
       <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
         <div className="flex max-w-2xl flex-col gap-2 px-2">
-          <h1 className="text-lg font-semibold md:mb-5 md:text-2xl lg:mb-8 lg:text-4xl">
+          <h1 className="text text-lg font-semibold md:mb-5 md:text-2xl lg:mb-8 lg:text-4xl">
             Цифровая экспертиза на благо Вашего бизнеса
           </h1>
-          <p className="lg:bm-28 text-xs text-gray-700 md:mb-5 lg:text-base">
+          <p className="lg:bm-28 text text-gray-700 text-xs md:mb-5 lg:text-base">
             Разработка современных, быстрых и удобных WEB приложений что-бы ваши
             клиенты были счестливы.
           </p>
@@ -36,9 +36,9 @@ const HomePage = () => (
       </div>
     </section>
     <section className="mx-auto max-w-[1160px] px-4 py-10">
-      <h2 className="mb-[54px] text-lg font-extrabold md:mb-8 md:text-2xl lg:mb-7 lg:text-4xl">
+      <h2 className="text mb-[54px] text-lg font-extrabold md:mb-8 md:text-2xl lg:mb-7 lg:text-4xl">
         Мы создаем интернет-магазины,{" "}
-        <span className="text-[#6B5AF9]">которые продают</span>{" "}
+        <span className="text-primary-500">которые продают</span>{" "}
       </h2>
       <BenefitsList
         benefitsData={benefits}
@@ -51,6 +51,6 @@ const HomePage = () => (
       </div>
     </section>
   </main>
-);
+)
 
-export { HomePage };
+export { HomePage }

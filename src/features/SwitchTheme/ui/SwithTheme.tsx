@@ -1,22 +1,22 @@
-import clsx from "clsx";
-import { LightIcon } from "@/shared/icons/theme/Light";
-import { DarkIcon } from "@/shared/icons/theme/Dark";
-import { $theme, changeTheme } from "@/shared/context/theme";
-import { useUnit } from "effector-react";
-import { AnimatePresence, motion } from "framer-motion";
-import { useMedia } from "@/shared/hooks/useMedia.hooks";
+import clsx from "clsx"
+import { LightIcon } from "@/shared/icons/theme/Light"
+import { DarkIcon } from "@/shared/icons/theme/Dark"
+import { $theme, changeTheme } from "@/shared/context/theme"
+import { useUnit } from "effector-react"
+import { AnimatePresence, motion } from "framer-motion"
+import { useMedia } from "@/shared/hooks/useMedia.hooks"
 
 const SwithTheme = () => {
-  const theme = useUnit($theme);
+  const theme = useUnit($theme)
 
-  const isDesktop1150 = useMedia({ media: "max", number: 1150 });
+  const isDesktop1150 = useMedia({ media: "max", number: 1150 })
 
   return (
     <motion.span
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className={clsx(
-        "relative flex h-[50px] w-[100px] items-center justify-evenly rounded-lg bg-[#f1f5f9] dark:bg-[#64748b]",
+        "relative flex h-[50px] w-[100px] items-center justify-evenly rounded-lg bg-gray/10 dark:bg-gray",
         {
           "m-auto mt-4": isDesktop1150.matches,
         },
@@ -57,7 +57,7 @@ const SwithTheme = () => {
             <LightIcon
               className={clsx(
                 "size-8 rounded-full",
-                theme === "light" ? "text-yellow-400" : "text-[#94a3b8]",
+                theme === "light" ? "text-yellow-400" : "text-iconBg",
               )}
             />
           </motion.div>
@@ -78,7 +78,7 @@ const SwithTheme = () => {
               initial={{ x: -30 }}
               animate={{ x: 0 }}
               exit={{ x: -30 }}
-              className="absolute left-0 top-0 size-[40px] rounded-full bg-[#475569]"
+              className="absolute left-0 top-0 size-[40px] rounded-full bg-iconBg"
             />
           )}
 
@@ -100,7 +100,7 @@ const SwithTheme = () => {
         </motion.label>
       </AnimatePresence>
     </motion.span>
-  );
-};
+  )
+}
 
-export { SwithTheme };
+export { SwithTheme }

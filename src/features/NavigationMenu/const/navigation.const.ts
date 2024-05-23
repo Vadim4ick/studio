@@ -1,8 +1,8 @@
-import { DASHBOARD_PAGES } from "@/shared/const/pages-url.const";
+import { DASHBOARD_PAGES } from "@/shared/const/pages-url.const"
 
 export interface Navigation {
-  name: string;
-  path: string;
+  name: string
+  path: string
 }
 
 export const navigation: Navigation[] = [
@@ -22,4 +22,4 @@ export const navigation: Navigation[] = [
     name: "Контакты",
     path: DASHBOARD_PAGES.CONTACTS,
   },
-];
+]

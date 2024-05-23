@@ -1,1 +1,1 @@
-export { SwithTheme } from "./ui/SwithTheme";
+export { SwithTheme } from "./ui/SwithTheme"

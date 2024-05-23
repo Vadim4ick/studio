@@ -7,6 +7,6 @@ const Loader = () => (
       aria-label="loading"
     />
   </div>
-);
+)
 
-export { Loader };
+export { Loader }

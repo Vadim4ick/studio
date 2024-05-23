@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
 const Overlay = () => (
   <motion.div
@@ -15,6 +15,6 @@ const Overlay = () => (
     transition={{ duration: 0.5, ease: "easeInOut" }}
     className="fixed inset-0 bg-white"
   />
-);
+)
 
-export { Overlay };
+export { Overlay }

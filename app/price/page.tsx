@@ -1,3 +1,3 @@
-const Page = () => <div>Цены</div>;
+const Page = () => <div>Цены</div>
 
-export default Page;
+export default Page

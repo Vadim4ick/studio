@@ -1,15 +1,15 @@
-import clsx from "clsx";
-import { ReactNode } from "react";
+import clsx from "clsx"
+import { ReactNode } from "react"
 
-type BtnVariant = "primary" | "secondary";
+type BtnVariant = "primary" | "secondary"
 
 interface ButtonProps extends ReactTagProps<"button"> {
-  children: ReactNode;
-  variant?: BtnVariant;
+  children: ReactNode
+  variant?: BtnVariant
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, className, variant = "primary", ...otherProps } = props;
+  const { children, className, variant = "primary", ...otherProps } = props
 
   return (
     <button
@@ -25,7 +25,7 @@ const Button = (props: ButtonProps) => {
     >
       {children}
     </button>
-  );
-};
+  )
+}
 
-export { Button };
+export { Button }

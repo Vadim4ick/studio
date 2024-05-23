@@ -1,1 +1,1 @@
-export { BenefitsList } from "./_ui/BenefitsList";
+export { BenefitsList } from "./ui/BenefitsList"

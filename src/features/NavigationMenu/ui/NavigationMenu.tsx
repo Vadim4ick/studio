@@ -1,21 +1,26 @@
-import { $menuIsOpen, closeBurger } from "@/shared/context/modal";
-import { useMedia } from "@/shared/hooks/useMedia.hooks";
-import { Portal } from "@/shared/ui/Portal";
-import clsx from "clsx";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { useUnit } from "effector-react";
-import { Overlay } from "@/shared/ui/Overlay";
-import { Button } from "@/shared/ui/Button";
-import { forwardRef } from "react";
-import { useActiveLink } from "../hooks/useActiveLink.hooks";
-import { SwithTheme } from "@/features/SwitchTheme";
+import { $menuIsOpen, closeBurger } from "@/shared/context/modal"
+import { useMedia } from "@/shared/hooks/useMedia.hooks"
+import { Portal } from "@/shared/ui/Portal"
+import clsx from "clsx"
+import Link from "next/link"
+import { motion } from "framer-motion"
+import { useUnit } from "effector-react"
+import { Overlay } from "@/shared/ui/Overlay"
+import { Button } from "@/shared/ui/Button"
+import { forwardRef } from "react"
+import { useActiveLink } from "../hooks/useActiveLink.hooks"
 
-const NavigationMenu = forwardRef<HTMLElement>((_, ref) => {
-  const { navigation, activeIdx } = useActiveLink();
-  const [open] = useUnit([$menuIsOpen]);
+interface Props {
+  SwithTheme: () => JSX.Element
+}
 
-  const isDesktop1150 = useMedia({ media: "max", number: 1150 });
+const NavigationMenu = forwardRef<HTMLElement, Props>((props, ref) => {
+  const { SwithTheme } = props
+
+  const { navigation, activeIdx } = useActiveLink()
+  const [open] = useUnit([$menuIsOpen])
+
+  const isDesktop1150 = useMedia({ media: "max", number: 1150 })
 
   if (!isDesktop1150.matches) {
     return (
@@ -24,16 +29,18 @@ const NavigationMenu = forwardRef<HTMLElement>((_, ref) => {
           {navigation.map((el, i) => (
             <li
               className={clsx("font-bold", {
-                "text-[#6B5AF9]": i === activeIdx,
+                "text-primary-500": i === activeIdx,
               })}
               key={el.path}
             >
-              <Link href={el.path}>{el.name}</Link>
+              <Link className="text" href={el.path}>
+                {el.name}
+              </Link>
             </li>
           ))}
         </ul>
       </nav>
-    );
+    )
   }
 
   return (
@@ -50,7 +57,7 @@ const NavigationMenu = forwardRef<HTMLElement>((_, ref) => {
               {navigation.map((el, i) => (
                 <li
                   className={clsx("font-bold", {
-                    "text-[#6B5AF9]": i === activeIdx,
+                    "text-primary-500": i === activeIdx,
                   })}
                   key={el.path}
                 >
@@ -76,7 +83,7 @@ const NavigationMenu = forwardRef<HTMLElement>((_, ref) => {
         </>
       )}
     </Portal>
-  );
-});
+  )
+})
 
-export { NavigationMenu };
+export { NavigationMenu }

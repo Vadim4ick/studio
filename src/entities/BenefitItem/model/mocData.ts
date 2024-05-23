@@ -1,4 +1,4 @@
-import { Benefit } from "./types";
+import { Benefit } from "./types"
 
 export const benefits: Benefit[] = [
   {
@@ -37,4 +37,4 @@ export const benefits: Benefit[] = [
     description:
       "Сайты соответствуют требованиям поисковой оптимизации, они без труда покоряют топы поисковой выдачи Яндекс и Google.",
   },
-];
+]

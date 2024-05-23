@@ -1,18 +1,18 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import Link from "next/link";
-import { RequestCall } from "@/features/RequestCall";
-import { useMedia } from "@/shared/hooks/useMedia.hooks";
-import { BurgerMenu, NavigationMenu } from "@/features/NavigationMenu";
-import clsx from "clsx";
-import { memo, useRef } from "react";
-import { SwithTheme } from "@/features/SwitchTheme";
+import Image from "next/image"
+import Link from "next/link"
+import { RequestCall } from "@/features/RequestCall"
+import { useMedia } from "@/shared/hooks/useMedia.hooks"
+import { BurgerMenu, NavigationMenu } from "@/features/NavigationMenu"
+import clsx from "clsx"
+import { memo, useRef } from "react"
+import { SwithTheme } from "@/features/SwitchTheme"
 
 const Header = memo(() => {
-  const isDesktop1150 = useMedia({ media: "max", number: 1150 });
+  const isDesktop1150 = useMedia({ media: "max", number: 1150 })
 
-  const headerRef = useRef(null);
+  const headerRef = useRef(null)
 
   return (
     <header
@@ -34,7 +34,9 @@ const Header = memo(() => {
               />
             </Link>
 
-            {headerRef.current && <NavigationMenu ref={headerRef} />}
+            {headerRef.current && (
+              <NavigationMenu ref={headerRef} SwithTheme={SwithTheme} />
+            )}
           </div>
 
           {!isDesktop1150.matches ? (
@@ -47,7 +49,7 @@ const Header = memo(() => {
         </div>
       </div>
     </header>
-  );
-});
+  )
+})
 
-export { Header };
+export { Header }

@@ -4,21 +4,62 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
   ],
   "rules": {
-    "prettier/prettier": "none",
+    "prettier/prettier": 2,
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
-    "no-trailing-spaces": [2, { "skipBlankLines": false }],
-    "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF": 1 }],
+    "no-trailing-spaces": [
+      2,
+      {
+        "skipBlankLines": false
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxBOF": 1
+      }
+    ],
     "object-curly-spacing": ["error", "always"],
-    "comma-spacing": [2, { "before": false, "after": true }],
-    "arrow-spacing": ["error", { "before": true, "after": true }],
-    "space-infix-ops": ["error", { "int32Hint": false }],
+    "comma-spacing": [
+      2,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "arrow-spacing": [
+      "error",
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "space-infix-ops": [
+      "error",
+      {
+        "int32Hint": false
+      }
+    ],
     "space-after-keywords": "off",
-    "keyword-spacing": [2, { "before": true, "after": true }],
-    "react/jsx-indent": [2, 2, { "indentLogicalExpressions": true }],
+    "keyword-spacing": [
+      2,
+      {
+        "before": true,
+        "after": true
+      }
+    ],
+    "react/jsx-indent": [
+      2,
+      2,
+      {
+        "indentLogicalExpressions": true
+      }
+    ],
     "arrow-body-style": ["error", "as-needed"],
     "padded-blocks": ["error", "never"],
     "indent": ["error", 2],
@@ -30,9 +71,12 @@
         "html": true
       }
     ],
-
-    "fsd-vf/path-checker": ["error", { "alias": "@" }],
-
+    "fsd-vf/path-checker": [
+      "error",
+      {
+        "alias": "@"
+      }
+    ],
     "fsd-vf/layer-imports": [
       "error",
       {
@@ -40,7 +84,6 @@
         "ignoreImportPatterns": ["**/StoreProvider", "**/testing"]
       }
     ],
-
     "fsd-vf/public-api-imports": [
       "error",
       {
@@ -52,7 +95,11 @@
         ]
       }
     ],
-
-    "react/jsx-tag-spacing": ["error", { "beforeSelfClosing": "always" }]
+    "react/jsx-tag-spacing": [
+      "error",
+      {
+        "beforeSelfClosing": "always"
+      }
+    ]
   }
 }

@@ -1,5 +1,5 @@
-import { Loader } from "@/shared/ui/Loader";
+import { Loader } from "@/shared/ui/Loader"
 
-const Loading = () => <Loader />;
+const Loading = () => <Loader />
 
-export default Loading;
+export default Loading

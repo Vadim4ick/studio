@@ -1,18 +1,18 @@
-import clsx from "clsx";
+import clsx from "clsx"
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
   CardContent,
-} from "@/shared/ui/Card";
-import { Benefit } from "../model/types";
+} from "@/shared/ui/Card"
+import { Benefit } from "../model/types"
 
 type Props = {
-  className?: string;
-  item: Benefit;
-  index: number;
-} & React.ComponentProps<typeof Card>;
+  className?: string
+  item: Benefit
+  index: number
+} & React.ComponentProps<typeof Card>
 
 export function BenefitCard({ className, item, index, ...props }: Props) {
   return (
@@ -21,7 +21,8 @@ export function BenefitCard({ className, item, index, ...props }: Props) {
         <div className="text-[64px] font-bold text-white drop-shadow-lg">
           0{index + 1}
         </div>
-        <div className="w-44 border-0 border-b-2 border-[#DA7B78]"> </div>
+        <div className="w-44 border-0 border-b-2 border-cardBorderBottom" />
+
         <CardTitle className="text-sm font-bold">{item.title}</CardTitle>
       </CardHeader>
       <CardContent className="">
@@ -30,5 +31,5 @@ export function BenefitCard({ className, item, index, ...props }: Props) {
         </CardDescription>
       </CardContent>
     </Card>
-  );
+  )
 }
