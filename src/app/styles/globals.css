@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --primary-gradient: linear-gradient(
+      180deg,
+      #000000 0%,
+      #5d2ca8 50%,
+      #000000 100%
+    );
+    --secondary-gradient: linear-gradient(
+      180deg,
+      #d2dcff 0%,
+      rgba(255, 255, 255, 0.65) 50%,
+      #d2dcff 100%
+    );
+  }
+
+  .cart-active {
+    background-image: var(--primary-gradient);
+  }
+
+  .dark .cart-active {
+    background-image: var(--secondary-gradient);
+  }
+}
+
 @layer utilities {
   .btn-primary {
     @apply h-[60px] rounded-[5px] bg-primary-500 transition-all hover:bg-primary-700;
@@ -37,4 +62,20 @@
   100% {
     background-position: -200% 0;
   }
+}
+
+html {
+  background: var(--secondary-gradient);
+}
+
+.dark {
+  background: var(--primary-gradient);
+}
+
+.light-card {
+  background: var(--primary-gradient);
+}
+
+.dark-card {
+  background: var(--secondary-gradient);
 }

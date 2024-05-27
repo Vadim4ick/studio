@@ -15,5 +15,4 @@ module.exports = {
   iconBg: "#94a3b8",
   gray: "#64748b",
   skeletonBg: "#2a323f",
-  // "bg-dark": "#475569",
 }

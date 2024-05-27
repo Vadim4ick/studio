@@ -1,21 +1,27 @@
-import { BenefitCard } from "@/entities/BenefitItem"
-import { Benefit } from "@/entities/BenefitItem"
+import { Benefit, BenefitCard } from "@/entities/BenefitItem"
 import clsx from "clsx"
-import React from "react"
+import { useState } from "react"
 
 type Props = {
   className?: string
   benefitsData: Benefit[]
 }
 
-const BenefitsList = React.forwardRef<HTMLDivElement, Props>(
-  ({ className, benefitsData, ...props }, ref) => (
-    <div ref={ref} className={clsx("", [className])} {...props}>
+const BenefitsList = ({ className, benefitsData }: Props) => {
+  const [activeCard] = useState(1)
+
+  return (
+    <div className={clsx("", [className])}>
       {benefitsData.map((item, index) => (
-        <BenefitCard key={item.id} index={index} item={item} />
+        <BenefitCard
+          key={item.id}
+          active={activeCard === index}
+          index={index}
+          item={item}
+        />
       ))}
     </div>
-  ),
-)
+  )
+}
 
 export { BenefitsList }
