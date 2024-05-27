@@ -1,11 +1,14 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const COLORS = require("../src/shared/const/colors.const.ts")
+import COLORS from "../src/shared/const/colors.const.ts"
 
-const fs = require("fs")
-const path = require("path")
+import { fileURLToPath } from "url"
+import fs from "fs"
+import path from "path"
 
-// Определите путь к файлу конфигурации
-const configPath = path.resolve(__dirname, "../tailwind.config.ts")
+const __filename = path.dirname(fileURLToPath(import.meta.url))
+const configPath = path.resolve(
+  path.dirname(__filename),
+  "./tailwind.config.ts",
+)
 
 function findEndOfObject(data, startIndex) {
   let openBrackets = 0
@@ -28,7 +31,7 @@ function findEndOfObject(data, startIndex) {
 
 fs.readFile(configPath, "utf8", (err, data) => {
   if (err) {
-    console.error("Ошибка чтения tailwind.config.js:", err)
+    console.error("Ошибка чтения tailwind.config.ts:", err)
     return
   }
 
@@ -67,9 +70,9 @@ fs.readFile(configPath, "utf8", (err, data) => {
   // Записываем обновленные данные обратно в файл
   fs.writeFile(configPath, newConfig, "utf8", (err) => {
     if (err) {
-      console.error("Ошибка записи в tailwind.config.js:", err)
+      console.error("Ошибка записи в tailwind.config.ts:", err)
       return
     }
-    console.log("Успешно обновлен tailwind.config.js")
+    console.log("Успешно обновлен tailwind.config.ts")
   })
 })

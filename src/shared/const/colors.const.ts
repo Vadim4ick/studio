@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const colors = require("tailwindcss/colors")
+import colors from "tailwindcss/colors.js"
 
-module.exports = {
+const newObj = {
   transparent: "transparent",
   current: "currentColor",
   primary: colors.indigo,
@@ -16,3 +15,5 @@ module.exports = {
   gray: "#64748b",
   skeletonBg: "#2a323f",
 }
+
+export default newObj

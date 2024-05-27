@@ -1,6 +1,7 @@
 {
   "name": "front",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "trustedDependencies": [
     "yo"
@@ -13,7 +14,7 @@
     "format": "prettier --write **/*.{ts,tsx,css}",
     "generate": "graphql-codegen --config ./src/shared/graphql/codegen.yml",
     "storybook": "storybook dev -p 6006",
-    "generate-color": "node ./scripts/generateColors.js",
+    "generate-color": "node --import 'data:text/javascript,import { register } from \"node:module\"; import { pathToFileURL } from \"node:url\"; register(\"ts-node/esm\", pathToFileURL(\"./\"));' ./scripts/generateColors",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -47,7 +48,7 @@
     "@storybook/react": "^8.1.2",
     "@storybook/test": "^8.1.2",
     "@tanstack/eslint-plugin-query": "^5.32.1",
-    "@types/node": "^20",
+    "@types/node": "^20.12.12",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
