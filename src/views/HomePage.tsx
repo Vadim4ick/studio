@@ -3,6 +3,7 @@
 import { benefits } from "@/entities/BenefitItem"
 import { Button } from "@/shared/ui/Button"
 import { BenefitsList } from "@/widgets/BenefitsList"
+import { Stages } from "@/widgets/Stages"
 import Image from "next/image"
 
 const HomePage = () => (
@@ -52,6 +53,8 @@ const HomePage = () => (
         </Button>
       </div>
     </section>
+
+    <Stages />
   </main>
 )
 

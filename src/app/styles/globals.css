@@ -18,6 +18,10 @@
     );
   }
 
+  body {
+    scroll-behavior: smooth;
+  }
+
   .cart-active {
     background-image: var(--primary-gradient);
   }
