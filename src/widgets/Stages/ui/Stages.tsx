@@ -62,8 +62,8 @@ const Stages = () => {
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="23"
-            height="398"
-            viewBox="0 0 23 398"
+            height="378"
+            viewBox="0 0 23 378"
             fill="currentColor"
             className="text-[#BDBDBD]"
           >
@@ -73,7 +73,7 @@ const Stages = () => {
                   x="0"
                   y="0"
                   width="23"
-                  height="398"
+                  height="378"
                   fill="white"
                   style={{ height: maskHeight }}
                 />
@@ -85,7 +85,7 @@ const Stages = () => {
               x1="11.5"
               y1="9"
               x2="11.5"
-              y2="385"
+              y2="378"
               strokeWidth="5"
               stroke="#BDBDBD"
             />
@@ -95,52 +95,52 @@ const Stages = () => {
               x1="11.5"
               y1="9"
               x2="11.5"
-              y2="385"
+              y2="378"
               strokeWidth="5"
               stroke="#7F3FBF"
               clipPath="url(#clip)"
             />
 
             {/* Серые круги */}
-            <circle cx="11.5" cy="102.5" r="11.5" fill="#BDBDBD" />
-            <circle cx="11.5" cy="173.5" r="11.5" fill="#BDBDBD" />
-            <circle cx="11.5" cy="244.5" r="11.5" fill="#BDBDBD" />
-            <circle cx="11.5" cy="315.5" r="11.5" fill="#BDBDBD" />
-            <circle cx="11.5" cy="386.5" r="11.5" fill="#BDBDBD" />
+            <circle cx="11.5" cy="82.5" r="11.5" fill="#BDBDBD" />
+            <circle cx="11.5" cy="153.5" r="11.5" fill="#BDBDBD" />
+            <circle cx="11.5" cy="224.5" r="11.5" fill="#BDBDBD" />
+            <circle cx="11.5" cy="295.5" r="11.5" fill="#BDBDBD" />
+            <circle cx="11.5" cy="366.5" r="11.5" fill="#BDBDBD" />
             <circle cx="11.5" cy="11.5" r="11.5" fill="#BDBDBD" />
 
             {/* Фиолетовые круги, которые будут окрашиваться */}
             <motion.circle
               cx="11.5"
-              cy="102.5"
+              cy="82.5"
               r="11.5"
               fill="#7F3FBF"
               clipPath="url(#clip)"
             />
             <motion.circle
               cx="11.5"
-              cy="173.5"
+              cy="153.5"
               r="11.5"
               fill="#7F3FBF"
               clipPath="url(#clip)"
             />
             <motion.circle
               cx="11.5"
-              cy="244.5"
+              cy="224.5"
               r="11.5"
               fill="#7F3FBF"
               clipPath="url(#clip)"
             />
             <motion.circle
               cx="11.5"
-              cy="315.5"
+              cy="295.5"
               r="11.5"
               fill="#7F3FBF"
               clipPath="url(#clip)"
             />
             <motion.circle
               cx="11.5"
-              cy="386.5"
+              cy="366.5"
               r="11.5"
               fill="#7F3FBF"
               clipPath="url(#clip)"
@@ -154,7 +154,7 @@ const Stages = () => {
             />
           </svg>
 
-          <div className="flex flex-col gap-[50px] pl-10">
+          <div className="flex flex-col gap-[42px] pl-10">
             {stages.map((item) => (
               <div key={item.id}>
                 <p className="text-lg">{`0${item.id}. ${item.title}`}</p>
@@ -164,7 +164,7 @@ const Stages = () => {
         </div>
 
         <div className="flex w-[60%] flex-col gap-[55px]">
-          {stages.map((item, idx) => (
+          {stages.map((item) => (
             <div
               key={item.id}
               style={{ boxShadow: "0px 10px 60px 0px #2A236726" }}
