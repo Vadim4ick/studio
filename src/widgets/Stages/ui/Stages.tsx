@@ -1,7 +1,6 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { useScroll, useTransform, motion, inView, animate } from "framer-motion"
+import { useScroll, useTransform, motion } from "framer-motion"
 import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
 
 const stages = [
   {
@@ -44,38 +43,12 @@ const stages = [
 
 const Stages = () => {
   const ref = useRef<null | HTMLDivElement>(null)
-  const reftest = stages.map(() => useRef<HTMLDivElement | null>(null))
-
-  const refs = stages.map(() => useRef<HTMLDivElement | null>(null))
-
-  const [lastIdx, setLastIdx] = useState<number | null>(null)
-
-  stages.map((_, idx) => {
-    useEffect(() => {
-      inView(refs[idx].current, () => {
-        animate(reftest[idx].current, {
-          background: "#9E77ED",
-        })
-
-        if (lastIdx !== null && lastIdx > idx) {
-          animate(reftest[lastIdx].current, {
-            background: "#BDBDBD",
-          })
-        }
-
-        setLastIdx(idx)
-      })
-    }, [refs, reftest, lastIdx])
-  })
 
   const { scrollYProgress } = useScroll({
     target: ref,
   })
 
-  const lineHeight = useTransform(
-    scrollYProgress,
-    (value) => `${(1 - value) * 100}%`,
-  )
+  const maskHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   return (
     <section className="m-auto max-w-[1260px] px-2">
@@ -86,22 +59,104 @@ const Stages = () => {
       <div className="flex" ref={ref}>
         <div className="sticky top-0 flex h-full w-[40%] pt-6">
           {/* LINE */}
-          <div className="relative ml-7 w-2 bg-[#9E77ED]">
-            <motion.div
-              style={{ height: lineHeight }}
-              className="absolute bottom-0 h-full w-2 bg-[#BDBDBD]"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="23"
+            height="398"
+            viewBox="0 0 23 398"
+            fill="currentColor"
+            className="text-[#BDBDBD]"
+          >
+            <defs>
+              <clipPath id="clip">
+                <motion.rect
+                  x="0"
+                  y="0"
+                  width="23"
+                  height="398"
+                  fill="white"
+                  style={{ height: maskHeight }}
+                />
+              </clipPath>
+            </defs>
+
+            {/* Базовая серая линия */}
+            <motion.line
+              x1="11.5"
+              y1="9"
+              x2="11.5"
+              y2="385"
+              strokeWidth="5"
+              stroke="#BDBDBD"
             />
-          </div>
+
+            {/* Фиолетовая линия, которая будет окрашиваться */}
+            <motion.line
+              x1="11.5"
+              y1="9"
+              x2="11.5"
+              y2="385"
+              strokeWidth="5"
+              stroke="#7F3FBF"
+              clipPath="url(#clip)"
+            />
+
+            {/* Серые круги */}
+            <circle cx="11.5" cy="102.5" r="11.5" fill="#BDBDBD" />
+            <circle cx="11.5" cy="173.5" r="11.5" fill="#BDBDBD" />
+            <circle cx="11.5" cy="244.5" r="11.5" fill="#BDBDBD" />
+            <circle cx="11.5" cy="315.5" r="11.5" fill="#BDBDBD" />
+            <circle cx="11.5" cy="386.5" r="11.5" fill="#BDBDBD" />
+            <circle cx="11.5" cy="11.5" r="11.5" fill="#BDBDBD" />
+
+            {/* Фиолетовые круги, которые будут окрашиваться */}
+            <motion.circle
+              cx="11.5"
+              cy="102.5"
+              r="11.5"
+              fill="#7F3FBF"
+              clipPath="url(#clip)"
+            />
+            <motion.circle
+              cx="11.5"
+              cy="173.5"
+              r="11.5"
+              fill="#7F3FBF"
+              clipPath="url(#clip)"
+            />
+            <motion.circle
+              cx="11.5"
+              cy="244.5"
+              r="11.5"
+              fill="#7F3FBF"
+              clipPath="url(#clip)"
+            />
+            <motion.circle
+              cx="11.5"
+              cy="315.5"
+              r="11.5"
+              fill="#7F3FBF"
+              clipPath="url(#clip)"
+            />
+            <motion.circle
+              cx="11.5"
+              cy="386.5"
+              r="11.5"
+              fill="#7F3FBF"
+              clipPath="url(#clip)"
+            />
+            <motion.circle
+              cx="11.5"
+              cy="11.5"
+              r="11.5"
+              fill="#7F3FBF"
+              clipPath="url(#clip)"
+            />
+          </svg>
 
           <div className="flex flex-col gap-[50px] pl-10">
-            {stages.map((item, idx) => (
+            {stages.map((item) => (
               <div key={item.id}>
-                {/* CIRCLE */}
-                <div
-                  ref={reftest[idx]}
-                  className="absolute left-5 size-[23px] rounded-full bg-[#BDBDBD]"
-                />
-
                 <p className="text-lg">{`0${item.id}. ${item.title}`}</p>
               </div>
             ))}
@@ -111,7 +166,6 @@ const Stages = () => {
         <div className="flex w-[60%] flex-col gap-[55px]">
           {stages.map((item, idx) => (
             <div
-              ref={refs[idx]}
               key={item.id}
               style={{ boxShadow: "0px 10px 60px 0px #2A236726" }}
               className="rounded-[10px] bg-white px-[43px] py-[23px]"
