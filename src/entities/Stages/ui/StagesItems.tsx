@@ -1,6 +1,6 @@
-import { useScroll, motion, useSpring } from "framer-motion"
+import { useScroll, motion, useSpring, useInView } from "framer-motion"
 import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import { Element, Link } from "react-scroll"
 import { stages } from "../model/mockData"
 import { StagesLine } from "./StagesLine"
@@ -9,6 +9,7 @@ import { useMedia } from "@/shared/hooks/useMedia.hooks"
 
 const StagesItems = () => {
   const ref = useRef<null | HTMLDivElement>(null)
+  const refSpring = useRef<null | HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -19,43 +20,28 @@ const StagesItems = () => {
   const isDesktop1151 = useMedia({ media: "max", number: 1151 })
   const isMobile768 = useMedia({ media: "max", number: 768 })
 
-  const [isTopTouched, setIsTopTouched] = useState(false)
-
-  const paddingTop = useSpring(0, {
+  const springPaddingTop = useSpring(0, {
     stiffness: 300,
     damping: 20,
   })
 
+  const isInView = useInView(refSpring, {
+    margin: "0px 100px -500px 0px",
+  })
+
   useEffect(() => {
-    if (isTopTouched) {
-      paddingTop.set(100)
+    if (isInView) {
+      springPaddingTop.set(100)
     } else {
-      paddingTop.set(0)
+      springPaddingTop.set(0)
     }
-  }, [isTopTouched, paddingTop])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = document.querySelector(".sticky-element")
-
-      if (element) {
-        const rect = element.getBoundingClientRect()
-        setIsTopTouched(rect.top <= 0)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+  }, [isInView, springPaddingTop])
 
   return (
     <div className="flex" ref={ref}>
       {!isMobile768.matches && (
         <motion.div
-          style={{ paddingTop }}
+          style={{ paddingTop: springPaddingTop }}
           className="sticky-element sticky top-0 flex h-full w-[40%]"
         >
           {/* LINE */}
@@ -80,7 +66,10 @@ const StagesItems = () => {
         </motion.div>
       )}
 
-      <div className="flex w-[60%] flex-col gap-[55px] max-mobile:w-full max-mobile:gap-11">
+      <div
+        ref={refSpring}
+        className="flex w-[60%] flex-col gap-[55px] max-mobile:w-full max-mobile:gap-11"
+      >
         {stages.map((item) => (
           <Element name={`section${item.id}`} key={item.id}>
             <div
