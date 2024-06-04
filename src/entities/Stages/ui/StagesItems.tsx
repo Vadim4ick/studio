@@ -11,7 +11,7 @@ const StagesItems = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end end"],
+    offset: ["start start", "end end"],
   })
 
   return (
