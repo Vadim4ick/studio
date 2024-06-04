@@ -1,10 +1,11 @@
-import { useScroll } from "framer-motion"
+import { useScroll, motion, useSpring } from "framer-motion"
 import Image from "next/image"
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Element, Link } from "react-scroll"
 import { stages } from "../model/mockData"
 import { StagesLine } from "./StagesLine"
 import { calcStagesNumber } from "@/shared/helpers/calc-stages-number.helper"
+import { useMedia } from "@/shared/hooks/useMedia.hooks"
 
 const StagesItems = () => {
   const ref = useRef<null | HTMLDivElement>(null)
@@ -14,46 +15,99 @@ const StagesItems = () => {
     offset: ["start start", "end end"],
   })
 
+  const isDesktop1024 = useMedia({ media: "max", number: 1024 })
+  const isDesktop1151 = useMedia({ media: "max", number: 1151 })
+  const isMobile768 = useMedia({ media: "max", number: 768 })
+
+  const [isTopTouched, setIsTopTouched] = useState(false)
+
+  const paddingTop = useSpring(0, {
+    stiffness: 300,
+    damping: 20,
+  })
+
+  useEffect(() => {
+    if (isTopTouched) {
+      paddingTop.set(100)
+    } else {
+      paddingTop.set(0)
+    }
+  }, [isTopTouched, paddingTop])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.querySelector(".sticky-element")
+
+      if (element) {
+        const rect = element.getBoundingClientRect()
+        setIsTopTouched(rect.top <= 0)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
   return (
     <div className="flex" ref={ref}>
-      <div className="sticky top-0 flex h-full w-[40%] pt-6">
-        {/* LINE */}
-        <StagesLine scrollYProgress={scrollYProgress} />
+      {!isMobile768.matches && (
+        <motion.div
+          style={{ paddingTop }}
+          className="sticky-element sticky top-0 flex h-full w-[40%]"
+        >
+          {/* LINE */}
+          {!isDesktop1024.matches && (
+            <StagesLine scrollYProgress={scrollYProgress} />
+          )}
 
-        <div className="flex flex-col gap-[42px] pl-10">
-          {stages.map((item) => (
-            <div key={item.id}>
-              <Link to={`section${item.id}`} smooth={true} duration={500}>
-                <p className="cursor-pointer text-lg">{`${calcStagesNumber(item.id)}. ${item.title}`}</p>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
+          <div className="flex flex-col gap-[42px] max-laptop:mr-4 laptop:pl-10">
+            {stages.map((item) => (
+              <div key={item.id}>
+                <Link
+                  to={`section${item.id}`}
+                  smooth={true}
+                  duration={500}
+                  offset={isDesktop1151.matches ? -100 : 0}
+                >
+                  <p className="cursor-pointer text-lg">{`${calcStagesNumber(item.id)}. ${item.title}`}</p>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      )}
 
-      <div className="flex w-[60%] flex-col gap-[55px]">
+      <div className="flex w-[60%] flex-col gap-[55px] max-mobile:w-full max-mobile:gap-11">
         {stages.map((item) => (
           <Element name={`section${item.id}`} key={item.id}>
             <div
               style={{ boxShadow: "0px 10px 60px 0px #2A236726" }}
-              className="rounded-[10px] bg-white px-[43px] py-[23px]"
+              className="rounded-[10px] bg-white px-[43px] py-[23px] max-mobile:px-4"
             >
-              <div className="flex items-center gap-[50px] border-b pb-[29px]">
-                <div className="flex size-[53px] items-center justify-center rounded-full bg-[#43CD93] font-extrabold text-white">
+              <div className="flex items-center gap-[50px] border-b pb-[29px] max-mobile:gap-4">
+                <div className="flex size-[53px] shrink-0 items-center justify-center rounded-full bg-[#43CD93] font-extrabold text-white">
                   {item.id}
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#2A2367]">
+                <h3 className="text-2xl font-bold text-[#2A2367] max-mobile:text-xl">
                   {item.title}
                 </h3>
               </div>
 
-              <div className="pt-[26px] text-lg text-[#2A2367]">
+              <div className="py-[26px] text-center text-lg text-[#2A2367] max-mobile:py-4 max-mobile:text-base">
                 {item.description}
               </div>
 
               <div className="relative h-[775px] w-full">
-                <Image src={"/1.png"} alt="test" fill />
+                <Image
+                  className="object-cover"
+                  src={"/1.png"}
+                  alt="test"
+                  fill
+                />
               </div>
             </div>
           </Element>
