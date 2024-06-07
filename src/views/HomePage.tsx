@@ -3,11 +3,14 @@
 import { benefits } from "@/entities/BenefitItem"
 import { Button } from "@/shared/ui/Button"
 import { BenefitsList } from "@/widgets/BenefitsList"
+import { RequestForm } from "@/widgets/RequestForConsultation"
 import { Stages } from "@/widgets/Stages"
 import Image from "next/image"
 
 const HomePage = () => (
   <main className={"max-desktop:pt-headerMobile"}>
+    <RequestForm />
+
     <section className="mx-auto max-w-[1160px] px-4 py-10 sm:flex sm:items-center sm:py-10 md:py-16 lg:py-24">
       <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
         <div className="flex max-w-2xl flex-col gap-2 px-2">
