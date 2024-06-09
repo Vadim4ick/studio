@@ -3,7 +3,7 @@ import { Modal } from "@/shared/ui/Modal"
 import { useState } from "react"
 import { RequestForm } from "./RequestForm"
 
-const ModalWrapper = () => {
+const RequestForConsultation = () => {
   const [showModal, setShowModal] = useState(false)
 
   const handleClick = () => {
@@ -26,4 +26,4 @@ const ModalWrapper = () => {
   )
 }
 
-export { ModalWrapper }
+export { RequestForConsultation }

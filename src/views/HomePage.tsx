@@ -3,7 +3,7 @@
 import { benefits } from "@/entities/BenefitItem"
 import { Button } from "@/shared/ui/Button"
 import { BenefitsList } from "@/widgets/BenefitsList"
-import { ModalWrapper } from "@/widgets/RequestForConsultation"
+import { RequestForConsultation } from "@/widgets/RequestForConsultation"
 import { Stages } from "@/widgets/Stages"
 import Image from "next/image"
 
@@ -20,10 +20,7 @@ const HomePage = () => (
             клиенты были счестливы.
           </p>
           <div className="mt-4 flex justify-center gap-8 font-semibold">
-            <Button className="text-xs" variant="secondary">
-              Узнать стоимость
-            </Button>
-            <ModalWrapper />
+            <RequestForConsultation />
           </div>
         </div>
       </div>

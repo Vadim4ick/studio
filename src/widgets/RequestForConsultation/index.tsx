@@ -1,1 +1,1 @@
-export { ModalWrapper } from "./ui/ModalWrapper"
+export { RequestForConsultation } from "./ui/RequestForConsultation"

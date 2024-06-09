@@ -1,6 +1,7 @@
 import React from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { Button } from "@/shared/ui/Button"
+import Image from "next/image"
 
 type FormValues = {
   firstName: string
@@ -19,8 +20,8 @@ const RequestForm = () => {
   console.log("errors: ", errors)
 
   return (
-    <div className="w-full bg-white sm:max-w-md md:mt-0 xl:p-0">
-      <div className="space-y-4 p-6 sm:p-8 md:space-y-6">
+    <div className="w-full bg-white sm:w-[766px] md:mt-0">
+      <div className="m-auto flex max-w-[375px] flex-col items-center gap-y-7 py-5  sm:py-7">
         <h1 className="text-center text-xl font-bold leading-tight tracking-tight md:text-2xl">
           Заявка на консультацию
         </h1>
@@ -32,7 +33,7 @@ const RequestForm = () => {
           <div>
             <label
               htmlFor="name"
-              className="mb-1 block text-base font-medium text-gray"
+              className="mb-1 block text-left text-base font-medium text-gray"
             >
               Ваше имя
             </label>
@@ -47,7 +48,7 @@ const RequestForm = () => {
           <div>
             <label
               htmlFor="phone"
-              className="mb-1 block text-base font-medium text-gray"
+              className="mb-1 block text-left text-base font-medium text-gray"
             >
               Ваш телефон
             </label>
@@ -68,6 +69,33 @@ const RequestForm = () => {
             Отправить
           </Button>
         </form>
+        <p className=" text-[10px] font-medium text-gray">
+          Нажимая на кнопку «Отправить заявку», я даю согласие на обработку
+          персональных данных и соглашаюсь c политикой конфиденциальности
+        </p>
+        <div className="relative flex h-[95px] w-[215px] justify-center rounded-[10px] bg-primary-500 align-middle">
+          <Image
+            src="/image/magazine.png"
+            alt="magazine"
+            width={122}
+            height={73}
+            style={{ objectFit: "contain" }}
+          />
+          <div className="absolute -right-2 -top-2 flex h-[27px] w-[27px] items-center justify-center rounded-full border-4 border-white bg-gray">
+            <Image
+              src="/image/closed_lock_icon 1.png"
+              width={44}
+              height={44}
+              alt=""
+              style={{
+                objectFit: "contain",
+                height: "10px",
+                width: "10px",
+                paddingBottom: "1px",
+              }}
+            />
+          </div>
+        </div>
       </div>
     </div>
   )
