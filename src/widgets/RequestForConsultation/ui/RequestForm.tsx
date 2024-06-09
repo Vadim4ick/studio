@@ -1,11 +1,18 @@
-import React from "react"
-import { SubmitHandler, useForm } from "react-hook-form"
+import React, { useEffect } from "react"
+import { SubmitHandler, useFieldArray, useForm } from "react-hook-form"
 import { Button } from "@/shared/ui/Button"
 import Image from "next/image"
 
 type FormValues = {
   firstName: string
   phoneNumber: string
+}
+
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }
 
 const RequestForm = () => {
@@ -17,10 +24,9 @@ const RequestForm = () => {
 
   const onSubmit: SubmitHandler<FormValues> = (data) =>
     console.log("data: ", data)
-  console.log("errors: ", errors)
 
   return (
-    <div className="w-full bg-white sm:w-[766px] md:mt-0">
+    <div className="w-full rounded-lg bg-white sm:w-[766px] md:mt-0">
       <div className="sm:py-17 m-auto flex w-full flex-col items-center gap-y-7 px-7 py-11 sm:max-w-[375px]">
         <h1 className="text-center text-xl font-bold leading-tight tracking-tight md:text-2xl">
           Заявка на консультацию
@@ -33,7 +39,10 @@ const RequestForm = () => {
           <div>
             <label
               htmlFor="name"
-              className="mb-1 block text-left text-base font-medium text-gray"
+              className={clsx(
+                "mb-1 block text-left text-base font-medium text-gray",
+                { "text-hover-700": errors.firstName },
+              )}
             >
               Ваше имя
             </label>
@@ -48,7 +57,10 @@ const RequestForm = () => {
           <div>
             <label
               htmlFor="phone"
-              className="mb-1 block text-left text-base font-medium text-gray"
+              className={clsx(
+                "mb-1 block text-left text-base font-medium text-gray",
+                { "text-hover-700": errors.phoneNumber },
+              )}
             >
               Ваш телефон
             </label>
@@ -64,7 +76,7 @@ const RequestForm = () => {
               })}
             />
           </div>
-          {/* <input type="submit" /> */}
+
           <Button variant="secondary" type="submit" className="w-full">
             Отправить
           </Button>

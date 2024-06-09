@@ -1,6 +1,7 @@
 import clsx from "clsx"
 import type { ReactNode } from "react"
 import { useCallback, useEffect, useRef } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 
 interface ModalProps {
   className?: string
@@ -39,22 +40,29 @@ const Modal = (props: ModalProps) => {
     }
   }, [handleOutsideClick, open])
 
-  if (!open) {
-    return null
-  }
-
   return (
     <>
-      <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-70">
-        <div ref={modalRef} className={clsx("", [className])}>
-          {children}
-          {close && (
-            <button className="w-max" onClick={handleClose}>
-              {close}
-            </button>
-          )}
-        </div>
-      </div>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, zIndex: 1000 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-70">
+              <div ref={modalRef} className={clsx("", [className])}>
+                {children}
+
+                {close && (
+                  <button className="w-max" onClick={handleClose}>
+                    {close}
+                  </button>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

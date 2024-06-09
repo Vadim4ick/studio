@@ -1,25 +1,27 @@
 import { Button } from "@/shared/ui/Button"
 import { Modal } from "@/shared/ui/Modal"
-import { useState } from "react"
 import { RequestForm } from "./RequestForm"
+import {
+  $modalConsultation,
+  closeModalConsultation,
+  openModalConsultation,
+} from "@/shared/context/modal"
+import { useUnit } from "effector-react"
 
 const RequestForConsultation = () => {
-  const [showModal, setShowModal] = useState(false)
-
-  const handleClick = () => {
-    setShowModal(true)
-  }
-
-  const handleClose = () => {
-    setShowModal(false)
-  }
+  const showModal = useUnit($modalConsultation)
 
   return (
     <>
-      <Button className="text-xs" variant="secondary" onClick={handleClick}>
+      <Button
+        className="text-xs"
+        variant="secondary"
+        onClick={() => openModalConsultation()}
+      >
         Узнать стоимость
       </Button>
-      <Modal open={showModal} onClose={handleClose}>
+
+      <Modal open={showModal} onClose={closeModalConsultation}>
         <RequestForm />
       </Modal>
     </>
