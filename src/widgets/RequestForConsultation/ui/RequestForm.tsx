@@ -21,13 +21,13 @@ const RequestForm = () => {
 
   return (
     <div className="w-full bg-white sm:w-[766px] md:mt-0">
-      <div className="m-auto flex max-w-[375px] flex-col items-center gap-y-7 py-5  sm:py-7">
+      <div className="sm:py-17 m-auto flex w-full flex-col items-center gap-y-7 px-7 py-11 sm:max-w-[375px]">
         <h1 className="text-center text-xl font-bold leading-tight tracking-tight md:text-2xl">
           Заявка на консультацию
         </h1>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="space-y-4 md:space-y-6"
+          className="w-full space-y-4 md:space-y-6"
           action="#"
         >
           <div>
@@ -65,11 +65,11 @@ const RequestForm = () => {
             />
           </div>
           {/* <input type="submit" /> */}
-          <Button variant="secondary" type="submit" className="w-[374px]">
+          <Button variant="secondary" type="submit" className="w-full">
             Отправить
           </Button>
         </form>
-        <p className=" text-[10px] font-medium text-gray">
+        <p className="text-[10px] font-medium text-gray">
           Нажимая на кнопку «Отправить заявку», я даю согласие на обработку
           персональных данных и соглашаюсь c политикой конфиденциальности
         </p>
