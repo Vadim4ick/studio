@@ -34,7 +34,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.51.5",
     "react-scroll": "^1.9.0",
-    "storybook": "^6.5.16",
+    "storybook": "^8.1.6",
     "tailwind-merge": "^2.3.0",
     "ts-node": "^10.9.2"
   },
