@@ -49,7 +49,7 @@ const StagesItems = () => {
             <StagesLine scrollYProgress={scrollYProgress} />
           )}
 
-          <div className="flex flex-col gap-[42px] max-laptop:mr-4 laptop:pl-10">
+          <div className="text flex flex-col gap-[42px] max-laptop:mr-4 laptop:pl-10">
             {stages.map((item) => (
               <div key={item.id}>
                 <Link
