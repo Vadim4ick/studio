@@ -1,17 +1,26 @@
-import { Card, CardContent } from "@/shared/ui/Card"
-import Image from "next/image"
+import { WhatYouGetItem } from "@/entities/WhatYouGet"
+import { whatyougetlist } from "@/entities/WhatYouGet"
 
 const WhatYouGet = () => (
   <section className="m-auto max-w-[1260px] px-4 py-[140px]">
     <h2 className="text mb-[54px] text-lg font-extrabold md:mb-8 md:text-2xl lg:mb-7 lg:text-4xl">
       Что вы <span className=" text-primary-500">получаете ?</span>
     </h2>
-    <div className="grid grid-cols-1 gap-0">
-      <Card className="flex">
-        <CardContent>
-          <Image src="/image/order.png" width={521} height={355} alt="card" />
-        </CardContent>
-        <CardContent className="flex flex-col justify-center">
+    {whatyougetlist.map((item) => (
+      <WhatYouGetItem
+        key={item.id}
+        id={item.id}
+        imageUrl={item.imageUrl}
+        title={item.title}
+        options={item.options}
+      />
+    ))}
+    {/* <div className="grid grid-cols-1 gap-0">
+      <div className="flex">
+        <div>
+          <Image src="/image/order.png" width={521} height={355} alt="div" />
+        </div>
+        <div className="flex flex-col justify-center">
           <h3 className="mb-[17px] text-lg font-bold text-primary-500">
             Оформление заказа
           </h3>
@@ -30,13 +39,13 @@ const WhatYouGet = () => (
               использование купонов, скидок и специальных предложений
             </li>
           </ul>
-        </CardContent>
-      </Card>
-      <Card className="-mt-10 flex flex-row-reverse">
-        <CardContent>
-          <Image src="/image/catalog.png" width={521} height={355} alt="card" />
-        </CardContent>
-        <CardContent className="flex flex-col justify-center">
+        </div>
+      </div>
+      <div className="-mt-10 flex flex-row-reverse">
+        <div>
+          <Image src="/image/catalog.png" width={521} height={355} alt="div" />
+        </div>
+        <div className="flex flex-col justify-center">
           <h3 className="mb-[17px] text-lg font-bold text-primary-500">
             Оформление заказа
           </h3>
@@ -55,18 +64,18 @@ const WhatYouGet = () => (
               использование купонов, скидок и специальных предложений
             </li>
           </ul>
-        </CardContent>
-      </Card>
-      <Card className="flex">
-        <CardContent>
+        </div>
+      </div>
+      <div className="flex">
+        <div>
           <Image
             src="/image/integration.png"
             width={521}
             height={355}
-            alt="card"
+            alt="div"
           />
-        </CardContent>
-        <CardContent className="flex flex-col justify-center">
+        </div>
+        <div className="flex flex-col justify-center">
           <h3 className="mb-[17px] text-lg font-bold text-primary-500">
             Оформление заказа
           </h3>
@@ -85,13 +94,13 @@ const WhatYouGet = () => (
               использование купонов, скидок и специальных предложений
             </li>
           </ul>
-        </CardContent>
-      </Card>
-      <Card className="-mt-10 flex flex-row-reverse">
-        <CardContent>
-          <Image src="/image/crm.png" width={521} height={355} alt="card" />
-        </CardContent>
-        <CardContent className="flex flex-col justify-center">
+        </div>
+      </div>
+      <div className="-mt-10 flex flex-row-reverse">
+        <div>
+          <Image src="/image/crm.png" width={521} height={355} alt="div" />
+        </div>
+        <div className="flex flex-col justify-center">
           <h3 className="mb-[17px] text-lg font-bold text-primary-500">
             Оформление заказа
           </h3>
@@ -110,9 +119,9 @@ const WhatYouGet = () => (
               использование купонов, скидок и специальных предложений
             </li>
           </ul>
-        </CardContent>
-      </Card>
-    </div>
+        </div>
+      </div>
+    </div> */}
   </section>
 )
 
