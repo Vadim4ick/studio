@@ -10,10 +10,7 @@ const Card = (props: CardProps) => {
 
   return (
     <div
-      className={clsx(
-        "bg-card text-card-foreground rounded-lg border shadow-sm dark:border-white",
-        [className],
-      )}
+      className={clsx("bg-card text-card-foreground ", [className])}
       {...otherProps}
     >
       {children}
