@@ -1,10 +1,16 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Montserrat } from "next/font/google"
 import "@/globalStyles"
 import { Providers } from "@/app/providers/Provider"
 import { Header } from "@/widgets/Header"
 
 const inter = Inter({ subsets: ["latin"] })
+
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  display: "swap",
+  variable: "--font-montserrat",
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-light`}>
+      <body className={`${montserrat.className} bg-light`}>
         <Providers>
           <Header />
 

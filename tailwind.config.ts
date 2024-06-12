@@ -69,6 +69,9 @@ const config: Config = {
       skeletonBg: "#2a323f",
     },
     extend: {
+      fontFamily: {
+        mono: ["var(--font-montserrat)"],
+      },
       padding: {
         headerMobile: "70.5px",
       },
