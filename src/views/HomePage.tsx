@@ -6,6 +6,7 @@ import { RequestForConsultation } from "@/features/RequestForConsultation"
 import { Stages } from "@/widgets/Stages"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { WhatYouGet } from "@/widgets/WhatYouGet"
 
 const HomePage = () => (
   <main className={"mx-auto max-w-[1160px] px-4 max-desktop:pt-headerMobile"}>
@@ -50,6 +51,10 @@ const HomePage = () => (
         <RequestForConsultation />
       </div>
     </section>
+
+    
+
+    <WhatYouGet />
 
     <section className="pb-10 lg:pb-24">
       <h2 className="text mb-[60px] text-lg font-extrabold md:text-2xl lg:text-4xl">
