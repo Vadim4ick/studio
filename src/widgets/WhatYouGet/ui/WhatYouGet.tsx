@@ -15,7 +15,7 @@ const WhatYouGet = () => (
           <h3 className="mb-[17px] text-lg font-bold text-primary-500">
             Оформление заказа
           </h3>
-          <ul className="list-inside list-disc ">
+          <ul className="text list-inside list-disc">
             <li className=" text-sm leading-6">личный кабинет</li>
             <li className=" text-sm leading-6">
               корзина с отображением выбранных товаров
@@ -40,7 +40,7 @@ const WhatYouGet = () => (
           <h3 className="mb-[17px] text-lg font-bold text-primary-500">
             Оформление заказа
           </h3>
-          <ul className="list-inside list-disc ">
+          <ul className="text list-inside list-disc">
             <li className=" text-sm leading-6">личный кабинет</li>
             <li className=" text-sm leading-6">
               корзина с отображением выбранных товаров
@@ -70,7 +70,7 @@ const WhatYouGet = () => (
           <h3 className="mb-[17px] text-lg font-bold text-primary-500">
             Оформление заказа
           </h3>
-          <ul className="list-inside list-disc ">
+          <ul className="text list-inside list-disc">
             <li className=" text-sm leading-6">личный кабинет</li>
             <li className=" text-sm leading-6">
               корзина с отображением выбранных товаров
@@ -95,7 +95,7 @@ const WhatYouGet = () => (
           <h3 className="mb-[17px] text-lg font-bold text-primary-500">
             Оформление заказа
           </h3>
-          <ul className="list-inside list-disc ">
+          <ul className="text list-inside list-disc">
             <li className=" text-sm leading-6">личный кабинет</li>
             <li className=" text-sm leading-6">
               корзина с отображением выбранных товаров

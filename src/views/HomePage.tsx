@@ -52,8 +52,6 @@ const HomePage = () => (
       </div>
     </section>
 
-    
-
     <WhatYouGet />
 
     <section className="pb-10 lg:pb-24">
