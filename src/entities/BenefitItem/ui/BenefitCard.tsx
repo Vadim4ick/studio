@@ -25,7 +25,7 @@ export function BenefitCard({
   return (
     <Card
       className={clsx(
-        "max-w-[373px] !shadow-lg",
+        "max-w-[373px] rounded-lg border !shadow-lg dark:border-white",
         {
           "cart-active": active,
         },
