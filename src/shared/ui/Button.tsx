@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import { ReactNode } from "react"
 
-type BtnVariant = "primary" | "secondary"
+type BtnVariant = "primary" | "secondary" | "green"
 
 interface ButtonProps extends ReactTagProps<"button"> {
   children: ReactNode
@@ -18,6 +18,7 @@ const Button = (props: ButtonProps) => {
         {
           primary: "btn-primary",
           secondary: "btn-secondary",
+          green: "btn-green",
         }[variant],
         [className],
       )}

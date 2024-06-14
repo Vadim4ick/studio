@@ -1,10 +1,8 @@
 import type { Metadata } from "next"
-import { Inter, Montserrat } from "next/font/google"
+import { Montserrat } from "next/font/google"
 import "@/globalStyles"
 import { Providers } from "@/app/providers/Provider"
 import { Header } from "@/widgets/Header"
-
-const inter = Inter({ subsets: ["latin"] })
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],

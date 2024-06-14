@@ -20,6 +20,7 @@
 
   body {
     scroll-behavior: smooth;
+    min-height: 100vh;
   }
 
   .cart-active {
@@ -37,6 +38,9 @@
   }
   .btn-secondary {
     @apply rounded-md bg-primary-500 px-10 py-4 transition duration-500 hover:bg-hover-400 active:scale-[0.97];
+  }
+  .btn-green {
+    @apply rounded-md bg-[#43CD93] px-10 py-4 transition duration-500 hover:bg-hover-400 active:scale-[0.97];
   }
 }
 
@@ -83,4 +87,3 @@ html {
 .dark-card {
   background: var(--secondary-gradient);
 }
-
