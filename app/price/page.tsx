@@ -1,5 +1,5 @@
-import { CasesPrice } from "@/widgets/CasesPrice"
+import { CasePricePage } from "@/views/CasePricePage"
 
-const Page = () => <CasesPrice />
+const Page = () => <CasePricePage />
 
 export default Page
