@@ -14,7 +14,7 @@ const Button = (props: ButtonProps) => {
   return (
     <button
       className={clsx(
-        "text-center text-white",
+        "my-auto text-center text-white",
         {
           primary: "btn-primary",
           secondary: "btn-secondary",
