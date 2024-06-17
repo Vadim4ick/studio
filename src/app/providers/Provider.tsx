@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { Loader } from "@/shared/ui/Loader";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactNode, useEffect, useState } from "react";
+import { Loader } from "@/shared/ui/Loader"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { ReactNode, useEffect, useState } from "react"
 
 const Providers = ({ children }: { children: ReactNode }) => {
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState(false)
 
   const [queryClient] = useState(
     new QueryClient({
@@ -15,19 +15,19 @@ const Providers = ({ children }: { children: ReactNode }) => {
         },
       },
     }),
-  );
+  )
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setMounted(true)
+  }, [])
 
   if (!mounted) {
-    return <Loader />;
+    return <Loader />
   }
 
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  );
-};
+  )
+}
 
-export { Providers };
+export { Providers }

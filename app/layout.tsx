@@ -26,7 +26,9 @@ export default function RootLayout({
       <body className={`${montserrat.className} bg-light`}>
         <Providers>
           <Header />
+
           {children}
+
           <Footer />
         </Providers>
       </body>
