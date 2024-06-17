@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google"
 import "@/globalStyles"
 import { Providers } from "@/app/providers/Provider"
 import { Header } from "@/widgets/Header"
+import { Footer } from "@/widgets/Footer"
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
@@ -25,8 +26,8 @@ export default function RootLayout({
       <body className={`${montserrat.className} bg-light`}>
         <Providers>
           <Header />
-
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

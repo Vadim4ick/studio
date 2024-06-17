@@ -1,5 +1,3 @@
-"use client"
-
 import { benefits } from "@/entities/BenefitItem"
 import { BenefitsList } from "@/widgets/BenefitsList"
 import { RequestForConsultation } from "@/features/RequestForConsultation"

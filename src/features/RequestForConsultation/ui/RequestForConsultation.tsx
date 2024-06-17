@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/shared/ui/Button"
 import { Modal } from "@/shared/ui/Modal"
 import { RequestForm } from "./RequestForm"
