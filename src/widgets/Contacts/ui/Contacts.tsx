@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 const Contacts = () => (
-  <div className="grid grid-cols-2 gap-4">
+  <div className="grid grid-cols-2 gap-7">
     <>
       <div className="text max-w-[320px] text-sm font-bold xl:text-lg">
         <h3 className=" mb-6">
@@ -38,15 +38,14 @@ const Contacts = () => (
       </div>
     </>
 
-    <div className="col-span-2 h-[420px] w-full bg-primary-950">
-      <div className="relative h-full w-full">
+    <div className="col-span-2 h-[420px] w-full bg-primary-950 ">
+      <div className="relative h-full w-full dark:grayscale-[50%]">
         <iframe
-          className="absolute left-0 top-0 h-full w-full "
+          className="absolute left-0 top-0 h-full w-full dark:invert"
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12080.73732861526!2d-74.0059418!3d40.7127847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMDA2JzEwLjAiTiA3NMKwMjUnMzcuNyJX!5e0!3m2!1sen!2sus!4v1648482801994!5m2!1sen!2sus"
           aria-hidden="false"
           tabIndex={0}
           title="Google Maps Adress"
-          style={"filter: invert(90%) grayscale(1)"}
         />
       </div>
     </div>
