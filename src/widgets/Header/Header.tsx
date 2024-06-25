@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { RequestCall } from "@/features/RequestCall"
 import { useMedia } from "@/shared/hooks/useMedia.hooks"
@@ -8,6 +7,7 @@ import { BurgerMenu, NavigationMenu } from "@/features/NavigationMenu"
 import clsx from "clsx"
 import { memo, useRef } from "react"
 import { SwithTheme } from "@/features/SwitchTheme"
+import { Logo } from "@/shared/icons/logo"
 
 const Header = memo(() => {
   const isDesktop1150 = useMedia({ media: "max", number: 1150 })
@@ -25,13 +25,15 @@ const Header = memo(() => {
         <div className="relative flex items-center justify-between">
           <div className="z-10 flex items-center gap-11">
             <Link href={"/"}>
-              <Image
+              {/* <Image
                 src={"/image/logo.png"}
                 priority
                 width={160}
                 height={55}
                 alt="logoImage"
-              />
+              /> */}
+
+              <Logo className="text-primary-900 dark:text-white" />
             </Link>
 
             {headerRef.current && (
@@ -41,7 +43,8 @@ const Header = memo(() => {
 
           {!isDesktop1150.matches ? (
             <>
-              <RequestCall /> <SwithTheme />
+              <RequestCall />
+              <SwithTheme />
             </>
           ) : (
             <BurgerMenu />
