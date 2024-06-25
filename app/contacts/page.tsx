@@ -1,3 +1,5 @@
-const Page = () => <div>Контакты</div>
+import { ContactsPage } from "@/views/ContactsPage"
+
+const Page = () => <ContactsPage />
 
 export default Page
