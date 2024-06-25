@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { navigation } from "../const/navigation.const";
+import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
+import { navigation } from "../const/navigation.const"
 
 const useActiveLink = () => {
-  const [activeIdx, setActiveIdx] = useState(0);
+  const [activeIdx, setActiveIdx] = useState(0)
 
-  const pathname = usePathname();
+  const pathname = usePathname()
 
   useEffect(() => {
-    const activeIndex = navigation.findIndex((item) => item.path === pathname);
+    const activeIndex = navigation.findIndex((item) => item.path === pathname)
 
-    setActiveIdx(activeIndex !== -1 ? activeIndex : 0);
-  }, [activeIdx, pathname]);
+    setActiveIdx(activeIndex !== -1 ? activeIndex : 0)
+  }, [activeIdx, pathname])
 
-  return { navigation, activeIdx };
-};
+  return { navigation, activeIdx }
+}
 
-export { useActiveLink };
+export { useActiveLink }

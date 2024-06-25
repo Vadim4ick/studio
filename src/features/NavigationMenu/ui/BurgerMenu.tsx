@@ -1,23 +1,23 @@
-import { $menuIsOpen, toggleBurger } from "@/shared/context/modal";
-import { useUnit } from "effector-react";
-import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { $menuIsOpen, toggleBurger } from "@/shared/context/modal"
+import { useUnit } from "effector-react"
+import { motion } from "framer-motion"
+import { useEffect } from "react"
 
 const variants = {
   open: { rotate: 45 },
   closed: { rotate: 0 },
-};
+}
 
 const BurgerMenu = () => {
-  const [open] = useUnit([$menuIsOpen]);
+  const [open] = useUnit([$menuIsOpen])
 
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = "scroll";
+      document.body.style.overflow = "scroll"
     }
-  }, [open]);
+  }, [open])
 
   return (
     <motion.div
@@ -38,7 +38,7 @@ const BurgerMenu = () => {
         }}
       />
     </motion.div>
-  );
-};
+  )
+}
 
-export { BurgerMenu };
+export { BurgerMenu }
