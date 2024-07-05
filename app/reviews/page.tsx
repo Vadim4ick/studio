@@ -1,3 +1,5 @@
-const Page = () => <div>lorem1000</div>
+import { ReviewsPage } from "@/views/ReviewsPage"
+
+const Page = () => <ReviewsPage />
 
 export default Page

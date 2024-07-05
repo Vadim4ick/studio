@@ -85,6 +85,7 @@ const config: Config = {
         tablet: "991px",
         laptop: "1024px",
         desktop: "1150px",
+        bigDesktop: "1400px",
       },
     },
   },
