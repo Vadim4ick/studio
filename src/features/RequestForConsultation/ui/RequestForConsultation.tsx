@@ -8,19 +8,26 @@ import {
   openModalConsultation,
 } from "@/shared/context/modal"
 import { useUnit } from "effector-react"
+import { ReactNode } from "react"
 
-const RequestForConsultation = () => {
+interface Props  {
+  children: ReactNode
+}
+
+const RequestForConsultation = (props: Props) => {
+  const { children } = props
   const showModal = useUnit($modalConsultation)
 
   return (
     <>
-      <Button
-        className="text-xs"
+      {children}
+      {/* <Button
+        className="text-base"
         variant="secondary"
         onClick={() => openModalConsultation()}
       >
         Узнать стоимость
-      </Button>
+      </Button> */}
 
       <Modal open={showModal} onClose={closeModalConsultation}>
         <RequestForm />

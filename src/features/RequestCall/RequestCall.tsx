@@ -5,7 +5,7 @@ const RequestCall = () => (
   <div className="flex gap-[20px]">
     <RequestCallTel />
 
-    <Button className="w-[160px]">Заказать звонок</Button>
+    <Button variant="secondary" className="">Заказать звонок</Button>
   </div>
 );
 

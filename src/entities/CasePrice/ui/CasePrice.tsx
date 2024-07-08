@@ -38,7 +38,7 @@ const CasePrice = (props: CaseProps) => {
   )
 
   return (
-    <div className="flex w-full max-w-[335px] flex-col justify-between rounded-xl bg-white px-[30px] pb-[30px]">
+    <div className="flex w-full max-w-[335px] flex-col justify-between rounded-xl bg-white/90 px-[30px] pb-[30px] duration-200 hover:bg-white/70">
       <div className="relative flex flex-col gap-3 py-6">
         <div className="text-center text-[#7C7C7C]">Тариф</div>
 
