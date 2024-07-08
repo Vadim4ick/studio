@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { RequestForConsultation } from "@/features/RequestForConsultation"
+import { Logo } from "@/shared/icons/logo"
 
 const Footer = () => (
   <footer className="w-full bg-primary-950 py-20 text-white">
@@ -59,13 +60,7 @@ const Footer = () => (
 
         <div className=" mt-8 flex flex-col items-center gap-y-5 sm:mt-0">
           <Link href={"/"}>
-            <Image
-              src={"/image/logo.png"}
-              priority
-              width={160}
-              height={55}
-              alt="logoImage"
-            />
+            <Logo className="text-white" />
           </Link>
 
           <p className="text-center text-xs">
