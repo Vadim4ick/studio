@@ -34,14 +34,18 @@
 
 @layer utilities {
   .btn-primary {
-    @apply h-[60px] rounded-[5px] bg-primary-500 transition-all hover:bg-primary-700;
+    @apply h-[50px] rounded-[5px] bg-primary-500 transition-all hover:bg-primary-700;
   }
   .btn-secondary {
-    @apply rounded-md bg-primary-500 px-10 py-4 transition duration-500 hover:bg-hover-400 active:scale-[0.97];
+    @apply rounded-md dark:text-primary-950 bg-primary-950 dark:bg-primary-100 px-10 py-4 transition duration-500 hover:bg-hover-400 dark:hover:bg-hover-400 active:scale-[0.97];
   }
   .btn-green {
     @apply rounded-md bg-[#43CD93] px-10 py-4 transition duration-500 hover:bg-hover-400 active:scale-[0.97];
   }
+  .btn-outline {
+    @apply rounded-md px-10 py-4 border dark:text-white dark:border-primary-200 hover:text-white text-primary-950 border-gray hover:border-hover-400 transition duration-500 hover:bg-hover-400 ;
+  }
+
 }
 
 .text {

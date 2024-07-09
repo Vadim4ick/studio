@@ -46,7 +46,7 @@ const StagesLine = ({
         x2="11.5"
         y2="378"
         strokeWidth="5"
-        stroke="#7F3FBF"
+        stroke="#EF7A33"
         clipPath="url(#clip)"
       />
 
@@ -63,42 +63,42 @@ const StagesLine = ({
         cx="11.5"
         cy="82.5"
         r="11.5"
-        fill="#7F3FBF"
+        fill="#EF7A33"
         clipPath="url(#clip)"
       />
       <motion.circle
         cx="11.5"
         cy="153.5"
         r="11.5"
-        fill="#7F3FBF"
+        fill="#EF7A33"
         clipPath="url(#clip)"
       />
       <motion.circle
         cx="11.5"
         cy="224.5"
         r="11.5"
-        fill="#7F3FBF"
+        fill="#EF7A33"
         clipPath="url(#clip)"
       />
       <motion.circle
         cx="11.5"
         cy="295.5"
         r="11.5"
-        fill="#7F3FBF"
+        fill="#EF7A33"
         clipPath="url(#clip)"
       />
       <motion.circle
         cx="11.5"
         cy="366.5"
         r="11.5"
-        fill="#7F3FBF"
+        fill="#EF7A33"
         clipPath="url(#clip)"
       />
       <motion.circle
         cx="11.5"
         cy="11.5"
         r="11.5"
-        fill="#7F3FBF"
+        fill="#EF7A33"
         clipPath="url(#clip)"
       />
     </svg>

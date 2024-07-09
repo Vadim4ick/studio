@@ -77,7 +77,7 @@ const StagesItems = () => {
               className="rounded-[10px] bg-white px-[43px] py-[23px] max-mobile:px-4"
             >
               <div className="flex items-center gap-[50px] border-b pb-[29px] max-mobile:gap-4">
-                <div className="flex size-[53px] shrink-0 items-center justify-center rounded-full bg-[#43CD93] font-extrabold text-white">
+                <div className="flex size-[53px] shrink-0 items-center justify-center rounded-full bg-hover-500 font-extrabold text-white">
                   {item.id}
                 </div>
 
