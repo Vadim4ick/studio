@@ -38,7 +38,7 @@ const HomePage = () => (
     </section>
 
     <section className="py-10">
-      <h2 className="text mb-[54px] text-lg font-extrabold md:mb-8 md:text-2xl lg:mb-7 lg:text-4xl">
+      <h2 className="text mb-[54px] text-lg font-extrabold md:mb-8 md:text-2xl lg:mb-16 lg:text-4xl">
         Мы создаем интернет-магазины,{" "}
         <span className="text-primary-500">которые продают</span>
       </h2>
