@@ -1,3 +1,5 @@
-const Page = () => <div>Цены</div>;
+import { CasePricePage } from "@/views/CasePricePage"
 
-export default Page;
+const Page = () => <CasePricePage />
+
+export default Page

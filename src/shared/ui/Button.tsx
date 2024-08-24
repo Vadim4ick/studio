@@ -1,22 +1,24 @@
-import clsx from "clsx";
-import { ReactNode } from "react";
+import clsx from "clsx"
+import { ReactNode } from "react"
 
-type BtnVariant = "primary";
+type BtnVariant = "primary" | "secondary" | "green" | "outline"
 
 interface ButtonProps extends ReactTagProps<"button"> {
-  children: ReactNode;
-  variant?: BtnVariant;
+  children: ReactNode
+  variant?: BtnVariant
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, className, variant = "primary", ...otherProps } = props;
-
+  const { children, className, variant = "primary", ...otherProps } = props
   return (
     <button
       className={clsx(
-        "text-center text-white",
+        "my-auto text-center text-white",
         {
           primary: "btn-primary",
+          secondary: "btn-secondary",
+          green: "btn-green",
+          outline: "btn-outline",
         }[variant],
         [className],
       )}
@@ -24,7 +26,7 @@ const Button = (props: ButtonProps) => {
     >
       {children}
     </button>
-  );
-};
+  )
+}
 
-export { Button };
+export { Button }

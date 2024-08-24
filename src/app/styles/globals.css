@@ -2,10 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --primary-gradient: linear-gradient(
+      180deg,
+      #000000 0%,
+      #5d2ca8 50%,
+      #000000 100%
+    );
+    --secondary-gradient: linear-gradient(
+      180deg,
+      #d2dcff 0%,
+      rgba(255, 255, 255, 0.65) 50%,
+      #d2dcff 100%
+    );
+  }
+
+  body {
+    scroll-behavior: smooth;
+    min-height: 100vh;
+  }
+
+  .cart-active {
+    background-image: var(--primary-gradient);
+  }
+
+  .dark .cart-active {
+    background-image: var(--secondary-gradient);
+  }
+}
+
 @layer utilities {
   .btn-primary {
-    @apply h-[60px] rounded-[5px] bg-[#6B5AF9] transition-all hover:bg-[#7A6AFF];
+    @apply h-[50px] rounded-[5px] bg-primary-500 transition-all hover:bg-primary-700;
   }
+  .btn-secondary {
+    @apply rounded-md dark:text-primary-950 bg-primary-950 dark:bg-primary-100 px-10 py-4 transition duration-500 hover:bg-hover-400 dark:hover:bg-hover-400 active:scale-[0.97];
+  }
+  .btn-green {
+    @apply rounded-md bg-[#43CD93] px-10 py-4 transition duration-500 hover:bg-hover-400 active:scale-[0.97];
+  }
+  .btn-outline {
+    @apply rounded-md px-10 py-4 border dark:text-white dark:border-primary-200 hover:text-white text-primary-950 border-gray hover:border-hover-400 transition duration-500 hover:bg-hover-400 ;
+  }
+
+}
+
+.text {
+  @apply text-black dark:text-white/90;
 }
 
 .skeleton-item {
@@ -30,4 +74,20 @@
   100% {
     background-position: -200% 0;
   }
+}
+
+html {
+  background: var(--secondary-gradient);
+}
+
+.dark {
+  background: var(--primary-gradient);
+}
+
+.light-card {
+  background: var(--primary-gradient);
+}
+
+.dark-card {
+  background: var(--secondary-gradient);
 }

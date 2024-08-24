@@ -1,0 +1,27 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks"
+import colors from "./../../shared/const/colors.const.ts"
+
+<Meta title="AllColors" />
+
+<ColorPalette>
+
+    {Object.entries(colors).map(([colorName, colorValue]) => {
+      if(typeof colorValue === 'object'){
+          return <ColorItem
+                    key={colorName}
+                    title={colorName}
+                    subtitle="Some of the greys"
+                    colors={colorValue}
+                />
+      }
+
+             return <ColorItem
+                    key={colorName}
+                    title={colorName}
+                    subtitle="Some of the greys"
+                    colors={{colorName: colorValue}}
+                />
+
+})}
+
+</ColorPalette>

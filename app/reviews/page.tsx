@@ -1,3 +1,5 @@
-const Page = () => <div>Отзывы</div>;
+import { ReviewsPage } from "@/views/ReviewsPage"
 
-export default Page;
+const Page = () => <ReviewsPage />
+
+export default Page
