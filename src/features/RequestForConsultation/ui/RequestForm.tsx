@@ -2,17 +2,11 @@ import React from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { Button } from "@/shared/ui/Button"
 import Image from "next/image"
+import { cn } from "@/shared/helpers/cn.helper"
 
 type FormValues = {
   firstName: string
   phoneNumber: string
-}
-
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
 }
 
 const RequestForm = () => {
@@ -39,7 +33,7 @@ const RequestForm = () => {
           <div>
             <label
               htmlFor="name"
-              className={clsx(
+              className={cn(
                 "mb-1 block text-left text-base font-medium text-gray",
                 { "text-hover-700": errors.firstName },
               )}
@@ -57,7 +51,7 @@ const RequestForm = () => {
           <div>
             <label
               htmlFor="phone"
-              className={clsx(
+              className={cn(
                 "mb-1 block text-left text-base font-medium text-gray",
                 { "text-hover-700": errors.phoneNumber },
               )}

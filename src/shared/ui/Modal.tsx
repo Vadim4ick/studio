@@ -44,23 +44,29 @@ const Modal = (props: ModalProps) => {
     <>
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, zIndex: 1000 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-70">
-              <div ref={modalRef} className={clsx("", [className])}>
-                {children}
+          <>
+            <motion.div
+              ref={modalRef}
+              className="z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div className={clsx("", [className])}>
+                  {children}
 
-                {close && (
-                  <button className="w-max" onClick={handleClose}>
-                    {close}
-                  </button>
-                )}
+                  {close && (
+                    <button className="w-max" onClick={handleClose}>
+                      {close}
+                    </button>
+                  )}
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20 bg-opacity-70" />
+          </>
         )}
       </AnimatePresence>
     </>
