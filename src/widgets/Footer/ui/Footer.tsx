@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
+import { Logo } from "@/shared/icons/logo"
 
 const Footer = () => (
   <footer className="text my-6   w-full ">
