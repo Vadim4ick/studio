@@ -29,17 +29,23 @@ const Modal = (props: ModalProps) => {
   )
 
   useEffect(() => {
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth
+
     if (open) {
       document.addEventListener("mousedown", handleOutsideClick)
       document.body.style.overflow = "hidden"
+      document.body.style.paddingRight = `${scrollbarWidth}px`
     } else {
       document.removeEventListener("mousedown", handleOutsideClick)
       document.body.style.overflow = "auto"
+      document.body.style.paddingRight = "0px"
     }
 
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick)
       document.body.style.overflow = "auto"
+      document.body.style.paddingRight = "0px"
     }
   }, [handleOutsideClick, open])
 
