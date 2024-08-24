@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 import { createDomain } from "effector"
 
-type Theme = "dark" | "light"
+export type Theme = "dark" | "light"
 
 const theme = createDomain()
 

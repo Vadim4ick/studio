@@ -2,17 +2,11 @@ import React from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { Button } from "@/shared/ui/Button"
 import Image from "next/image"
+import { cn } from "@/shared/helpers/cn.helper"
 
 type FormValues = {
   firstName: string
   phoneNumber: string
-}
-
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
 }
 
 const RequestForm = () => {
@@ -22,12 +16,13 @@ const RequestForm = () => {
     formState: { errors },
   } = useForm<FormValues>()
 
-  const onSubmit: SubmitHandler<FormValues> = (data) =>
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log("data: ", data)
+  }
 
   return (
-    <div className="w-full rounded-lg bg-white sm:w-[766px] md:mt-0">
-      <div className="sm:py-17 m-auto flex w-full flex-col items-center gap-y-7 px-7 py-11 sm:max-w-[375px]">
+    <div className="w-full rounded-lg bg-white md:mt-0">
+      <div className="sm:py-17 m-auto flex w-full flex-col items-center gap-y-7 px-7 py-11">
         <h1 className="text-center text-xl font-bold leading-tight tracking-tight md:text-2xl">
           Заявка на консультацию
         </h1>
@@ -39,7 +34,7 @@ const RequestForm = () => {
           <div>
             <label
               htmlFor="name"
-              className={clsx(
+              className={cn(
                 "mb-1 block text-left text-base font-medium text-gray",
                 { "text-hover-700": errors.firstName },
               )}
@@ -57,7 +52,7 @@ const RequestForm = () => {
           <div>
             <label
               htmlFor="phone"
-              className={clsx(
+              className={cn(
                 "mb-1 block text-left text-base font-medium text-gray",
                 { "text-hover-700": errors.phoneNumber },
               )}

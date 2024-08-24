@@ -2,10 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { RequestForConsultation } from "@/features/RequestForConsultation"
-import { Logo } from "@/shared/icons/logo"
-import { openModalConsultation } from "@/shared/context/modal"
-import { Button } from "@/shared/ui/Button"
+import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 
 const Footer = () => (
   <footer className="text my-6   w-full ">
@@ -22,16 +19,8 @@ const Footer = () => (
             info@studio.examle
           </a>
         </div>
-        {/* <hr className="border-1 my-6 border-primary-500 dark:border-primary-200 sm:hidden lg:my-8" /> */}
-        <RequestForConsultation>
-          <Button
-            className="text-base"
-            variant="outline"
-            onClick={() => openModalConsultation()}
-          >
-            Узнать стоимость
-          </Button>
-        </RequestForConsultation>
+        <hr className="border-1 my-6 border-primary-500 sm:hidden lg:my-8" />
+        <BtnOpenConsultation />
       </section>
       <hr className="border-1 my-6 hidden border-primary-950 dark:border-primary-200 sm:block lg:my-8" />
       <section className="pt-8 sm:pt-0">

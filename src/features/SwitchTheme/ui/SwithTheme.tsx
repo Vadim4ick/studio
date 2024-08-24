@@ -1,15 +1,24 @@
 import clsx from "clsx"
 import { LightIcon } from "@/shared/icons/theme/Light"
 import { DarkIcon } from "@/shared/icons/theme/Dark"
-import { $theme, changeTheme } from "@/shared/context/theme"
+import { $theme, Theme, changeTheme } from "@/shared/context/theme"
 import { useUnit } from "effector-react"
 import { AnimatePresence, motion } from "framer-motion"
 import { useMedia } from "@/shared/hooks/useMedia.hooks"
+import { closeBurger } from "@/shared/context/modal"
 
 const SwithTheme = () => {
-  const theme = useUnit($theme)
+  const [theme] = useUnit([$theme])
 
   const isDesktop1150 = useMedia({ media: "max", number: 1150 })
+
+  const onChange = (currentTheme: Theme) => {
+    changeTheme(currentTheme)
+
+    if (isDesktop1150.matches) {
+      closeBurger()
+    }
+  }
 
   return (
     <motion.span
@@ -46,7 +55,7 @@ const SwithTheme = () => {
             name="theme"
             className="absolute h-0 w-0 opacity-0"
             checked={theme === "light"}
-            onChange={() => changeTheme("light")}
+            onChange={() => onChange("light")}
           />
 
           <motion.div
@@ -87,7 +96,7 @@ const SwithTheme = () => {
             name="theme"
             className="absolute h-0 w-0 opacity-0"
             checked={theme === "dark"}
-            onChange={() => changeTheme("dark")}
+            onChange={() => onChange("dark")}
           />
 
           <DarkIcon

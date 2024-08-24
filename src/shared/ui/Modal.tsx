@@ -1,7 +1,7 @@
-import clsx from "clsx"
 import type { ReactNode } from "react"
 import { useCallback, useEffect, useRef } from "react"
 import { AnimatePresence, motion } from "framer-motion"
+import { cn } from "../helpers/cn.helper"
 
 interface ModalProps {
   className?: string
@@ -13,7 +13,7 @@ interface ModalProps {
 
 const Modal = (props: ModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null)
-  const { open, children, className, onClose, close } = props
+  const { open, children, className = "", onClose, close } = props
 
   const handleClose = useCallback(() => {
     onClose()
@@ -31,12 +31,15 @@ const Modal = (props: ModalProps) => {
   useEffect(() => {
     if (open) {
       document.addEventListener("mousedown", handleOutsideClick)
+      document.body.style.overflow = "hidden"
     } else {
       document.removeEventListener("mousedown", handleOutsideClick)
+      document.body.style.overflow = "auto"
     }
 
     return () => {
       document.removeEventListener("mousedown", handleOutsideClick)
+      document.body.style.overflow = "auto"
     }
   }, [handleOutsideClick, open])
 
@@ -44,13 +47,20 @@ const Modal = (props: ModalProps) => {
     <>
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, zIndex: 1000 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-70">
-              <div ref={modalRef} className={clsx("", [className])}>
+          <>
+            <motion.div
+              className="relative z-50"
+              ref={modalRef}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <div
+                className={cn(
+                  "fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
+                  [className],
+                )}
+              >
                 {children}
 
                 {close && (
@@ -59,8 +69,10 @@ const Modal = (props: ModalProps) => {
                   </button>
                 )}
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/20 bg-opacity-70" />
+          </>
         )}
       </AnimatePresence>
     </>
