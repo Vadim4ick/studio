@@ -16,12 +16,13 @@ const RequestForm = () => {
     formState: { errors },
   } = useForm<FormValues>()
 
-  const onSubmit: SubmitHandler<FormValues> = (data) =>
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log("data: ", data)
+  }
 
   return (
-    <div className="w-full rounded-lg bg-white sm:w-[766px] md:mt-0">
-      <div className="sm:py-17 m-auto flex w-full flex-col items-center gap-y-7 px-7 py-11 sm:max-w-[375px]">
+    <div className="w-full rounded-lg bg-white md:mt-0">
+      <div className="sm:py-17 m-auto flex w-full flex-col items-center gap-y-7 px-7 py-11">
         <h1 className="text-center text-xl font-bold leading-tight tracking-tight md:text-2xl">
           Заявка на консультацию
         </h1>

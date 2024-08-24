@@ -1,10 +1,10 @@
 import { benefits } from "@/entities/BenefitItem"
 import { BenefitsList } from "@/widgets/BenefitsList"
-import { RequestForConsultation } from "@/features/RequestForConsultation"
 import { Stages } from "@/widgets/Stages"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { WhatYouGet } from "@/widgets/WhatYouGet"
+import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 
 const HomePage = () => (
   <main className={"mx-auto max-w-[1160px] px-4 max-desktop:pt-headerMobile"}>
@@ -19,7 +19,7 @@ const HomePage = () => (
             клиенты были счестливы.
           </p>
           <div className="mt-4 flex justify-center gap-8 font-semibold">
-            <RequestForConsultation />
+            <BtnOpenConsultation />
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@ const HomePage = () => (
         className="mb-[50px] grid grid-cols-1 justify-items-center gap-y-10 md:grid-cols-2 md:gap-x-5 lg:grid-cols-3 lg:gap-y-[54px]"
       />
       <div className="mt-4 flex justify-center gap-8 font-semibold">
-        <RequestForConsultation />
+        <BtnOpenConsultation />
       </div>
     </section>
 

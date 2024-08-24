@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { RequestForConsultation } from "@/features/RequestForConsultation"
+import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 
 const Footer = () => (
   <footer className="w-full bg-primary-950 py-20 text-white">
@@ -18,7 +18,7 @@ const Footer = () => (
           </a>
         </div>
         <hr className="border-1 my-6 border-primary-500 sm:hidden lg:my-8" />
-        <RequestForConsultation />
+        <BtnOpenConsultation />
       </section>
       <hr className="border-1 my-6 hidden border-primary-500 sm:block lg:my-8" />
       <section className="pt-8 sm:pt-0">
