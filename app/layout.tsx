@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
-import "@/globalStyles"
 import { Providers } from "@/app/providers/Provider"
 import { Header } from "@/widgets/Header"
 import { Footer } from "@/widgets/Footer"
+
+import "@/globalStyles"
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
@@ -18,16 +19,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  modal,
 }: Readonly<{
   children: React.ReactNode
-  modal: React.ReactNode
 }>) {
   return (
     <html lang="en">
       <body className={`${montserrat.className} bg-light`}>
-        {modal}
-
         <Providers>
           <Header />
 
