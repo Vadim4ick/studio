@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 import { useMotionValue, motion, animate } from "framer-motion"
 import { MouseEvent } from "react"
+import { useMedia } from "@/shared/hooks/useMedia.hooks"
 
 interface ReviewsItemProps {
   title: ReactNode
@@ -9,6 +10,8 @@ interface ReviewsItemProps {
 
 const ReviewsItem = (props: ReviewsItemProps) => {
   const { imageUrl, title } = props
+
+  const isMobile768 = useMedia({ media: "max", number: 768 })
 
   const rotateX = useMotionValue(0)
   const rotateY = useMotionValue(0)
@@ -20,17 +23,19 @@ const ReviewsItem = (props: ReviewsItemProps) => {
     const { clientX, clientY, currentTarget } = event
     const { width, height, left, top } = currentTarget.getBoundingClientRect()
 
-    // Calculate the mouse position relative to the center of the element
     const x = clientX - left - width / 2
     const y = clientY - top - height / 2
 
-    // Calculate rotateX and rotateY with clamping between -15 and 15 degrees
     const newRotateX = clamp((-y / height) * 30, -15, 15)
     const newRotateY = clamp((x / width) * 30, -15, 15)
 
-    // Update rotateX and rotateY
-    rotateX.set(newRotateX)
-    rotateY.set(newRotateY)
+    // // Update rotateX and rotateY
+    // rotateX.set(newRotateX)
+    // rotateY.set(newRotateY)
+
+    // Анимация обновления значений rotateX и rotateY с плавным переходом
+    animate(rotateX, newRotateX, { duration: 0.1, ease: "easeOut" })
+    animate(rotateY, newRotateY, { duration: 0.1, ease: "easeOut" })
   }
 
   const handleMouseLeave = () => {
@@ -40,11 +45,11 @@ const ReviewsItem = (props: ReviewsItemProps) => {
 
   return (
     <div className="mx-auto flex max-w-[1100px] flex-col gap-2">
-      {title}
+      <p className="text"> {title}</p>
 
       <motion.div
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
+        onMouseMove={!isMobile768.matches ? handleMouseMove : undefined}
+        onMouseLeave={!isMobile768.matches ? handleMouseLeave : undefined}
         style={{
           perspective: 1000,
         }}
