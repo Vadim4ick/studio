@@ -1,15 +1,10 @@
-import { ReactNode } from "react"
 import { useMotionValue, motion, animate } from "framer-motion"
 import { MouseEvent } from "react"
 import { useMedia } from "@/shared/hooks/useMedia.hooks"
+import { IReviewsItem } from "../model/type"
 
-interface ReviewsItemProps {
-  title: ReactNode
-  imageUrl: string
-}
-
-const ReviewsItem = (props: ReviewsItemProps) => {
-  const { imageUrl, title } = props
+const ReviewsItem = (props: IReviewsItem) => {
+  const { imageUrl, title, imageUrl2X } = props
 
   const isMobile768 = useMedia({ media: "max", number: 768 })
 
@@ -44,8 +39,8 @@ const ReviewsItem = (props: ReviewsItemProps) => {
   }
 
   return (
-    <div className="mx-auto flex max-w-[1100px] flex-col gap-2">
-      <p className="text"> {title}</p>
+    <div className="mx-auto flex max-w-[1100px] flex-col gap-4">
+      <p className="text text-xl">{title}</p>
 
       <motion.div
         onMouseMove={!isMobile768.matches ? handleMouseMove : undefined}
@@ -62,6 +57,7 @@ const ReviewsItem = (props: ReviewsItemProps) => {
             transformStyle: "preserve-3d",
           }}
           src={imageUrl}
+          srcSet={imageUrl2X ? `${imageUrl2X} 2x` : undefined}
           alt="1"
           className="object-contain"
         />
