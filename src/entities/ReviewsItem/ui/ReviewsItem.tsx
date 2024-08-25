@@ -30,12 +30,12 @@ const ReviewsItem = (props: ReviewsItemProps) => {
     const newRotateY = clamp((x / width) * 30, -15, 15)
 
     // // Update rotateX and rotateY
-    // rotateX.set(newRotateX)
-    // rotateY.set(newRotateY)
+    rotateX.set(newRotateX)
+    rotateY.set(newRotateY)
 
     // Анимация обновления значений rotateX и rotateY с плавным переходом
-    animate(rotateX, newRotateX, { duration: 0.1, ease: "easeOut" })
-    animate(rotateY, newRotateY, { duration: 0.1, ease: "easeOut" })
+    // animate(rotateX, newRotateX, { duration: 0.1, ease: "linear" })
+    // animate(rotateY, newRotateY, { duration: 0.1, ease: "linear" })
   }
 
   const handleMouseLeave = () => {
