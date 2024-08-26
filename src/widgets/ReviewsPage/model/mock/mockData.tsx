@@ -12,7 +12,7 @@ export const mockProjects: IReviewsItem[] = [
     imageUrl2X: "/image/projects/fromMorf/logo@2x.png",
   },
   {
-    title: "FromMorf",
+    title: "Adress.store",
     imageUrl: "/image/projects/adresstore/logo.png",
     imageUrl2X: "/image/projects/adresstore/logo@2x.png",
   },
