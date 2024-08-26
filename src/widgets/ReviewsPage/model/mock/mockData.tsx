@@ -16,4 +16,9 @@ export const mockProjects: IReviewsItem[] = [
     imageUrl: "/image/projects/adresstore/logo.png",
     imageUrl2X: "/image/projects/adresstore/logo@2x.png",
   },
+  {
+    title: "Kupicontoru",
+    imageUrl: "/image/projects/kupicontoru/logo.png",
+    imageUrl2X: "/image/projects/kupicontoru/logo@2x.png",
+  },
 ]
