@@ -1,11 +1,11 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion"
 
 type Props = {
-  isDark?: boolean;
-} & ReactTagProps<"svg">;
+  isDark?: boolean
+} & ReactTagProps<"svg">
 
 const DarkIcon = (props: Props) => {
-  const { isDark, ...otherProps } = props;
+  const { isDark, ...otherProps } = props
 
   return (
     <svg
@@ -47,7 +47,7 @@ const DarkIcon = (props: Props) => {
         )}
       </AnimatePresence>
     </svg>
-  );
-};
+  )
+}
 
-export { DarkIcon };
+export { DarkIcon }

@@ -62,7 +62,7 @@ const Footer = () => (
 
         <div className=" mt-8 flex flex-col items-center gap-y-5 sm:mt-0">
           <Link href={"/"}>
-            <Logo className="text" />
+            <Logo />
           </Link>
 
           <p className="text-center text-xs">
