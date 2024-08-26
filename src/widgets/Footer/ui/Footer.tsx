@@ -14,7 +14,7 @@ const Footer = () => (
             Напишите нам
           </h3>
           <a
-            className="text-xl font-bold text-primary-950 duration-500 hover:text-hover-500 dark:text-primary-200 dark:hover:text-hover-500 sm:text-3xl xl:text-5xl"
+            className="text-xl font-bold text-primary-800 duration-500 hover:text-hover-500 dark:text-primary-400 dark:hover:text-hover-500 sm:text-3xl xl:text-5xl"
             href="mailto:info@studio.examle"
           >
             info@studio.examle
