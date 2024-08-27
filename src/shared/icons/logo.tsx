@@ -1,4 +1,4 @@
-const Logo = (props: ReactTagProps<"svg">) => (
+const Logo = () => (
   <svg
     width="193"
     height="67"

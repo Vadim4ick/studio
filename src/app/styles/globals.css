@@ -43,9 +43,8 @@
     @apply rounded-md bg-[#43CD93] px-10 py-4 transition duration-500 hover:bg-hover-400 active:scale-[0.97];
   }
   .btn-outline {
-    @apply rounded-md px-10 py-4 border dark:text-white dark:border-primary-200 hover:text-white text-primary-950 border-gray hover:border-hover-400 transition duration-500 hover:bg-hover-400 ;
+    @apply rounded-md border border-gray px-10 py-4 text-primary-950 transition duration-500 hover:border-hover-400 hover:bg-hover-400 hover:text-white dark:border-primary-200 dark:text-white;
   }
-
 }
 
 .text {
@@ -90,4 +89,12 @@ html {
 
 .dark-card {
   background: var(--secondary-gradient);
+}
+
+.slick-list {
+  margin: 0 -15px !important;
+}
+
+.slick-slide > div {
+  padding: 0 15px !important;
 }

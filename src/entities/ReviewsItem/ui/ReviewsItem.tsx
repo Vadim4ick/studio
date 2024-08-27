@@ -1,10 +1,11 @@
 import { useMotionValue, motion, animate } from "framer-motion"
 import { MouseEvent } from "react"
 import { useMedia } from "@/shared/hooks/useMedia.hooks"
-import { IReviewsItem } from "../model/type"
+import Link from "next/link"
+import { IReviewsItem } from "@/shared/const/mockProjects.const"
 
 const ReviewsItem = (props: IReviewsItem) => {
-  const { imageUrl, title, imageUrl2X } = props
+  const { imageUrl, title, imageUrl2X, id } = props
 
   const isMobile768 = useMedia({ media: "max", number: 768 })
 
@@ -39,8 +40,11 @@ const ReviewsItem = (props: IReviewsItem) => {
   }
 
   return (
-    <div className="mx-auto flex max-w-[1100px] flex-col gap-4">
-      <p className="text text-xl">{title}</p>
+    <Link
+      href={`/reviews/${id}`}
+      className="mx-auto flex max-w-[1100px] flex-col gap-4"
+    >
+      <p className="text text-xl font-semibold">{title}</p>
 
       <motion.div
         onMouseMove={!isMobile768.matches ? handleMouseMove : undefined}
@@ -62,7 +66,7 @@ const ReviewsItem = (props: IReviewsItem) => {
           className="object-contain"
         />
       </motion.div>
-    </div>
+    </Link>
   )
 }
 
