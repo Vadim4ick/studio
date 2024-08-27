@@ -1,37 +1,18 @@
 "use client"
 
 import Link from "next/link"
-import { RequestCall } from "@/features/RequestCall"
+// import { RequestCall } from "@/features/RequestCall"
 import { useMedia } from "@/shared/hooks/useMedia.hooks"
 import { BurgerMenu, NavigationMenu } from "@/features/NavigationMenu"
 import clsx from "clsx"
-import { memo, useEffect, useRef, useState } from "react"
+import { memo, useRef } from "react"
 import { SwithTheme } from "@/features/SwitchTheme"
 import { Logo } from "@/shared/icons/logo"
-import { useUnit } from "effector-react"
-import { $theme } from "@/shared/context/theme"
-import { cn } from "@/shared/helpers/cn.helper"
-import { $menuIsOpen } from "@/shared/context/modal"
 
 const Header = memo(() => {
   const isDesktop1150 = useMedia({ media: "max", number: 1150 })
 
-  const [theme, menuIsOpen] = useUnit([$theme, $menuIsOpen])
-
   const headerRef = useRef(null)
-
-  const [shouldApplyClass, setShouldApplyClass] = useState(false)
-
-  useEffect(() => {
-    if (theme === "dark" && menuIsOpen) {
-      const timer = setTimeout(() => {
-        setShouldApplyClass(true)
-      }, 500)
-      return () => clearTimeout(timer)
-    } else {
-      setShouldApplyClass(false)
-    }
-  }, [theme, menuIsOpen])
 
   return (
     <header
@@ -44,11 +25,7 @@ const Header = memo(() => {
         <div className="relative flex items-center justify-between">
           <div className="z-10 flex items-center gap-11">
             <Link href={"/"}>
-              <Logo
-                className={cn("text-primary-900 dark:text-white", {
-                  "dark:text-primary-900": shouldApplyClass,
-                })}
-              />
+              <Logo />
             </Link>
 
             {headerRef.current && (
@@ -58,7 +35,7 @@ const Header = memo(() => {
 
           {!isDesktop1150.matches ? (
             <>
-              <RequestCall />
+              {/* <RequestCall /> */}
               <SwithTheme />
             </>
           ) : (

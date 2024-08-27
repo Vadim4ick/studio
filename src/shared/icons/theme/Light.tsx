@@ -18,6 +18,6 @@ const LightIcon = (props: ReactTagProps<"svg">) => (
       strokeLinecap="round"
     />
   </svg>
-);
+)
 
-export { LightIcon };
+export { LightIcon }

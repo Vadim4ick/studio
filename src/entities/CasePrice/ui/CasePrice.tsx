@@ -9,6 +9,7 @@ import { Arrow } from "@/shared/icons/Arrow"
 import { motion } from "framer-motion"
 import { useUnit } from "effector-react"
 import { $spollerPrice, openSpollerPrice } from "@/shared/context/spoller"
+import { openModalConsultation } from "@/shared/context/modal"
 
 interface CaseProps {
   item: Case
@@ -91,7 +92,11 @@ const CasePrice = (props: CaseProps) => {
         <Spoller isOpen={activeSpoiler === item.id}>{list}</Spoller>
       )}
 
-      <Button className="z-50" variant="green">
+      <Button
+        onClick={() => openModalConsultation()}
+        className="z-50"
+        variant="green"
+      >
         Заказать
       </Button>
     </div>
