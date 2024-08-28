@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { RequestCall } from "@/features/RequestCall"
+// import { RequestCall } from "@/features/RequestCall"
 import { useMedia } from "@/shared/hooks/useMedia.hooks"
 import { BurgerMenu, NavigationMenu } from "@/features/NavigationMenu"
 import clsx from "clsx"
@@ -35,7 +35,7 @@ const Header = memo(() => {
 
           {!isDesktop1150.matches ? (
             <>
-              <RequestCall />
+              {/* <RequestCall /> */}
               <SwithTheme />
             </>
           ) : (
