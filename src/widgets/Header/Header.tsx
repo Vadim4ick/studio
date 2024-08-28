@@ -18,7 +18,7 @@ const Header = memo(() => {
     <header
       ref={headerRef}
       className={clsx(
-        "z-10 flex w-full items-center p-4 max-desktop:fixed max-desktop:pt-4",
+        "fixed z-[60] flex w-full items-center p-4 max-desktop:pt-4",
       )}
     >
       <div className="mx-auto w-full max-w-[1280px] px-4">
