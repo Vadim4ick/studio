@@ -51,7 +51,7 @@ const NavigationMenu = forwardRef<HTMLElement, Props>((props, ref) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.55, ease: "easeInOut" }}
-            className="absolute left-1/2 top-[175px] z-20 h-full translate-x-[-50%]"
+            className="absolute left-1/2 top-0 z-20 flex h-fit w-full translate-x-[-50%] flex-col items-center bg-primary-50 p-10"
           >
             <ul className="flex flex-col items-center gap-5">
               {navigation.map((el, i) => (
@@ -74,7 +74,7 @@ const NavigationMenu = forwardRef<HTMLElement, Props>((props, ref) => {
 
             <SwithTheme />
 
-            <Button variant="secondary" className="mt-6 w-full text-nowrap">
+            <Button variant="secondary" className="mt-6 text-nowrap">
               Заказать звонок
             </Button>
           </motion.nav>

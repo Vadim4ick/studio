@@ -21,7 +21,7 @@ const BurgerMenu = () => {
 
   return (
     <motion.div
-      className="absolute right-0 z-20 h-6 w-6 cursor-pointer"
+      className="absolute right-0 z-50 h-6 w-6 cursor-pointer"
       animate={open ? "open" : "closed"}
       onClick={() => toggleBurger()}
     >
