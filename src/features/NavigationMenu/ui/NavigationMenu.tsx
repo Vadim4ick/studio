@@ -62,7 +62,7 @@ const NavigationMenu = forwardRef<HTMLElement, Props>((props, ref) => {
                   key={el.path}
                 >
                   <Link
-                    className="text-xl"
+                    className="lg:text-xl"
                     onClick={() => closeBurger()}
                     href={el.path}
                   >
