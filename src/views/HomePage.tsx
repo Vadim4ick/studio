@@ -1,3 +1,5 @@
+"use client"
+
 import { benefits } from "@/entities/BenefitItem"
 import { BenefitsList } from "@/widgets/BenefitsList"
 import { Stages } from "@/widgets/Stages"
@@ -7,7 +9,7 @@ import { WhatYouGet } from "@/widgets/WhatYouGet"
 import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 
 const HomePage = () => (
-  <main className={"mx-auto max-w-[1160px] px-4 max-desktop:pt-headerMobile"}>
+  <main className={"mx-auto max-w-[1160px] px-4 pt-headerMobile"}>
     <section className="py-10 sm:flex sm:items-center sm:py-10 md:py-16 lg:py-24">
       <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
         <div className="flex max-w-2xl flex-col gap-2 px-2">
