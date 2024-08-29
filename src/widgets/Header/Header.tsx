@@ -17,10 +17,10 @@ const Header = memo(() => {
     <header
       ref={headerRef}
       className={clsx(
-        "fixed z-[60] flex w-full items-center p-4 max-desktop:pt-4",
+        "bg-background/95 sticky top-0 z-[60] flex w-full items-center border-b border-primary-800 p-4 shadow-md backdrop-blur max-desktop:pt-4",
       )}
     >
-      <div className="mx-auto w-full max-w-[1280px] px-4">
+      <div className="mx-auto w-full max-w-[1280px] px-4 ">
         <div className="relative flex items-center justify-between">
           <div className="z-10 flex items-center gap-11">
             <Link href={"/"}>

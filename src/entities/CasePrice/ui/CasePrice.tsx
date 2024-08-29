@@ -39,7 +39,7 @@ const CasePrice = (props: CaseProps) => {
   )
 
   return (
-    <div className="flex w-full max-w-[335px] flex-col justify-between rounded-xl bg-white/90 px-[30px] pb-[30px] duration-200 hover:bg-white/70">
+    <div className="flex w-full max-w-[335px] flex-col justify-between rounded-xl bg-white/90 px-[30px] pb-[30px] duration-200 hover:bg-white/80">
       <div className="relative flex flex-col gap-3 py-6">
         <div className="text-center text-[#7C7C7C]">Тариф</div>
 
@@ -57,7 +57,7 @@ const CasePrice = (props: CaseProps) => {
           viewBox="0 0 15 20"
           fill="none"
         >
-          <path d="M15 10L0 20L0 0L15 10Z" fill="#9E77ED" />
+          <path d="M15 10L0 20L0 0L15 10Z" fill="#818cf8" />
         </svg>
 
         <svg
@@ -68,7 +68,7 @@ const CasePrice = (props: CaseProps) => {
           viewBox="0 0 15 20"
           fill="none"
         >
-          <path d="M0 10L15 0L15 20L0 10Z" fill="#9E77ED" />
+          <path d="M0 10L15 0L15 20L0 10Z" fill="#818cf8" />
         </svg>
 
         {isMobile768.matches && (
@@ -81,7 +81,7 @@ const CasePrice = (props: CaseProps) => {
               openSpollerPrice(item.id)
             }}
           >
-            <Arrow className="text-[#9E77ED]" />
+            <Arrow className="text-[#818cf8]" />
           </motion.button>
         )}
       </div>
@@ -95,7 +95,7 @@ const CasePrice = (props: CaseProps) => {
       <Button
         onClick={() => openModalConsultation()}
         className="z-50"
-        variant="green"
+        variant="secondary"
       >
         Заказать
       </Button>

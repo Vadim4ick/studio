@@ -3,8 +3,8 @@
 import { CasesPrice } from "@/widgets/CasesPrice"
 
 const CasePricePage = () => (
-  <main className={"mx-auto max-w-[1160px] px-4 pt-headerMobile"}>
-    <section className="relative mb-40 mt-20 rounded-3xl bg-[#B5A4E7] px-9 py-[50px]">
+  <main className={"mx-auto max-w-[1160px] px-4 max-desktop:pt-headerMobile"}>
+    <section className="relative mb-40 mt-20 rounded-3xl bg-[#818cf8] px-9 py-[50px]">
       <img
         src="/image/price-bg.png"
         alt=""
