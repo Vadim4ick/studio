@@ -17,7 +17,7 @@ const Header = memo(() => {
     <header
       ref={headerRef}
       className={clsx(
-        "bg-background/95 sticky top-0 z-[60] flex w-full items-center border-b border-primary-800 p-4 shadow-md backdrop-blur max-desktop:pt-4",
+        "sticky top-0 z-[60] flex w-full items-center border-b border-primary-800 p-4 shadow-md backdrop-blur max-desktop:pt-4",
       )}
     >
       <div className="mx-auto w-full max-w-[1280px] px-4 ">
