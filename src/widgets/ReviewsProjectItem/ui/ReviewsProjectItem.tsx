@@ -59,7 +59,17 @@ const ReviewsProjectItem = ({ item }: { item: IReviewsItem }) => {
         </div>
       </div>
 
-      <p className="text text-lg font-medium">{item.aboutProject}</p>
+      <div className="flex flex-col gap-y-5">
+        <a
+          target="_blank"
+          className="text cursor-pointer text-lg font-semibold"
+          href={item.link}
+        >
+          Ссылка на проект
+        </a>
+
+        <p className="text text-lg font-medium">{item.aboutProject}</p>
+      </div>
     </section>
   )
 }
