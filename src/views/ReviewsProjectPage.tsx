@@ -8,11 +8,7 @@ const ReviewsProjectPage = ({ id }: { id: string }) => {
   if (!item) notFound()
 
   return (
-    <main
-      className={
-        "relative mx-auto max-w-[1280px] px-4 max-desktop:pt-headerMobile"
-      }
-    >
+    <main className={"relative mx-auto max-w-[1280px] px-4 pt-headerMobile"}>
       <ReviewsProjectItem item={item} />
     </main>
   )

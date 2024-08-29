@@ -20,7 +20,7 @@ const Logo = () => (
       x2="0.215881"
       y2="56"
       stroke="#ea580c"
-      stroke-width="2"
+      strokeWidth="2"
     />
     <line
       x1="192.784"
@@ -28,7 +28,7 @@ const Logo = () => (
       x2="161.891"
       y2="56"
       stroke="#ea580c"
-      stroke-width="2"
+      strokeWidth="2"
     />
   </svg>
 )
