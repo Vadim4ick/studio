@@ -9,8 +9,8 @@ import { WhatYouGet } from "@/widgets/WhatYouGet"
 import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 
 const HomePage = () => (
-  <main className={"mx-auto max-w-[1160px] px-4 pt-10"}>
-    <section className="sm:flex sm:items-center md:py-10">
+  <main className={" px-4 "}>
+    <section className="mx-auto max-w-[1280px] sm:flex sm:items-center md:py-10">
       <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
         <div className="flex max-w-2xl flex-col gap-8  px-2">
           <h1 className="text text-lg font-extrabold md:text-2xl lg:text-4xl">
@@ -40,11 +40,12 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="py-10">
+    <section className="mx-auto max-w-[1280px] py-10">
       <h2 className="text mb-[54px] text-lg font-extrabold md:mb-8 md:text-2xl lg:mb-16 lg:text-4xl">
-      Вам нужно создать сайт или веб приложение?{" "}
-        <span className="text-primary-500">Нужна помощь с SEO
-        настройкой сайта или необходимо запустить рекламму?</span>
+        Вам нужно создать сайт или веб приложение?{" "}
+        <span className="text-primary-500">
+          Нужна помощь с SEO настройкой сайта или необходимо запустить рекламму?
+        </span>
       </h2>
       <BenefitsList
         benefitsData={benefits}
@@ -57,7 +58,7 @@ const HomePage = () => (
 
     <WhatYouGet />
 
-    <section className="pb-10 lg:pb-24">
+    <section className="mx-auto max-w-[1280px] pb-10 lg:pb-24">
       <h2 className="text mb-[60px] text-lg font-extrabold md:text-2xl lg:text-4xl">
         Исследуем <span className="text-primary-500">Бизнес</span>
       </h2>

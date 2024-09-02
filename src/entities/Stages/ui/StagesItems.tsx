@@ -42,7 +42,7 @@ const StagesItems = () => {
       {!isMobile768.matches && (
         <motion.div
           style={{ paddingTop: springPaddingTop }}
-          className="sticky-element sticky top-0 flex h-full w-[40%]"
+          className="sticky-element sticky top-10 flex h-full w-[40%]"
         >
           {/* LINE */}
           {!isDesktop1024.matches && (
@@ -90,14 +90,14 @@ const StagesItems = () => {
                 {item.description}
               </div>
 
-              <div className="relative h-[775px] w-full">
+              {/* <div className="relative h-[775px] w-full">
                 <Image
                   className="object-cover"
                   src={"/1.png"}
                   alt="test"
                   fill
                 />
-              </div>
+              </div> */}
             </div>
           </Element>
         ))}

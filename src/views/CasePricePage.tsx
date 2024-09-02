@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 import { CasesPrice } from "@/widgets/CasesPrice"
 
 const CasePricePage = () => (
