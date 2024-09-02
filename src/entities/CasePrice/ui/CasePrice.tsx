@@ -27,10 +27,13 @@ const CasePrice = (props: CaseProps) => {
       <ul className="flex h-full flex-col gap-3 py-[30px]">
         {item.services.map((service, idx) => (
           <li
-            className="relative pl-[22px] text-[12px] before:absolute before:left-0 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rounded-full before:bg-primary-700 before:content-['']"
+            className="relative grid grid-cols-3 pl-[22px] text-[12px] before:absolute before:left-0 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rounded-full before:bg-primary-700 before:content-['']"
             key={idx}
           >
-            {service}
+            <p className="col-span-2">{service.option}</p>
+            <p className="col-start-3  text-center">
+              <span>{service.price}</span>
+            </p>
           </li>
         ))}
       </ul>
@@ -39,14 +42,13 @@ const CasePrice = (props: CaseProps) => {
   )
 
   return (
-    <div className="flex w-full max-w-[335px] flex-col justify-between rounded-xl bg-white/90 px-[30px] pb-[30px] duration-200 hover:bg-white/80">
+    <div className="md:max-w-1/2 flex flex-col justify-between rounded-xl bg-white/90 px-[30px] py-[30px] duration-200 hover:bg-white/80">
       <div className="relative flex flex-col gap-3 py-6">
-        <div className="text-center text-[#7C7C7C]">Тариф</div>
-
+        {/* <div className="text-center text-[#7C7C7C]">Тариф</div> */}
         <p className="text-center text-[18px] font-bold">{item.title}</p>
-
         <div className="text-center text-[18px]">
-          от <span className="font-bold">{item.price}</span> Р
+          от <span className="font-bold">{item.timeFrom}</span> -{" "}
+          <span className="font-bold">{item.timeTill}</span> дней
         </div>
 
         <svg
@@ -94,10 +96,10 @@ const CasePrice = (props: CaseProps) => {
 
       <Button
         onClick={() => openModalConsultation()}
-        className="z-50"
+        className="z-50 text-sm"
         variant="secondary"
       >
-        Заказать
+        Запросить предложение
       </Button>
     </div>
   )
