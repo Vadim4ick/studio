@@ -38,7 +38,7 @@ const StagesItems = () => {
   }, [isInView, springPaddingTop])
 
   return (
-    <div className="flex" ref={ref}>
+    <div className="flex gap-3" ref={ref}>
       {!isMobile768.matches && (
         <motion.div
           style={{ paddingTop: springPaddingTop }}
@@ -90,7 +90,7 @@ const StagesItems = () => {
                 {item.description}
               </div>
 
-              <div className="relative h-[775px] w-full">
+              <div className="relative h-[300px] lg:h-[400px] w-full">
                 <Image
                   className="object-cover"
                   src={item.imageUrl}

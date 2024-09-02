@@ -11,7 +11,7 @@ export const stages = [
     title: "Подбор ключевых фраз",
     description:
       "Подбор продающих, высоко- и среднечастотных ключевых фраз для распределения по страницам вашего нового сайта, согласование. С целью получения максимального охвата целевого трафика в поисковых системах.",
-    imageUrl: "/image/stages/target_audience.png",
+    imageUrl: "/image/stages/Selection_of_key_phrases.png",
   },
   {
     id: 3,
