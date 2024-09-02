@@ -90,14 +90,14 @@ const StagesItems = () => {
                 {item.description}
               </div>
 
-              {/* <div className="relative h-[775px] w-full">
+              <div className="relative h-[775px] w-full">
                 <Image
                   className="object-cover"
-                  src={"/1.png"}
+                  src={item.imageUrl}
                   alt="test"
                   fill
                 />
-              </div> */}
+              </div>
             </div>
           </Element>
         ))}
