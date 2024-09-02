@@ -15,7 +15,6 @@ export const casesData: Case[] = [
       },
     ],
     timeFrom: 7,
-    timeTill: null,
   },
   {
     id: 2,
@@ -31,7 +30,6 @@ export const casesData: Case[] = [
       },
     ],
     timeFrom: 12,
-    timeTill: 24,
   },
   {
     id: 3,
@@ -47,7 +45,6 @@ export const casesData: Case[] = [
       },
     ],
     timeFrom: 14,
-    timeTill: 27,
   },
   {
     id: 4,
@@ -63,7 +60,6 @@ export const casesData: Case[] = [
       },
     ],
     timeFrom: 30,
-    timeTill: 90,
   },
   {
     id: 5,
@@ -83,7 +79,6 @@ export const casesData: Case[] = [
       },
     ],
     timeFrom: 30,
-    timeTill: 90,
   },
   {
     id: 6,
@@ -116,7 +111,6 @@ export const casesData: Case[] = [
       },
     ],
     timeFrom: 30,
-    timeTill: 90,
   },
   // {
   //   id: 1,

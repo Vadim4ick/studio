@@ -32,7 +32,7 @@ const CasePrice = (props: CaseProps) => {
           >
             <p className="col-span-2">{service.option}</p>
             <p className="col-start-3  text-center">
-              <span>{service.price}</span>
+              от <span>{service.price}</span> руб.
             </p>
           </li>
         ))}
@@ -47,8 +47,7 @@ const CasePrice = (props: CaseProps) => {
         {/* <div className="text-center text-[#7C7C7C]">Тариф</div> */}
         <p className="text-center text-[18px] font-bold">{item.title}</p>
         <div className="text-center text-[18px]">
-          от <span className="font-bold">{item.timeFrom}</span> -{" "}
-          <span className="font-bold">{item.timeTill}</span> дней
+          от <span className="font-bold">{item.timeFrom}</span> дней
         </div>
 
         <svg

@@ -8,5 +8,4 @@ export interface Case {
   title: string
   services: Services[]
   timeFrom: number
-  timeTill: number | null
 }
