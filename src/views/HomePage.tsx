@@ -1,3 +1,5 @@
+"use client"
+
 import { benefits } from "@/entities/BenefitItem"
 import { BenefitsList } from "@/widgets/BenefitsList"
 import { Stages } from "@/widgets/Stages"
@@ -7,18 +9,19 @@ import { WhatYouGet } from "@/widgets/WhatYouGet"
 import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 
 const HomePage = () => (
-  <main className={"mx-auto max-w-[1160px] px-4 max-desktop:pt-headerMobile"}>
-    <section className="py-10 sm:flex sm:items-center sm:py-10 md:py-16 lg:py-24">
+  <main className={" px-4 "}>
+    <section className="mx-auto max-w-[1280px] sm:flex sm:items-center md:py-10">
       <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
-        <div className="flex max-w-2xl flex-col gap-2 px-2">
-          <h1 className="text text-lg font-semibold md:mb-5 md:text-2xl lg:mb-8 lg:text-4xl">
-            Цифровая экспертиза на благо Вашего бизнеса
+        <div className="flex max-w-2xl flex-col gap-8  px-2">
+          <h1 className="text text-lg font-extrabold md:text-2xl lg:text-4xl">
+            Нужен сайт?
           </h1>
-          <p className="lg:bm-28 text text-gray-700 text-xs md:mb-5 lg:text-base">
-            Разработка современных, быстрых и удобных WEB приложений что-бы ваши
-            клиенты были счестливы.
-          </p>
-          <div className="mt-4 flex justify-center gap-8 font-semibold">
+          <article className="text text-gray-700 text-base">
+            Мы — команда профессионалов из веб-студии Барбарис,
+            специализирующаяся на фронтенд и бекенд разработке. Наши опытные
+            специалисты с удовольствием возьмутся за реализацию вашего сайта.
+          </article>
+          <div className="flex justify-center gap-8 font-semibold">
             <BtnOpenConsultation />
           </div>
         </div>
@@ -37,10 +40,12 @@ const HomePage = () => (
       </div>
     </section>
 
-    <section className="py-10">
+    <section className="mx-auto max-w-[1280px] py-10">
       <h2 className="text mb-[54px] text-lg font-extrabold md:mb-8 md:text-2xl lg:mb-16 lg:text-4xl">
-        Мы создаем интернет-магазины,{" "}
-        <span className="text-primary-500">которые продают</span>
+        Вам нужно создать сайт или веб приложение?{" "}
+        <span className="text-primary-500">
+          Нужна помощь с SEO настройкой сайта или необходимо запустить рекламму?
+        </span>
       </h2>
       <BenefitsList
         benefitsData={benefits}
@@ -53,7 +58,7 @@ const HomePage = () => (
 
     <WhatYouGet />
 
-    <section className="pb-10 lg:pb-24">
+    <section className="mx-auto max-w-[1280px] pb-10 lg:pb-24">
       <h2 className="text mb-[60px] text-lg font-extrabold md:text-2xl lg:text-4xl">
         Исследуем <span className="text-primary-500">Бизнес</span>
       </h2>

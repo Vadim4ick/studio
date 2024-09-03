@@ -38,11 +38,11 @@ const StagesItems = () => {
   }, [isInView, springPaddingTop])
 
   return (
-    <div className="flex" ref={ref}>
+    <div className="flex gap-3" ref={ref}>
       {!isMobile768.matches && (
         <motion.div
           style={{ paddingTop: springPaddingTop }}
-          className="sticky-element sticky top-0 flex h-full w-[40%]"
+          className="sticky-element sticky top-10 flex h-full w-[40%]"
         >
           {/* LINE */}
           {!isDesktop1024.matches && (
@@ -90,10 +90,10 @@ const StagesItems = () => {
                 {item.description}
               </div>
 
-              <div className="relative h-[775px] w-full">
+              <div className="relative h-[300px] lg:h-[400px] w-full">
                 <Image
                   className="object-cover"
-                  src={"/1.png"}
+                  src={item.imageUrl}
                   alt="test"
                   fill
                 />

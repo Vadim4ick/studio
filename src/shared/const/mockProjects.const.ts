@@ -7,6 +7,8 @@ export interface IReviewsItem {
   subTitle: string
   aboutProject?: string
   images: string[]
+
+  link: string
 }
 
 export const mockProjects: IReviewsItem[] = [
@@ -15,6 +17,8 @@ export const mockProjects: IReviewsItem[] = [
     title: "Creatin",
     imageUrl: "/image/projects/creatin/logo.png",
     imageUrl2X: "/image/projects/creatin/logo@2x.png",
+
+    link: "https://creatin.ru/",
 
     subTitle: "Создание для дизайнерской веб-студии - Creatin.",
     images: [

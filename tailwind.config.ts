@@ -63,7 +63,7 @@ const config: Config = {
         950: "#172554",
       },
       bgDark: "#475569",
-      cardBorderBottom: "#DA7B78",
+      cardBorderBottom: "#f97316",
       iconBg: "#94a3b8",
       gray: "#64748b",
       skeletonBg: "#2a323f",

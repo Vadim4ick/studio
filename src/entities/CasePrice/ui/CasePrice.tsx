@@ -27,10 +27,13 @@ const CasePrice = (props: CaseProps) => {
       <ul className="flex h-full flex-col gap-3 py-[30px]">
         {item.services.map((service, idx) => (
           <li
-            className="relative pl-[22px] text-[12px] before:absolute before:left-0 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rounded-full before:bg-primary-700 before:content-['']"
+            className="relative grid grid-cols-3 pl-[22px] text-[12px] before:absolute before:left-0 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rounded-full before:bg-primary-700 before:content-['']"
             key={idx}
           >
-            {service}
+            <p className="col-span-2">{service.option}</p>
+            <p className="col-start-3  text-center">
+              от <span>{service.price}</span> руб.
+            </p>
           </li>
         ))}
       </ul>
@@ -39,14 +42,12 @@ const CasePrice = (props: CaseProps) => {
   )
 
   return (
-    <div className="flex w-full max-w-[335px] flex-col justify-between rounded-xl bg-white/90 px-[30px] pb-[30px] duration-200 hover:bg-white/70">
+    <div className="md:max-w-1/2 flex flex-col justify-between rounded-xl bg-white/90 px-[30px] py-[30px] duration-200 hover:bg-white/80">
       <div className="relative flex flex-col gap-3 py-6">
-        <div className="text-center text-[#7C7C7C]">Тариф</div>
-
+        {/* <div className="text-center text-[#7C7C7C]">Тариф</div> */}
         <p className="text-center text-[18px] font-bold">{item.title}</p>
-
         <div className="text-center text-[18px]">
-          от <span className="font-bold">{item.price}</span> Р
+          от <span className="font-bold">{item.timeFrom}</span> дней
         </div>
 
         <svg
@@ -57,7 +58,7 @@ const CasePrice = (props: CaseProps) => {
           viewBox="0 0 15 20"
           fill="none"
         >
-          <path d="M15 10L0 20L0 0L15 10Z" fill="#9E77ED" />
+          <path d="M15 10L0 20L0 0L15 10Z" fill="#818cf8" />
         </svg>
 
         <svg
@@ -68,7 +69,7 @@ const CasePrice = (props: CaseProps) => {
           viewBox="0 0 15 20"
           fill="none"
         >
-          <path d="M0 10L15 0L15 20L0 10Z" fill="#9E77ED" />
+          <path d="M0 10L15 0L15 20L0 10Z" fill="#818cf8" />
         </svg>
 
         {isMobile768.matches && (
@@ -81,7 +82,7 @@ const CasePrice = (props: CaseProps) => {
               openSpollerPrice(item.id)
             }}
           >
-            <Arrow className="text-[#9E77ED]" />
+            <Arrow className="text-[#818cf8]" />
           </motion.button>
         )}
       </div>
@@ -94,10 +95,10 @@ const CasePrice = (props: CaseProps) => {
 
       <Button
         onClick={() => openModalConsultation()}
-        className="z-50"
-        variant="green"
+        className="z-50 text-sm"
+        variant="secondary"
       >
-        Заказать
+        Запросить предложение
       </Button>
     </div>
   )
