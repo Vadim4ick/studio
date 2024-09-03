@@ -95,7 +95,7 @@ const CasePrice = (props: CaseProps) => {
 
       <Button
         onClick={() => openModalConsultation()}
-        className="z-50 text-sm"
+        className="text-sm"
         variant="secondary"
       >
         Запросить предложение

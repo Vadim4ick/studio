@@ -17,8 +17,8 @@ const StagesItems = () => {
   })
 
   const isDesktop1024 = useMedia({ media: "max", number: 1024 })
-  const isDesktop1151 = useMedia({ media: "max", number: 1151 })
-  const isMobile768 = useMedia({ media: "max", number: 768 })
+  // const isDesktop1151 = useMedia({ media: "max", number: 1151 })
+  // const isMobile768 = useMedia({ media: "max", number: 768 })
 
   const springPaddingTop = useSpring(0, {
     stiffness: 300,
@@ -39,26 +39,26 @@ const StagesItems = () => {
 
   return (
     <div className="flex gap-3" ref={ref}>
-      {!isMobile768.matches && (
+      {!isDesktop1024.matches && (
         <motion.div
           style={{ paddingTop: springPaddingTop }}
-          className="sticky-element sticky top-10 flex h-full w-[40%]"
+          className="sticky-element sticky top-10 grid h-full overflow-hidden laptop:w-[500px] laptop:shrink-0 laptop:flex-grow-0 laptop:basis-auto laptop:grid-cols-[23px_1fr] laptop:gap-10"
         >
           {/* LINE */}
           {!isDesktop1024.matches && (
             <StagesLine scrollYProgress={scrollYProgress} />
           )}
 
-          <div className="text flex flex-col gap-[42px] max-laptop:mr-4 laptop:pl-10">
+          <div className="text flex flex-col gap-[42.5px] max-laptop:mr-4">
             {stages.map((item) => (
               <div key={item.id}>
                 <Link
                   to={`section${item.id}`}
                   smooth={true}
                   duration={500}
-                  offset={isDesktop1151.matches ? -100 : 0}
+                  offset={-110}
                 >
-                  <p className="cursor-pointer text-lg">{`${calcStagesNumber(item.id)}. ${item.title}`}</p>
+                  <p className="w-full max-w-[400px] cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap text-lg">{`${calcStagesNumber(item.id)}. ${item.title}`}</p>
                 </Link>
               </div>
             ))}
@@ -68,13 +68,13 @@ const StagesItems = () => {
 
       <div
         ref={refSpring}
-        className="flex w-[60%] flex-col gap-[55px] max-mobile:w-full max-mobile:gap-11"
+        className="flex w-[60%] flex-col gap-[55px] max-laptop:w-full max-mobile:gap-11"
       >
         {stages.map((item) => (
           <Element name={`section${item.id}`} key={item.id}>
             <div
               style={{ boxShadow: "0px 10px 60px 0px #2A236726" }}
-              className="rounded-[10px] bg-white px-[43px] py-[23px] max-mobile:px-4"
+              className="max-w-[736px] rounded-[10px] bg-white px-[43px] py-[23px] max-laptop:mx-auto max-mobile:px-4"
             >
               <div className="flex items-center gap-[50px] border-b pb-[29px] max-mobile:gap-4">
                 <div className="flex size-[53px] shrink-0 items-center justify-center rounded-full bg-hover-500 font-extrabold text-white">
@@ -90,7 +90,7 @@ const StagesItems = () => {
                 {item.description}
               </div>
 
-              <div className="relative h-[300px] lg:h-[400px] w-full">
+              <div className="relative h-[300px] w-full lg:h-[400px]">
                 <Image
                   className="object-cover"
                   src={item.imageUrl}

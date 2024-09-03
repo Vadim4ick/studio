@@ -63,7 +63,7 @@ export const casesData: Case[] = [
   },
   {
     id: 5,
-    title: "Разработка сайта на CMS WordPress",
+    title: "Разработка CMS WordPress",
     services: [
       {
         option: "Разработка сайте на стандартом дизайне",
