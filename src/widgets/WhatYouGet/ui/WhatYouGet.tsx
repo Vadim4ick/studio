@@ -2,7 +2,7 @@ import { WhatYouGetItem } from "@/entities/WhatYouGet"
 import { whatyougetlist } from "@/entities/WhatYouGet"
 
 const WhatYouGet = () => (
-  <section className="m-auto max-w-[1260px] px-4 py-[140px]">
+  <section className="m-auto max-w-[1280px] px-4 py-[140px]">
     <h2 className="text mb-[54px] text-lg font-extrabold md:mb-8 md:text-2xl lg:mb-7 lg:text-4xl">
       Что вы <span className=" text-primary-500">получаете ?</span>
     </h2>
