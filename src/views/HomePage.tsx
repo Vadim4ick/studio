@@ -4,9 +4,9 @@ import { benefits } from "@/entities/BenefitItem"
 import { BenefitsList } from "@/widgets/BenefitsList"
 import { Stages } from "@/widgets/Stages"
 import Image from "next/image"
-import { motion } from "framer-motion"
 import { WhatYouGet } from "@/widgets/WhatYouGet"
 import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
+import { CirclesOnWater } from "@/shared/ui/CirclesOnWater"
 
 const HomePage = () => (
   <main className={" px-4 "}>
@@ -80,48 +80,7 @@ const HomePage = () => (
 
         <div className="basis-1/2 max-tablet:hidden">
           <div className="flex items-center justify-center">
-            <div className="relative h-full">
-              <motion.div
-                initial={{ scale: 1, opacity: 1, translate: "-50%" }}
-                animate={{ scale: 1.5, opacity: 0.3 }}
-                transition={{
-                  duration: 2.5,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-                className="absolute left-1/2 top-1/2 size-40 animate-pulse rounded-full border-8 border-secondary-300 shadow-lg"
-              />
-              <motion.div
-                initial={{
-                  scale: 1,
-                  opacity: 1,
-                  translate: "-50%",
-                  marginTop: "32px",
-                }}
-                animate={{ scale: 1.5, opacity: 0.3 }}
-                transition={{
-                  duration: 2.5,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-                className="absolute left-1/2 top-1/2 size-24 animate-pulse rounded-full border-8 border-hover-400 shadow-lg"
-              />
-              <motion.div
-                initial={{
-                  scale: 1,
-                  opacity: 1,
-                  translate: "-50%",
-                  marginTop: "60px",
-                }}
-                animate={{ scale: 1.5, opacity: 0.3 }}
-                transition={{
-                  duration: 2.5,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-                className="absolute left-1/2 top-1/2 size-10 animate-pulse rounded-full border-8 border-primary-500 shadow-lg"
-              />
-            </div>
+            <CirclesOnWater />
           </div>
         </div>
       </div>
