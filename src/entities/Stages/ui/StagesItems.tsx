@@ -42,39 +42,39 @@ const StagesItems = () => {
       {!isDesktop1024.matches && (
         <motion.div
           style={{ paddingTop: springPaddingTop }}
-          className="sticky-element sticky top-10 grid h-full overflow-hidden laptop:w-[500px] laptop:shrink-0 laptop:flex-grow-0 laptop:basis-auto laptop:grid-cols-[23px_1fr] laptop:gap-10"
+          className="sticky-element sticky top-10 grid h-full overflow-hidden laptop:shrink-0 laptop:flex-grow-0 laptop:basis-auto laptop:grid-cols-[23px_1fr] laptop:gap-10"
         >
           {/* LINE */}
           {!isDesktop1024.matches && (
             <StagesLine scrollYProgress={scrollYProgress} />
           )}
 
-          <div className="text flex flex-col gap-[42.5px] max-laptop:mr-4">
+          {/* <div className="text flex flex-col gap-[42.5px] max-laptop:mr-4">
             {stages.map((item) => (
-              <div key={item.id}>
+              <div key={item.id} className="">
                 <Link
                   to={`section${item.id}`}
                   smooth={true}
                   duration={500}
                   offset={-110}
                 >
-                  <p className="w-full max-w-[400px] cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap text-lg">{`${calcStagesNumber(item.id)}. ${item.title}`}</p>
+                  <p className=" cursor-pointer overflow-hidden text-ellipsis whitespace-nowrap text-pretty text-xs">{`${calcStagesNumber(item.id)}. ${item.title}`}</p>
                 </Link>
               </div>
             ))}
-          </div>
+          </div> */}
         </motion.div>
       )}
 
       <div
         ref={refSpring}
-        className="flex w-[60%] flex-col gap-[55px] max-laptop:w-full max-mobile:gap-11"
+        className="flex flex-col gap-[55px] max-laptop:w-full max-mobile:gap-11"
       >
         {stages.map((item) => (
           <Element name={`section${item.id}`} key={item.id}>
             <div
               style={{ boxShadow: "0px 10px 60px 0px #2A236726" }}
-              className="max-w-[736px] rounded-[10px] bg-white px-[43px] py-[23px] max-laptop:mx-auto max-mobile:px-4"
+              className="w-full rounded-[10px] bg-white px-[43px] py-[23px] max-laptop:mx-auto max-mobile:px-4"
             >
               <div className="flex items-center gap-[50px] border-b pb-[29px] max-mobile:gap-4">
                 <div className="flex size-[53px] shrink-0 items-center justify-center rounded-full bg-hover-500 font-extrabold text-white">
@@ -86,17 +86,19 @@ const StagesItems = () => {
                 </h3>
               </div>
 
-              <div className="py-[26px] text-center text-lg text-[#2A2367] max-mobile:py-4 max-mobile:text-base">
-                {item.description}
-              </div>
+              <div className="grid py-3 md:grid-cols-3">
+                <div className="text px-5 py-[26px] text-[#2A2367] max-mobile:py-4 max-mobile:text-sm md:col-span-2">
+                  {item.description}
+                </div>
 
-              <div className="relative h-[300px] w-full lg:h-[400px]">
-                <Image
-                  className="object-cover"
-                  src={item.imageUrl}
-                  alt="test"
-                  fill
-                />
+                <div className="relative h-full min-h-[230px] w-full">
+                  <Image
+                    className="rounded-lg object-cover"
+                    src={item.imageUrl}
+                    alt="test"
+                    fill
+                  />
+                </div>
               </div>
             </div>
           </Element>

@@ -63,7 +63,7 @@ const HomePage = () => (
     <WhatYouGet />
 
     <section className="mx-auto max-w-[1280px] pb-10 lg:pb-24">
-      <h2 className="text mb-[60px] text-lg font-extrabold md:text-2xl lg:text-4xl">
+      <h2 className="text mb-[60px] text-center text-lg font-extrabold md:text-2xl lg:text-4xl">
         Сколько Стоит Создание Сайта?{" "}
         <span className="text-primary-500">Прайс-лист Веб-Студии Barbaris</span>
       </h2>
