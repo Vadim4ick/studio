@@ -1,10 +1,9 @@
 import { useScroll, motion, useSpring, useInView } from "framer-motion"
 import Image from "next/image"
 import { useEffect, useRef } from "react"
-import { Element, Link } from "react-scroll"
+import { Element } from "react-scroll"
 import { stages } from "../model/mockData"
 import { StagesLine } from "./StagesLine"
-import { calcStagesNumber } from "@/shared/helpers/calc-stages-number.helper"
 import { useMedia } from "@/shared/hooks/useMedia.hooks"
 
 const StagesItems = () => {
@@ -13,7 +12,7 @@ const StagesItems = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"],
+    offset: ["start +400px", "end end"],
   })
 
   const isDesktop1024 = useMedia({ media: "max", number: 1024 })
