@@ -87,7 +87,7 @@ const StagesItems = () => {
               </div>
 
               <div className="grid py-3 md:grid-cols-3">
-                <div className="text px-5 py-[26px] text-[#2A2367] max-mobile:py-4 max-mobile:text-sm md:col-span-2">
+                <div className="px-5 py-[26px] text-[#2A2367] text-primary-950 max-mobile:py-4 max-mobile:text-sm md:col-span-2">
                   {item.description}
                 </div>
 
