@@ -1,10 +1,13 @@
 import { StagesItems } from "@/entities/Stages"
 
 const Stages = () => (
-  <section className="m-auto max-w-[1280px] px-4 pb-20">
-    <h2 className="text pb-[55px] text-4xl font-extrabold max-mobile:pb-[35px]">
-      Этапы создания сайта
-    </h2>
+  <section className="m-auto max-w-[1280px] px-4 py-32">
+    <h3 className="text mb-[100px] text-center text-lg font-extrabold md:text-2xl lg:text-4xl">
+      Барбарис: Стадии создания любого Сайта -{" "}
+      <span className="text-primary-500">
+        Лендинг, корпоративный сайт, интернет-магазин
+      </span>
+    </h3>
     <StagesItems />
   </section>
 )
