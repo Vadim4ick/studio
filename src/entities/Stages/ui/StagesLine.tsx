@@ -1,5 +1,4 @@
 import { MotionValue, useTransform, motion } from "framer-motion"
-
 const StagesLine = ({
   scrollYProgress,
 }: {

@@ -12,7 +12,7 @@ export async function generateMetadata({
   const item = findProject(id)
 
   return {
-    title: `${item?.title} | Barbaris`,
+    title: `${item?.title}`,
     description: "Разработка сайтов, интернет-магазинов и web-сервисов",
     keywords:
       "разработка сайтов,разработка высоконагруженных сайтов, CMS, админ панелей, Создание сайтов",

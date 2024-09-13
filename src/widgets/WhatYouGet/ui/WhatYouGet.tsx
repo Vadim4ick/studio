@@ -15,113 +15,12 @@ const WhatYouGet = () => (
         options={item.options}
       />
     ))}
-    {/* <div className="grid grid-cols-1 gap-0">
-      <div className="flex">
-        <div>
-          <Image src="/image/order.png" width={521} height={355} alt="div" />
-        </div>
-        <div className="flex flex-col justify-center">
-          <h3 className="mb-[17px] text-lg font-bold text-primary-500">
-            Оформление заказа
-          </h3>
-          <ul className="text list-inside list-disc">
-            <li className=" text-sm leading-6">личный кабинет</li>
-            <li className=" text-sm leading-6">
-              корзина с отображением выбранных товаров
-            </li>
-            <li className=" text-sm leading-6">
-              оформление заказа с указанием контактных данных
-            </li>
-            <li className=" text-sm leading-6">
-              возможность приема онлайн-платежей
-            </li>
-            <li className=" text-sm leading-6">
-              использование купонов, скидок и специальных предложений
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="-mt-10 flex flex-row-reverse">
-        <div>
-          <Image src="/image/catalog.png" width={521} height={355} alt="div" />
-        </div>
-        <div className="flex flex-col justify-center">
-          <h3 className="mb-[17px] text-lg font-bold text-primary-500">
-            Оформление заказа
-          </h3>
-          <ul className="text list-inside list-disc">
-            <li className=" text-sm leading-6">личный кабинет</li>
-            <li className=" text-sm leading-6">
-              корзина с отображением выбранных товаров
-            </li>
-            <li className=" text-sm leading-6">
-              оформление заказа с указанием контактных данных
-            </li>
-            <li className=" text-sm leading-6">
-              возможность приема онлайн-платежей
-            </li>
-            <li className=" text-sm leading-6">
-              использование купонов, скидок и специальных предложений
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="flex">
-        <div>
-          <Image
-            src="/image/integration.png"
-            width={521}
-            height={355}
-            alt="div"
-          />
-        </div>
-        <div className="flex flex-col justify-center">
-          <h3 className="mb-[17px] text-lg font-bold text-primary-500">
-            Оформление заказа
-          </h3>
-          <ul className="text list-inside list-disc">
-            <li className=" text-sm leading-6">личный кабинет</li>
-            <li className=" text-sm leading-6">
-              корзина с отображением выбранных товаров
-            </li>
-            <li className=" text-sm leading-6">
-              оформление заказа с указанием контактных данных
-            </li>
-            <li className=" text-sm leading-6">
-              возможность приема онлайн-платежей
-            </li>
-            <li className=" text-sm leading-6">
-              использование купонов, скидок и специальных предложений
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="-mt-10 flex flex-row-reverse">
-        <div>
-          <Image src="/image/crm.png" width={521} height={355} alt="div" />
-        </div>
-        <div className="flex flex-col justify-center">
-          <h3 className="mb-[17px] text-lg font-bold text-primary-500">
-            Оформление заказа
-          </h3>
-          <ul className="text list-inside list-disc">
-            <li className=" text-sm leading-6">личный кабинет</li>
-            <li className=" text-sm leading-6">
-              корзина с отображением выбранных товаров
-            </li>
-            <li className=" text-sm leading-6">
-              оформление заказа с указанием контактных данных
-            </li>
-            <li className=" text-sm leading-6">
-              возможность приема онлайн-платежей
-            </li>
-            <li className=" text-sm leading-6">
-              использование купонов, скидок и специальных предложений
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div> */}
+    <p className="text mt-16 flex flex-col gap-4 border-x-4 border-primary-400 px-10 text-center tablet:basis-1/2">
+      Каждый аспект вашего веб-проекта требует внимания и профессионального
+      подхода, который веб-студия Barbaris готова предложить. Наши услуги
+      охватывают все стадии разработки и продвижения сайтов, обеспечивая вашему
+      бизнесу необходимое преимущество в цифровой среде.
+    </p>
   </section>
 )
 

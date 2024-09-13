@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 import { Logo } from "@/shared/icons/logo"
 
@@ -24,42 +23,7 @@ const Footer = () => (
         <BtnOpenConsultation />
       </section>
       <hr className="border-1 my-6 hidden border-primary-950 dark:border-primary-200 sm:block lg:my-8" />
-      <section className="pt-8 sm:pt-0">
-        <div className="flex flex-col-reverse items-center gap-8 sm:grid sm:grid-cols-2 sm:gap-6">
-          <div className="max-w-[300px] text-sm font-bold xl:text-lg">
-            <h3 className=" mb-6">
-              Москва, ул. Профсоюзная 76, БЦ «ГАЛЕРЕЯ 76» 2 этаж
-            </h3>
-            <h3 className="">+7 (495) 792-66-69 пн-пт 10:00–19:00</h3>
-          </div>
-          <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-end">
-            <a
-              href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-            >
-              <Image
-                src={"/image/telegram.svg"}
-                priority
-                width={35}
-                height={35}
-                alt="logoImage"
-              />
-            </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-            >
-              <Image
-                src={"/image/whatsapp.svg"}
-                priority
-                width={35}
-                height={35}
-                alt="logoImage"
-              />
-            </a>
-          </div>
-        </div>
-
+      <section className="flex flex-col gap-3 pt-8 sm:pt-0">
         <div className=" mt-8 flex flex-col items-center gap-y-5 sm:mt-0">
           <Link href={"/"}>
             <Logo />

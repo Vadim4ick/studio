@@ -4,22 +4,23 @@ import { benefits } from "@/entities/BenefitItem"
 import { BenefitsList } from "@/widgets/BenefitsList"
 import { Stages } from "@/widgets/Stages"
 import Image from "next/image"
-import { motion } from "framer-motion"
 import { WhatYouGet } from "@/widgets/WhatYouGet"
 import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
+import { CirclesOnWater } from "@/shared/ui/CirclesOnWater"
 
 const HomePage = () => (
   <main className={" px-4 "}>
     <section className="mx-auto max-w-[1280px] sm:flex sm:items-center md:py-10">
       <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
         <div className="flex max-w-2xl flex-col gap-8  px-2">
-          <h1 className="text text-lg font-extrabold md:text-2xl lg:text-4xl">
-            Нужен сайт?
+          <h1 className="text text-lg font-extrabold md:text-xl lg:text-2xl">
+            Профессиональное Создание и Продвижение Сайтов от Барбарис
           </h1>
           <article className="text text-gray-700 text-base">
-            Мы — команда профессионалов из веб-студии Барбарис,
-            специализирующаяся на фронтенд и бекенд разработке. Наши опытные
-            специалисты с удовольствием возьмутся за реализацию вашего сайта.
+            Веб-студия Barbaris предлагает полный спектр услуг по созданию
+            сайтов любой сложности. Наша команда профессионалов готова взяться
+            за проекты различной направленности: от личных блогов до крупных
+            интернет-магазинов и корпоративных порталов.
           </article>
           <div className="flex justify-center gap-8 font-semibold">
             <BtnOpenConsultation />
@@ -41,12 +42,15 @@ const HomePage = () => (
     </section>
 
     <section className="mx-auto max-w-[1280px] py-10">
-      <h2 className="text mb-[54px] text-lg font-extrabold md:mb-8 md:text-2xl lg:mb-16 lg:text-4xl">
-        Вам нужно создать сайт или веб приложение?{" "}
+      <h2 className="text mb-[25px] text-center text-lg font-extrabold md:mb-7 md:text-left md:text-2xl lg:mb-16 lg:text-4xl">
+        Заказать Интернет Магазин:{" "}
         <span className="text-primary-500">
-          Нужна помощь с SEO настройкой сайта или необходимо запустить рекламму?
+          Профессиональное Создание от Barbaris
         </span>
       </h2>
+      <p className="text mb-[30px] text-center text-base font-extrabold md:mb-6 md:text-left md:text-xl lg:mb-8">
+        Наши ключевые услуги включают
+      </p>
       <BenefitsList
         benefitsData={benefits}
         className="mb-[50px] grid grid-cols-1 justify-items-center gap-y-10 md:grid-cols-2 md:gap-x-5 lg:grid-cols-3 lg:gap-y-[54px]"
@@ -59,77 +63,24 @@ const HomePage = () => (
     <WhatYouGet />
 
     <section className="mx-auto max-w-[1280px] pb-10 lg:pb-24">
-      <h2 className="text mb-[60px] text-lg font-extrabold md:text-2xl lg:text-4xl">
-        Исследуем <span className="text-primary-500">Бизнес</span>
+      <h2 className="text mb-[60px] text-center text-lg font-extrabold md:text-2xl lg:text-4xl">
+        Сколько Стоит Создание Сайта?{" "}
+        <span className="text-primary-500">Прайс-лист Веб-Студии Barbaris</span>
       </h2>
 
       <div className="flex items-start gap-3">
         <div className="text flex flex-col gap-4 tablet:basis-1/2">
           <p>
-            Каждый клиент – своя история. Мы не берем шаблонные решения, а
-            исследуем рынок конкретно под ваши цели и задачи. Сделать
-            интернет-магазин с нуля непросто.
-          </p>
-          <p>
-            Нужен сайт с качественной разработкой дизайна, который не будет
-            отвлекать от сути, наполнением и рабочими модулями. Кроме этого, для
-            успешного запуска электронной торговой площадки владельцу бизнеса
-            требуется найти поставщиков, выбрать товарные позиции, просчитать
-            рентабельность, уладить другие организационные вопросы вне сети.
-          </p>
-          <p>
-            Создание интернет-магазина лучше делегировать на профессионалов. Мы
-            возьмем на себя вопросы по разработке интернет-магазина под ключ.
-            Специалисты компании предоставляют заказчику готовый продающий сайт.
-            Он уже наполнен контентом, ориентирован на конечного потребителя и
-            интуитивно понятен для заказчика.
+            Стоимость разработки сайта варьируется в зависимости от сложности
+            проекта и требуемых функциональностей. Мы предлагаем прозрачные
+            условия сотрудничества и готовы предоставить детальный расчет
+            стоимости перед началом работ.
           </p>
         </div>
 
         <div className="basis-1/2 max-tablet:hidden">
           <div className="flex items-center justify-center">
-            <div className="relative">
-              <motion.div
-                initial={{ scale: 1, opacity: 1, translate: "-50%" }}
-                animate={{ scale: 1.5, opacity: 0.3 }}
-                transition={{
-                  duration: 2.5,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-                className="absolute left-1/2 top-1/2 size-80 animate-pulse rounded-full border-8 border-primary-500"
-              />
-              <motion.div
-                initial={{
-                  scale: 1,
-                  opacity: 1,
-                  translate: "-50%",
-                  marginTop: "35px",
-                }}
-                animate={{ scale: 1.5, opacity: 0.3 }}
-                transition={{
-                  duration: 2.5,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-                className="absolute left-1/2 top-1/2 size-60 animate-pulse rounded-full border-8 border-primary-500"
-              />
-              <motion.div
-                initial={{
-                  scale: 1,
-                  opacity: 1,
-                  translate: "-50%",
-                  marginTop: "70px",
-                }}
-                animate={{ scale: 1.5, opacity: 0.3 }}
-                transition={{
-                  duration: 2.5,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                }}
-                className="absolute left-1/2 top-1/2 size-40 animate-pulse rounded-full border-8 border-primary-500"
-              />
-            </div>
+            <CirclesOnWater />
           </div>
         </div>
       </div>
