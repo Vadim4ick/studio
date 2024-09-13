@@ -7,6 +7,7 @@ import Image from "next/image"
 import { WhatYouGet } from "@/widgets/WhatYouGet"
 import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 import { CirclesOnWater } from "@/shared/ui/CirclesOnWater"
+import Link from "next/link"
 
 const HomePage = () => (
   <main className={" px-4 "}>
@@ -16,12 +17,23 @@ const HomePage = () => (
           <h1 className="text text-lg font-extrabold md:text-xl lg:text-2xl">
             Профессиональное Создание и Продвижение Сайтов от Барбарис
           </h1>
-          <article className="text text-gray-700 text-base">
-            Веб-студия Barbaris предлагает полный спектр услуг по созданию
-            сайтов любой сложности. Наша команда профессионалов готова взяться
-            за проекты различной направленности: от личных блогов до крупных
-            интернет-магазинов и корпоративных порталов.
-          </article>
+
+          <div className="text text-gray-700 text-base">
+            <p className="pb-[10px]">
+              Ознакомится с проектами наших клиентов можно в разделе -{" "}
+              <Link className="text-primary-500" href={"/reviews"}>
+                Кейсы
+              </Link>
+            </p>
+
+            <p>
+              Веб-студия Barbaris предлагает полный спектр услуг по созданию
+              сайтов любой сложности. Наша команда профессионалов готова взяться
+              за проекты различной направленности: от личных блогов до крупных
+              интернет-магазинов и корпоративных порталов.
+            </p>
+          </div>
+
           <div className="flex justify-center gap-8 font-semibold">
             <BtnOpenConsultation />
           </div>
@@ -42,12 +54,13 @@ const HomePage = () => (
     </section>
 
     <section className="mx-auto max-w-[1280px] py-10">
-      <h2 className="text mb-[25px] text-center text-lg font-extrabold md:mb-7 md:text-left md:text-2xl lg:mb-16 lg:text-4xl">
+      <h2 className="text mb-[25px] text-center text-lg font-extrabold md:mb-7 md:text-left  md:text-2xl lg:mb-10 lg:text-4xl">
         Заказать Интернет Магазин:{" "}
         <span className="text-primary-500">
           Профессиональное Создание от Barbaris
         </span>
       </h2>
+
       <p className="text mb-[30px] text-center text-base font-extrabold md:mb-6 md:text-left md:text-xl lg:mb-8">
         Наши ключевые услуги включают
       </p>
@@ -75,6 +88,13 @@ const HomePage = () => (
             проекта и требуемых функциональностей. Мы предлагаем прозрачные
             условия сотрудничества и готовы предоставить детальный расчет
             стоимости перед началом работ.
+          </p>
+
+          <p>
+            Подробнее с ценами работ вы можете ознакомится на странице -{" "}
+            <Link className="text-primary-500" href={"/price"}>
+              цены
+            </Link>
           </p>
         </div>
 
