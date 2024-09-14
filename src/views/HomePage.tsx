@@ -9,7 +9,7 @@ import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 import { CirclesOnWater } from "@/shared/ui/CirclesOnWater"
 
 const HomePage = () => (
-  <main className={" px-4 "}>
+  <main className={" px-4 pt-20"}>
     <section className="mx-auto max-w-[1280px] sm:flex sm:items-center md:py-10">
       <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
         <div className="flex max-w-2xl flex-col gap-8  px-2">
