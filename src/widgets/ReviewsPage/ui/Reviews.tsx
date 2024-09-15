@@ -2,8 +2,8 @@ import { ReviewsItem } from "@/entities/ReviewsItem"
 import { mockProjects } from "@/shared/const/mockProjects.const"
 
 const Reviews = () => (
-  <section className="relative py-10 sm:py-10 md:py-16 lg:py-24">
-    <h2 className="text mb-[60px] text-lg font-extrabold md:text-2xl lg:text-4xl">
+  <section className="relative py-20 lg:py-24">
+    <h2 className="text mb-16  text-lg font-extrabold md:text-2xl lg:text-4xl">
       Избранные <span className="text-primary-500">проекты</span>
     </h2>
 

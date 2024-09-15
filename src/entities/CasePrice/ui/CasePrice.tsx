@@ -25,7 +25,7 @@ const CasePrice = (props: CaseProps) => {
 
   const list = useMemo(
     () => (
-      <ul className="flex h-full flex-col gap-3 py-[30px]">
+      <ul className="mb-10 flex h-full flex-col gap-3">
         {item.services.map((service, idx) => (
           <li
             className="relative flex flex-col items-start justify-start gap-1 pl-[22px] text-[12px] before:absolute before:left-0 before:top-1/2 before:size-2 before:-translate-y-1/2 before:rounded-full before:bg-primary-700 before:content-['']"
@@ -43,8 +43,8 @@ const CasePrice = (props: CaseProps) => {
   )
 
   return (
-    <div className="md:max-w-1/2 flex flex-col justify-between rounded-xl bg-white/90 px-[30px] py-[30px] duration-200 hover:bg-white/80">
-      <div className="relative flex flex-col gap-3 py-6">
+    <div className="md:max-w-1/2 flex flex-col justify-between rounded-xl bg-white/90 px-[30px] py-12 duration-200 hover:bg-white/80">
+      <div className="relative mb-10 flex flex-col gap-3">
         <p className="text-center text-[18px] font-bold">{item.title}</p>
         <div className="text-center text-[18px]">
           от <span className="font-bold">{item.timeFrom}</span> дней
@@ -95,7 +95,7 @@ const CasePrice = (props: CaseProps) => {
 
       <Button
         onClick={() => openModalConsultation()}
-        className="text-sm"
+        className="px-5 py-2.5 text-xs"
         variant="secondary"
       >
         Запросить предложение

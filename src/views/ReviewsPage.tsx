@@ -3,7 +3,7 @@
 import { Reviews } from "@/widgets/ReviewsPage"
 
 const ReviewsPage = () => (
-  <main className={"relative mx-auto max-w-[1280px] px-4 pt-headerMobile"}>
+  <main className={"relative mx-auto max-w-[1280px] px-4"}>
     <Reviews />
   </main>
 )
