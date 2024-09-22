@@ -45,8 +45,8 @@ services:
     restart: always
     environment:
       - DRONE_GITHUB_SERVER=https://github.com
-      - DRONE_GITHUB_CLIENT_ID=Ov23liuw92ndgEPaj1vU
-      - DRONE_GITHUB_CLIENT_SECRET=f73ec67795e34f4495994b43e7cd6342fd241921
+      - DRONE_GITHUB_CLIENT_ID=Ov23li8wnqPBYijzNCjz
+      - DRONE_GITHUB_CLIENT_SECRET=d78d2d6ba9bc1022fcb007c3ca85a3349823cf8e
       - DRONE_RPC_SECRET=your_rpc_secret
       - DRONE_SERVER_HOST=drone.barbarisstudio.ru
       - DRONE_SERVER_PROTO=https
