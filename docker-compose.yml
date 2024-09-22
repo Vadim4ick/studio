@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  drone-server:
+    image: drone/drone:2
+    container_name: drone-server
+    ports:
+      - 8080:80
+    volumes:
+      - /var/lib/drone:/data
+    restart: always
+    environment:
+      - DRONE_GITHUB_SERVER=https://github.com
+      - DRONE_GITHUB_CLIENT_ID=Ov23liodg7nOY3N31TlV
+      - DRONE_GITHUB_CLIENT_SECRET=4ebecc744a97b1ddb09b6d4173d0e4399dd816f1
+      - DRONE_RPC_SECRET=your_rpc_secret
+      - DRONE_SERVER_HOST=http://barbarisstudio.ru:8080
+      - DRONE_SERVER_PROTO=http # или https, если настроен SSL
+
+  drone-runner:
+    image: drone/drone-runner-docker:1
+    container_name: drone-runner
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_RPC_HOST=drone-server:80
+      - DRONE_RPC_SECRET=your_rpc_secret
+      - DRONE_RUNNER_CAPACITY=2
+      - DRONE_RUNNER_NAME=runner
