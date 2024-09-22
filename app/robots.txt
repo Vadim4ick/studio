@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
-Disallow:
+Disallow:/contacts
 Sitemap: https://barbarisstudio.ru/sitemap.xml
