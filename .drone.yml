@@ -39,8 +39,5 @@ steps:
         ✅ Успешно развернуто приложение после коммита на ветке master!
 
 trigger:
-  branch:
-    - master
-# trigger:
-#   event:
-#     - push
+  event:
+    - push
