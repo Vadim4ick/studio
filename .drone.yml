@@ -54,7 +54,7 @@ steps:
   #     - npm run lint
 
   - name: deploy
-    image: appleboy/ssh-action
+    image: appleboy/drone-ssh
     settings:
       host: 45.153.69.201
       username: root
