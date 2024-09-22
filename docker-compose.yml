@@ -48,7 +48,7 @@ services:
       - DRONE_GITHUB_CLIENT_ID=Ov23liuw92ndgEPaj1vU
       - DRONE_GITHUB_CLIENT_SECRET=f73ec67795e34f4495994b43e7cd6342fd241921
       - DRONE_RPC_SECRET=your_rpc_secret
-      - DRONE_SERVER_HOST=https://drone.barbarisstudio.ru
+      - DRONE_SERVER_HOST=drone.barbarisstudio.ru
       - DRONE_SERVER_PROTO=https
 
   drone-runner:
