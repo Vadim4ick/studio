@@ -35,7 +35,7 @@ steps:
       password: o9_+U8s8JVPjNZ # Убедитесь, что этот пароль не попадает в публичные репозитории!
       script:
         - cd /studio
-        - git pull origin main
+        - git pull origin master
         - npm install
         - npm run build
         - pm2 restart your-app-name # Замените на имя вашего приложения
