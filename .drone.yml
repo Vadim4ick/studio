@@ -61,7 +61,7 @@ steps:
       password: o9_+U8s8JVPjNZ
       port: 22
       script:
-        - cd /studio
+        - cd /root/studio
         - git pull origin master
         - npm install
         - npm run build
