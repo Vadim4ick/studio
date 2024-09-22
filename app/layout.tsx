@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode
   modal: React.ReactNode
 }>) {
-  console.log(123, "test drone")
+  console.log(123, "testing")
 
   return (
     <html lang="en">
