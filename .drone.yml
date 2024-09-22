@@ -12,14 +12,10 @@ steps:
   - name: deploy
     image: appleboy/drone-ssh
     settings:
-      host:
-        from_secret: host
-      username:
-        from_secret: username
-      password:
-        from_secret: password
-      port:
-        from_secret: port
+      host: 45.153.69.201
+      username: root
+      password: o9_+U8s8JVPjNZ
+      port: 22
       script:
         - cd /root/studio
         - source ~/.nvm/nvm.sh
