@@ -58,11 +58,16 @@ steps:
     settings:
       host: 45.153.69.201
       username: root
-      key: ssh root@45.153.69.201
+      key:
+        from_secret: ssh root@45.153.69.201
       port: 22
       script:
         - cd /studio
         - git pull origin master
         - npm install
         - npm run build
-        - pm2 restart your-app-name # Replace with your application name
+        - pm2 restart your-app-name
+
+trigger:
+  event:
+    - push
