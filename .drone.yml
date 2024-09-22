@@ -48,7 +48,7 @@ name: default
 
 steps:
   - name: lint
-    image: node:14 # Use the appropriate Node.js version
+    image: node:20 # Use the appropriate Node.js version
     commands:
       - npm install
       - npm run lint # Adjust this if your lint script has a different name
