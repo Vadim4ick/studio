@@ -28,10 +28,8 @@ steps:
   - name: notify
     image: appleboy/drone-telegram:1.3.10
     settings:
-      token:
-        from_secret: telegram_token
-      chat_id:
-        from_secret: telegram_chat_id
+      token: 7667848651:AAFC29EEL9jkm6c6CoXZ-XWN0JZ_dh7hhuE
+      chat_id: -4551183176
       message: "✅ Успешно развернуто приложение после коммита на ветке master!"
 
 trigger:
