@@ -26,12 +26,12 @@ steps:
         - pm2 restart your-app-name
 
   - name: notify
-    image: appleboy/drone-telegram
+    image: appleboy/drone-telegram:1.3.10
     settings:
       token:
         from_secret: telegram_token
-      chat_id:
-        from_secret: telegram_chat_id
+
+      to: telegram_chat_id
       message: "✅ Успешно развернуто приложение после коммита на ветке master!"
 
 trigger:
