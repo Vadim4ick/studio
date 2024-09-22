@@ -34,13 +34,8 @@ steps:
       message: |
         ✅ Успешно развернуто приложение после коммита на ветке master!
 
-        Коммит: {{ .Commit }}  
-        Сообщение коммита: {{ .CommitMessage }}  
-
-        Измененные файлы:
-        {{ range .ChangedFiles }}
-          - {{ . }}
-        {{ end }}
+        Коммит: {{ .Commit }}
+        Сообщение коммита: {{ .CommitMessage }}
 
 trigger:
   event:
