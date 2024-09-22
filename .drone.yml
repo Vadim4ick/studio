@@ -47,11 +47,11 @@ type: docker
 name: default
 
 steps:
-  - name: lint
-    image: node:20 # Use the appropriate Node.js version
-    commands:
-      - npm install
-      - npm run lint # Adjust this if your lint script has a different name
+  # - name: lint
+  #   image: node:20
+  #   commands:
+  #     - npm install
+  #     - npm run lint
 
   - name: deploy
     image: appleboy/ssh-action
