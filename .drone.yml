@@ -38,5 +38,7 @@ steps:
       message: |
         ✅ Успешно развернуто приложение после коммита на ветке master!
 trigger:
+  branch:
+    - master
   event:
     - push
