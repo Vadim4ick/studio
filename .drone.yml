@@ -30,8 +30,8 @@ steps:
     settings:
       token:
         from_secret: telegram_token
-
-      to: telegram_chat_id
+      chat_id:
+        from_secret: telegram_chat_id
       message: "✅ Успешно развернуто приложение после коммита на ветке master!"
 
 trigger:
