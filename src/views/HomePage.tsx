@@ -10,7 +10,7 @@ import { CirclesOnWater } from "@/shared/ui/CirclesOnWater"
 import Link from "next/link"
 
 const HomePage = () => {
-  console.log("22")
+  console.log("2212312312313221")
 
   return (
     <main className={" px-4 pt-20"}>
