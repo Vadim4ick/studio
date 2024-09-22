@@ -34,9 +34,6 @@ steps:
       message: |
         ✅ Успешно развернуто приложение после коммита на ветке master!
 
-        Коммит: {{ .Commit }}
-        Сообщение коммита: {{ .CommitMessage }}
-
 trigger:
   event:
     - push
