@@ -22,11 +22,37 @@
 #         - npm run build
 #         - pm2 restart your-app-name
 
+# ==============
+
+# kind: pipeline
+# type: docker
+# name: default
+
+# steps:
+#   - name: deploy
+#     image: appleboy/ssh-action
+#     settings:
+#       host: 45.153.69.201
+#       username: root
+#       key: ssh root@45.153.69.201
+#       script:
+#         - cd /studio
+#         - git pull origin master
+#         - npm install
+#         - npm run build
+#         - pm2 restart your-app-name # Замените на имя вашего приложения
+
 kind: pipeline
 type: docker
 name: default
 
 steps:
+  - name: lint
+    image: node:14 # Use the appropriate Node.js version
+    commands:
+      - npm install
+      - npm run lint # Adjust this if your lint script has a different name
+
   - name: deploy
     image: appleboy/ssh-action
     settings:
@@ -38,4 +64,4 @@ steps:
         - git pull origin master
         - npm install
         - npm run build
-        - pm2 restart your-app-name # Замените на имя вашего приложения
+        - pm2 restart your-app-name # Replace with your application name
