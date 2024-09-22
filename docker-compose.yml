@@ -81,7 +81,7 @@ services:
       - DRONE_RPC_SECRET=your_rpc_secret
       - DRONE_SERVER_HOST=drone.barbarisstudio.ru
       - DRONE_SERVER_PROTO=https
-      # - DRONE_USER_CREATE=username:admin,machine:false,admin:true,token://
+      - DRONE_USER_CREATE=username:admin,machine:false,admin:true,token:720d07798c66958e6ca8684ae9f519f9
       # - DRONE_LOGS_DEBUG=true
     ports:
       - 8080:80
