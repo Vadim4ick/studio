@@ -29,9 +29,11 @@ steps:
     image: appleboy/drone-telegram:1.3.10
     settings:
       token:
-        from_secret: telegram_token
+        from_secret: 7667848651:AAFC29EEL9jkm6c6CoXZ-XWN0JZ_dh7hhuE
+        # from_secret: telegram_token
 
-      to: telegram_chat_id
+      to: -4551183176
+      # to: telegram_chat_id
       message: "✅ Успешно развернуто приложение после коммита на ветке master!"
 
 trigger:
