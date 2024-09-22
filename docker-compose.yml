@@ -28,3 +28,5 @@ services:
       - DRONE_RPC_SECRET=your_rpc_secret
       - DRONE_RUNNER_CAPACITY=2
       - DRONE_RUNNER_NAME=runner
+      - DRONE_SERVER_HOST=drone.barbarisstudio.ru
+      - DRONE_SERVER_PROTO=https
