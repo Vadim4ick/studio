@@ -1,23 +1,41 @@
+# kind: pipeline
+# type: docker
+# name: default
+
+# steps:
+#   - name: install dependencies
+#     image: node:18-alpine
+#     commands:
+#       - npm install
+#       - npm run build
+
+#   - name: deploy
+#     image: appleboy/ssh-action
+#     settings:
+#       host: 45.153.69.201
+#       username: root
+#       password: o9_+U8s8JVPjNZ
+#       script:
+#         - cd /studio
+#         - git pull origin master
+#         - npm install
+#         - npm run build
+#         - pm2 restart your-app-name
+
 kind: pipeline
 type: docker
 name: default
 
 steps:
-  - name: install dependencies
-    image: node:18-alpine
-    commands:
-      - npm install
-      - npm run build
-
   - name: deploy
     image: appleboy/ssh-action
     settings:
       host: 45.153.69.201
       username: root
-      password: o9_+U8s8JVPjNZ
+      password: o9_+U8s8JVPjNZ # Убедитесь, что этот пароль не попадает в публичные репозитории!
       script:
         - cd /studio
-        - git pull origin master
+        - git pull origin main
         - npm install
         - npm run build
-        - pm2 restart your-app-name
+        - pm2 restart your-app-name # Замените на имя вашего приложения
