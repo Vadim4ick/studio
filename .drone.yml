@@ -58,8 +58,7 @@ steps:
     settings:
       host: 45.153.69.201
       username: root
-      key:
-        from_secret: ssh root@45.153.69.201
+      password: o9_+U8s8JVPjNZ
       port: 22
       script:
         - cd /studio
