@@ -11,11 +11,11 @@ services:
     restart: always
     environment:
       - DRONE_GITHUB_SERVER=https://github.com
-      - DRONE_GITHUB_CLIENT_ID=Ov23liodg7nOY3N31TlV
-      - DRONE_GITHUB_CLIENT_SECRET=4ebecc744a97b1ddb09b6d4173d0e4399dd816f1
+      - DRONE_GITHUB_CLIENT_ID=Ov23liRjT0LevFfAZenV
+      - DRONE_GITHUB_CLIENT_SECRET=9380d51980f2d2e5c7c2cd2a59eecf7442957d4b
       - DRONE_RPC_SECRET=your_rpc_secret
-      - DRONE_SERVER_HOST=http://barbarisstudio.ru:8080
-      - DRONE_SERVER_PROTO=http # или https, если настроен SSL
+      - DRONE_SERVER_HOST=https://drone.barbarisstudio.ru
+      - DRONE_SERVER_PROTO=https
 
   drone-runner:
     image: drone/drone-runner-docker:1
