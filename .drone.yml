@@ -3,11 +3,11 @@ type: docker
 name: default
 
 steps:
-  # - name: lint
-  #   image: node:20
-  #   commands:
-  #     - npm install
-  #     - npm run lint
+  - name: lint
+    image: node:20
+    commands:
+      - npm install
+      - npm run lint
 
   # - name: deploy
   #   image: appleboy/drone-ssh
@@ -25,18 +25,14 @@ steps:
   #       - npm run build
   #       - pm2 restart your-app-name
 
-  - name: notify
-    image: appleboy/drone-telegram:1.3.10
-    settings:
-      token:
-        from_secret: telegram_token
-      to: -4551183176
-      message: "✅ Успешно развернуто приложение после коммита на ветке master!
-
-        Коммит: {{ .Commit }}
-        Сообщение коммита: {{ .CommitMessage }}
-
-        Измененные файлы: {{ range .ChangedFiles }} - {{ . }} {{ end }}"
+  # - name: notify
+  #   image: appleboy/drone-telegram:1.3.10
+  #   settings:
+  #     token:
+  #       from_secret: telegram_token
+  #     to: -4551183176
+  #     message: |
+  #       ✅ Успешно развернуто приложение после коммита на ветке master!
 
 trigger:
   event:
