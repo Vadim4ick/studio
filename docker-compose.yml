@@ -59,6 +59,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - DRONE_RPC_HOST=drone.barbarisstudio.ru # Изменено на HTTPS
+      - DRONE_RPC_PROTO=https
       - DRONE_RPC_SECRET=your_rpc_secret
       - DRONE_RUNNER_CAPACITY=2
       - DRONE_RUNNER_NAME=runner
