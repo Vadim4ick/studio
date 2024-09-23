@@ -3,8 +3,11 @@ import { Montserrat } from "next/font/google"
 import { Providers } from "@/app/providers/Provider"
 import { Header } from "@/widgets/Header"
 import { Footer } from "@/widgets/Footer"
+import Script from "next/script"
 
 import "@/globalStyles"
+import { Suspense } from "react"
+import YandexMetrika from "@/shared/ui/YandexMetrika"
 
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
@@ -31,7 +34,7 @@ export default function RootLayout({
   modal: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body className={`${montserrat.className} bg-light`}>
         <Providers>
           <Header />
@@ -42,6 +45,29 @@ export default function RootLayout({
         </Providers>
 
         {modal}
+
+        <Script
+          id="metrika-counter"
+          type="text/javascript"
+          strategy="afterInteractive"
+        >
+          {`(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+              m[i].l=1*new Date();
+              for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+              k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+              (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+              ym(98424024, "init", {
+                    defer: true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+              });`}
+        </Script>
+        <Suspense fallback={<></>}>
+          <YandexMetrika />
+        </Suspense>
       </body>
     </html>
   )
