@@ -33,10 +33,11 @@ export default function RootLayout({
   children: React.ReactNode
   modal: React.ReactNode
 }>) {
-  console.log(123)
-
   return (
     <html lang="ru">
+      <head>
+        <meta name="yandex-verification" content="bc1f993cd45b406b" />
+      </head>
       <body className={`${montserrat.className} bg-light`}>
         <Providers>
           <Header />
