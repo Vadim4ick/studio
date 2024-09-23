@@ -52,17 +52,17 @@ const Contacts = () => (
       </div>
     </>
 
-    <div className="col-span-2 h-[420px] w-full bg-primary-950 ">
-      <div className="relative h-full w-full shadow-lg">
+    <div className="">
+      <div className="relative m-auto max-w-xs overflow-hidden rounded-full shadow-lg transition-transform hover:scale-110">
         <Image
           quality={100}
           priority
-          sizes="(max-width: 768px) 100vw, 50vw"
-          src="/image/Cover.webp"
+          // sizes="(max-width: 768px) 100vw, 50vw"
+          src="/image/contacts/communications.webp"
           alt="bunner image"
-          className="pointer-events-none mx-auto h-full w-full select-none object-cover"
-          width={2000}
-          height={2000}
+          className="pointer-events-none mx-auto h-full select-none object-cover"
+          width={512}
+          height={512}
         />
         {/* <iframe
           className="absolute left-0 top-0 h-full w-full rounded-md"
