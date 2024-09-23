@@ -9,7 +9,10 @@ export default function YandexMetrika() {
 
   useEffect(() => {
     const url = `${pathname}?${searchParams}`
-    ym(98424024, "hit", url)
+    // Проверяем, существует ли `ym` в глобальной области
+    if (typeof window !== "undefined" && typeof window.ym === "function") {
+      window.ym(98424024, "hit", url)
+    }
   }, [pathname, searchParams])
 
   return null
