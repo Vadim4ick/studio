@@ -7,6 +7,8 @@ import Image from "next/image"
 import { WhatYouGet } from "@/widgets/WhatYouGet"
 import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 import { CirclesOnWater } from "@/shared/ui/CirclesOnWater"
+import { Button } from "@/shared/ui/Button"
+import Link from "next/link"
 
 const HomePage = () => (
   <main className={" px-4 pt-20"}>
@@ -23,7 +25,10 @@ const HomePage = () => (
             интернет-магазинов и корпоративных порталов.
           </article>
           <div className="flex justify-center gap-8 font-semibold">
-            <BtnOpenConsultation />
+            {/* <BtnOpenConsultation /> */}
+            <Link href={"/price/"} className="btn-primary">
+              <Button variant="secondary">Узнать стоимость</Button>
+            </Link>
           </div>
         </div>
       </div>
