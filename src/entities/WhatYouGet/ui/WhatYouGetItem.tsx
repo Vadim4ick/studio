@@ -4,7 +4,7 @@ import { OptionList } from "./OptionItem"
 
 const WhatYouGetItem = ({ imageUrl, title, options }: WhatYouGetList) => (
   <div className="flex flex-col gap-y-5 md:flex-row md:even:flex-row-reverse">
-    <div className=" grayscale-[80%] ">
+    <div className="">
       <Image src={imageUrl} width={521} height={355} alt="div" />
     </div>
     <div className="flex flex-col justify-center">

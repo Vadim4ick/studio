@@ -3,7 +3,7 @@ import { WhatYouGetList } from "../types"
 export const whatyougetlist: WhatYouGetList[] = [
   {
     id: "1",
-    imageUrl: "/image/catalog.png",
+    imageUrl: "/image/whatYouGet/programmer.webp",
     title: "Программирование и Техническая Оптимизация Сайтов от Barbaris",
     options: [
       {
@@ -15,7 +15,7 @@ export const whatyougetlist: WhatYouGetList[] = [
   },
   {
     id: "2",
-    imageUrl: "/image/order.png",
+    imageUrl: "/image/whatYouGet/web-design.webp",
     title: "Примеры Успешных Проектов от Веб-Студии Barbaris",
     options: [
       {
@@ -27,7 +27,7 @@ export const whatyougetlist: WhatYouGetList[] = [
   },
   {
     id: "3",
-    imageUrl: "/image/integration.png",
+    imageUrl: "/image/whatYouGet/research.webp",
     title: "SEO-Оптимизация и Поисковый Трафик",
     options: [
       {
@@ -39,7 +39,7 @@ export const whatyougetlist: WhatYouGetList[] = [
   },
   {
     id: "4",
-    imageUrl: "/image/crm.png",
+    imageUrl: "/image/whatYouGet/full-stack.webp",
     title: "Контент-Маркетинг и Мобильная Оптимизация",
     options: [
       {
@@ -51,7 +51,7 @@ export const whatyougetlist: WhatYouGetList[] = [
   },
   {
     id: "5",
-    imageUrl: "/image/crm.png",
+    imageUrl: "/image/whatYouGet/data-analyst.webp",
     title: "Аналитика и Таргетированная Реклама",
     options: [
       {
@@ -63,7 +63,7 @@ export const whatyougetlist: WhatYouGetList[] = [
   },
   {
     id: "5",
-    imageUrl: "/image/crm.png",
+    imageUrl: "/image/whatYouGet/launch.webp",
     title: "Брендинг и Омниканальность",
     options: [
       {
@@ -75,7 +75,7 @@ export const whatyougetlist: WhatYouGetList[] = [
   },
   {
     id: "6",
-    imageUrl: "/image/crm.png",
+    imageUrl: "/image/whatYouGet/seo.webp",
     title: "SEO Продвижение и Ценообразование ",
     options: [
       {
