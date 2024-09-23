@@ -7,39 +7,28 @@ import Image from "next/image"
 import { WhatYouGet } from "@/widgets/WhatYouGet"
 import { BtnOpenConsultation } from "@/features/BtnOpenConsultation"
 import { CirclesOnWater } from "@/shared/ui/CirclesOnWater"
+import { Button } from "@/shared/ui/Button"
 import Link from "next/link"
 
-const HomePage = () => {
-  console.log(123)
-
-  return (
-    <main className={" px-4 pt-20"}>
-      <section className="mx-auto max-w-[1280px] sm:flex sm:items-center md:py-10">
-        <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
-          <div className="flex max-w-2xl flex-col gap-8  px-2">
-            <h1 className="text text-lg font-extrabold md:text-xl lg:text-2xl">
-              Профессиональное Создание и Продвижение Сайтов от Барбарис
-            </h1>
-
-            <div className="text text-gray-700 text-base">
-              <p className="pb-[10px]">
-                Ознакомится с проектами наших клиентов можно в разделе -{" "}
-                <Link className="text-primary-500" href={"/reviews"}>
-                  Кейсы
-                </Link>
-              </p>
-
-              <p>
-                Веб-студия Barbaris предлагает полный спектр услуг по созданию
-                сайтов любой сложности. Наша команда профессионалов готова
-                взяться за проекты различной направленности: от личных блогов до
-                крупных интернет-магазинов и корпоративных порталов.
-              </p>
-            </div>
-
-            <div className="flex justify-center gap-8 font-semibold">
-              <BtnOpenConsultation />
-            </div>
+const HomePage = () => (
+  <main className={" px-4 pt-20"}>
+    <section className="mx-auto max-w-[1280px] sm:flex sm:items-center md:py-10">
+      <div className="mx-auto mb-8 max-w-7xl text-center sm:w-1/2">
+        <div className="flex max-w-2xl flex-col gap-8  px-2">
+          <h1 className="text text-lg font-extrabold md:text-xl lg:text-2xl">
+            Профессиональное Создание и Продвижение Сайтов от Барбарис
+          </h1>
+          <article className="text text-gray-700 text-base">
+            Веб-студия Barbaris предлагает полный спектр услуг по созданию
+            сайтов любой сложности. Наша команда профессионалов готова взяться
+            за проекты различной направленности: от личных блогов до крупных
+            интернет-магазинов и корпоративных порталов.
+          </article>
+          <div className="flex justify-center gap-8 font-semibold">
+            {/* <BtnOpenConsultation /> */}
+            <Link href={"/price/"} className="btn-primary">
+              <Button variant="secondary">Узнать стоимость</Button>
+            </Link>
           </div>
         </div>
         <div className="mx-auto flex w-5/6 flex-col justify-items-center sm:w-1/2">
