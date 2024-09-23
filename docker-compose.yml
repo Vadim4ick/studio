@@ -60,6 +60,8 @@ services:
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 3300:3000
     environment:
       - DRONE_RPC_HOST=drone.barbarisstudio.ru # Изменено на HTTPS
       - DRONE_RPC_PROTO=https
