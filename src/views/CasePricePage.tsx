@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { CasesPrice } from "@/widgets/CasesPrice"
+import Link from "next/link"
 
 const CasePricePage = () => (
   <main
@@ -29,16 +30,25 @@ const CasePricePage = () => (
         <h2 className="text mb-6 text-lg font-extrabold md:text-xl lg:text-2xl">
           Веб-разработка и стоимость создания сайта
         </h2>
-        <p className=" text-pretty">
+
+        <p className="text-pretty">
           Создание сайта — это сложный процесс, включающий в себя множество
           этапов, от проектирования до запуска и поддержки. Стоимость создания
           сайта зависит от множества факторов, таких как сложность проекта,
           функциональность, объем контента и необходимость в дополнительных
           услугах.
         </p>
-        <p className=" text-pretty">
+
+        <p className="text-pretty">
           Мы предлагаем гибкие тарифные планы, чтобы каждый клиент мог выбрать
           оптимальное решение в рамках своего бюджета на сайт.
+        </p>
+
+        <p className="text-pretty">
+          Ознакомится с проектами наших клиентов можно в разделе -{" "}
+          <Link href={"/reviews"} className="font-semibold text-[#000]">
+            кейсы
+          </Link>
         </p>
       </div>
 

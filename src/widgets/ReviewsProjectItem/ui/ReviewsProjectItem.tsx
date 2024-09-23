@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css"
 import Image from "next/image"
 import { useRef } from "react"
 import { Arrow } from "@/shared/icons/Arrow"
+import Link from "next/link"
 
 const settings: Settings = {
   speed: 600,
@@ -70,6 +71,13 @@ const ReviewsProjectItem = ({ item }: { item: IReviewsItem }) => {
 
         <p className="text text-lg font-medium">{item.aboutProject}</p>
       </div>
+
+      <p className="text cursor-pointer pt-[30px] text-center text-lg font-medium">
+        Посмотреть полное портфолио можно в разделе{" "}
+        <Link className="text-primary-500" href={"/reviews"}>
+          кейсы
+        </Link>
+      </p>
     </section>
   )
 }

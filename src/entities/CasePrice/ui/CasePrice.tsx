@@ -4,7 +4,7 @@ import { Button } from "@/shared/ui/Button"
 import { Case } from "../model/type"
 import { useMedia } from "@/shared/hooks/useMedia.hooks"
 import { Spoller } from "@/shared/ui/Spoller"
-import { useMemo } from "react"
+import { memo, useMemo } from "react"
 import { Arrow } from "@/shared/icons/Arrow"
 import { motion } from "framer-motion"
 import { useUnit } from "effector-react"
@@ -16,10 +16,10 @@ interface CaseProps {
   item: Case
 }
 
-const CasePrice = (props: CaseProps) => {
+const CasePrice = memo((props: CaseProps) => {
   const { item } = props
 
-  const activeSpoiler = useUnit($spollerPrice)
+  const [activeSpoiler] = useUnit([$spollerPrice])
 
   const isMobile768 = useMedia({ media: "max", number: 768 })
 
@@ -102,6 +102,6 @@ const CasePrice = (props: CaseProps) => {
       </Button>
     </div>
   )
-}
+})
 
 export { CasePrice }

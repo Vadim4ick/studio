@@ -15,6 +15,7 @@ const WhatYouGet = () => (
         options={item.options}
       />
     ))}
+
     <p className="text mt-16 flex flex-col gap-4 border-x-4 border-primary-400 px-10 text-center tablet:basis-1/2">
       Каждый аспект вашего веб-проекта требует внимания и профессионального
       подхода, который веб-студия Barbaris готова предложить. Наши услуги

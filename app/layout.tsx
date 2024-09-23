@@ -33,6 +33,8 @@ export default function RootLayout({
   children: React.ReactNode
   modal: React.ReactNode
 }>) {
+  console.log(123)
+
   return (
     <html lang="ru">
       <body className={`${montserrat.className} bg-light`}>
