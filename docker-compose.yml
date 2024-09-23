@@ -60,6 +60,7 @@ services:
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
     ports:
       - 3300:3000
     environment:
