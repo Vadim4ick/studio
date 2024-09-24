@@ -8,7 +8,6 @@ steps:
   #   commands:
   #     - npm ci
   #     - npm run lint
-
   - name: deploy
     image: appleboy/drone-ssh
     settings:
