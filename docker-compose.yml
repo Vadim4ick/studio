@@ -70,6 +70,7 @@
 #       - DRONE_RPC_SECRET=your_rpc_secret
 #       - DRONE_RUNNER_CAPACITY=2
 #       - DRONE_RUNNER_NAME=runner
+
 version: "3.8"
 
 services:
