@@ -44,6 +44,7 @@ services:
     volumes:
       - /var/lib/drone:/data
     restart: always
+
     environment:
       - DRONE_GITHUB_SERVER=https://github.com
       - DRONE_GITHUB_CLIENT_ID=Ov23li8wnqPBYijzNCjz
