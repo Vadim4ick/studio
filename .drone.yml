@@ -41,6 +41,7 @@ steps:
 trigger:
   event:
     - push
+    - promote
     - custom
 # trigger:
 #   branch:
