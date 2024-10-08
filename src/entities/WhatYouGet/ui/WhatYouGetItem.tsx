@@ -8,7 +8,7 @@ const WhatYouGetItem = ({ imageUrl, title, options }: WhatYouGetList) => (
       <Image src={imageUrl} width={521} height={355} alt="div" />
     </div>
     <div className="flex flex-col justify-center">
-      <h3 className="mb-[17px] text-lg font-bold text-primary-600">{title}</h3>
+      <h3 className="text mb-[17px] text-lg font-bold">{title}</h3>
 
       <ul className="text list-inside list-disc">
         {options.map((option) => (
