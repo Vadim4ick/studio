@@ -1,6 +1,5 @@
 import { ModalRequest } from "@/features/ModalRequest"
 import { mockProjects } from "@/shared/const/mockProjects.const"
-import { redirect } from "next/navigation"
 
 export async function generateStaticParams() {
   // Генерируем массив параметров для каждого поста
@@ -17,26 +16,6 @@ export async function generateStaticParams() {
   ]
 }
 
-export default function ModalPageReviews({
-  params,
-}: {
-  params: { slug: string[] }
-}) {
-  const [firstSegment, id] = params.slug
-
-  if (firstSegment === "reviews") {
-    if (id) {
-      // Здесь можно добавить логику для отображения поста по ID
-      redirect(`/reviews/${id}`) // Редирект на конкретный пост
-    }
-    redirect("/reviews")
-  } else if (firstSegment === "price") {
-    redirect("/price")
-  } else if (firstSegment === "contacts") {
-    redirect("/contacts")
-  } else {
-    redirect("/404")
-  }
-
+export default function ModalPageReviews() {
   return <ModalRequest />
 }
