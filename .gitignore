@@ -11,6 +11,9 @@
 /coverage
 /docker-compose.yml
 
+.drone.yml
+docker-compose.yml
+
 # next.js
 /.next/
 # /out/
