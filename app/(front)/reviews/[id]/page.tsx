@@ -1,13 +1,6 @@
-import { mockProjects } from "@/shared/const/mockProjects.const"
 import { findProject } from "@/shared/helpers/findProject.helper"
 import { ReviewsProjectPage } from "@/views/ReviewsProjectPage"
 import type { Metadata } from "next"
-
-export async function generateStaticParams() {
-  return mockProjects.map((post) => ({
-    id: post.id.toString(),
-  }))
-}
 
 export async function generateMetadata({
   params,
