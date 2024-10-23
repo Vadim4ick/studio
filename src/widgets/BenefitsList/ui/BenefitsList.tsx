@@ -7,21 +7,19 @@ type Props = {
   benefitsData: Benefit[]
 }
 
-const BenefitsList = ({ className, benefitsData }: Props) => {
-  const [activeCard] = useState(1)
+const BenefitsList = ({ className, benefitsData }: Props) => (
+  // const [activeCard] = useState(1)
 
-  return (
-    <div className={clsx("", [className])}>
-      {benefitsData.map((item, index) => (
-        <BenefitCard
-          key={item.id}
-          active={activeCard === index}
-          index={index}
-          item={item}
-        />
-      ))}
-    </div>
-  )
-}
+  <div className={clsx("", [className])}>
+    {benefitsData.map((item, index) => (
+      <BenefitCard
+        key={item.id}
+        // active={activeCard === index}
+        index={index}
+        item={item}
+      />
+    ))}
+  </div>
+)
 
 export { BenefitsList }

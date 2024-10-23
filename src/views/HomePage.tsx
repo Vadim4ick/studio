@@ -13,7 +13,7 @@ import Link from "next/link"
 const HomePage = () => (
   <main className={" px-4 pt-20"}>
     <section className="mx-auto max-w-[1280px] sm:flex sm:items-center md:py-10">
-      <div className="mx-auto mb-8 contents max-w-7xl text-center sm:w-1/2">
+      <div className=" mx-auto mb-8 contents max-w-7xl text-center sm:w-1/2">
         <div className="flex max-w-2xl flex-col gap-8  px-2">
           <h1 className="text text-lg font-extrabold md:text-xl lg:text-2xl">
             Профессиональное Создание и Продвижение Сайтов от Барбарис

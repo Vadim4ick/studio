@@ -73,20 +73,20 @@ const StagesItems = () => {
           <Element name={`section${item.id}`} key={item.id}>
             <div
               style={{ boxShadow: "0px 10px 60px 0px #2A236726" }}
-              className="w-full rounded-[10px] bg-white px-[43px] py-[23px] max-laptop:mx-auto max-mobile:px-4"
+              className="w-full rounded-[10px] bg-white px-[43px] py-[23px] duration-500 hover:bg-hover-300 dark:bg-primary-50/5 dark:hover:bg-hover-600 max-laptop:mx-auto max-mobile:px-4"
             >
-              <div className="flex items-center gap-[50px] border-b pb-[29px] max-mobile:gap-4">
-                <div className="flex size-[53px] shrink-0 items-center justify-center rounded-full bg-hover-500 font-extrabold text-white">
-                  {item.id}
+              <div className="flex items-center gap-[50px] border-b pb-[29px] dark:border-cardBorderBottom max-mobile:gap-4">
+                <div className="flex size-[53px] shrink-0 items-center justify-center rounded-full text-[48px]  font-extrabold text-gray/90 drop-shadow-lg dark:text-white/50">
+                  0{item.id}
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#2A2367] max-mobile:text-xl">
+                <h3 className="text-2xl font-bold text-[#2A2367] text-gray/90 dark:text-white/50 max-mobile:text-xl">
                   {item.title}
                 </h3>
               </div>
 
               <div className="grid py-3 md:grid-cols-3">
-                <div className="px-5 py-[26px] text-[#2A2367] text-primary-950 max-mobile:py-4 max-mobile:text-sm md:col-span-2">
+                <div className="text px-5 py-[26px] text-primary-950 max-mobile:py-4 max-mobile:text-sm md:col-span-2">
                   {item.description}
                 </div>
 

@@ -24,8 +24,9 @@ export function BenefitCard({
 }: Props) {
   return (
     <Card
+      style={{ boxShadow: "0px 10px 60px 0px #2A236726" }}
       className={clsx(
-        "max-w-[373px] rounded-lg border !shadow-lg dark:border-white",
+        "max-w-[373px] rounded-lg bg-white dark:bg-primary-50/5 hover:bg-hover-500 dark:hover:bg-hover-600 duration-500",
         {
           "cart-active": active,
         },
@@ -34,10 +35,10 @@ export function BenefitCard({
       {...props}
     >
       <CardHeader>
-        <div className="text-[64px] font-bold text-white drop-shadow-lg">
+        <div className="text-[64px] font-bold text-gray/50 drop-shadow-lg">
           0{index + 1}
         </div>
-        <div className="w-44 border-0 border-b-2 border-cardBorderBottom" />
+        <div className="w-44 border-0 border-b border-primary-500" />
 
         <CardTitle
           className={clsx("text-sm font-bold", {
