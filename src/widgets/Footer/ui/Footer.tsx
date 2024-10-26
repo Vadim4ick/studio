@@ -28,7 +28,7 @@ const Footer = () => (
           </Link>
 
           <p className="text-center text-xs">
-            © 2024{" "}
+            © 2024{"  "}
             <a href="https://studiobarbaris.com" className="hover:underline">
               Studio Barbaris™
             </a>
