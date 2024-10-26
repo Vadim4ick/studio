@@ -10,6 +10,7 @@ import { RequestForm } from "./RequestForm"
 
 const ModalRequest = () => {
   const showModal = useUnit($modalConsultation)
+  console.log(showModal)
 
   return (
     <Modal

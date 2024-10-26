@@ -9,10 +9,15 @@
 
 # testing
 /coverage
+/docker-compose.yml
+
+.drone.yml
+docker-compose.yml
 
 # next.js
 /.next/
-/out/
+/dist
+# /out/
 
 # production
 /build
