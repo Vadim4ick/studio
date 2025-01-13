@@ -26,7 +26,7 @@ export function BenefitCard({
     <Card
       style={{ boxShadow: "0px 10px 60px 0px #2A236726" }}
       className={clsx(
-        "max-w-[373px] rounded-lg bg-white dark:bg-primary-50/5 hover:bg-hover-500 dark:hover:bg-hover-600 duration-500",
+        "max-w-[373px] rounded-lg bg-white duration-500 hover:bg-hover-500 dark:bg-primary-50/5 dark:hover:bg-hover-600",
         {
           "cart-active": active,
         },

@@ -1,6 +1,5 @@
 import { Benefit, BenefitCard } from "@/entities/BenefitItem"
 import clsx from "clsx"
-import { useState } from "react"
 
 type Props = {
   className?: string
